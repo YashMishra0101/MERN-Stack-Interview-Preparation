@@ -399,7 +399,7 @@ let patternTwelve=(number)=>{
         for (let b=1; b<=a; b++){
             store +=b;
         }
-        for(let c=1; c<=2*number-a*2;c++){
+        for(let c=1; c<=2number-a2;c++){
             store+=" ";
         }
         for(let d=a; 1<=d; d--){
@@ -1668,7 +1668,7 @@ boolean are not the same type, hence false.
 `splice()` modifies the original array → ❌ mutable
 `map()`, `filter()`, and `concat()` return a new array without changing the original → ✅ immutable
 
-So, `splice()` is the only **mutable** one among them 👀
+So, `splice()` is the only mutable one among them 👀
 
 
 #Ans 37)
@@ -1713,11 +1713,11 @@ Vite is built using a combination of esbuild and Rollup, so Babel is not require
   JavaScript packages like TypeScript, React, and other libraries used in development. Without npm, you can’t easily install 
   these packages.
   
-2. **To run JavaScript outside the browser**:  
+2. To run JavaScript outside the browser:  
    - Reason: Node.js provides a JavaScript runtime environment, allowing you to run JavaScript
     on the server-side or locally (e.g., running backend services or development tools).
 
-3. **For modern development tools**:  
+3. For modern development tools:  
    - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
    Node.js is required to run these tools for building and optimizing code.
 
@@ -1921,9 +1921,9 @@ applications.
 (In computer security, entropy means randomness or unpredictability)
 
 >B)
-Formula 2*pi*r
+Formula 2pir
 let radius=5;
-let ans =Number((2*Math.PI*radius).toFixed(2))
+let ans =Number((2Math.PIradius).toFixed(2))
 console.log(typeof(ans));
 console.log(ans);
 

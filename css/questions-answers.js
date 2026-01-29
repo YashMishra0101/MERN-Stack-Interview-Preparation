@@ -46,7 +46,7 @@ There are three main ways to add CSS to HTML:
    </head>
    ```
 
---Using **External CSS** is the preferred choice for most cases due to better maintainability and reusability.
+--Using External CSS is the preferred choice for most cases due to better maintainability and reusability.
 
 # 2) What is specificity in CSS, and which CSS rule has higher precedence ?
 
@@ -90,7 +90,7 @@ The cascade algorithm in CSS is the process the browser uses to decide which CSS
   
 3. Predefined Browser Styles:
    - Browsers have their own default styles (called user agent stylesheets), but these have 
-   **lower priority** than developer-defined styles.
+   lower priority than developer-defined styles.
 
 4.Specificity numbers
 The specificity numbers are calculated based on the types of selectors in CSS.
@@ -233,7 +233,7 @@ columns.
  >Note (V.V IMP)
 
  =>
-- If you use `width`: It will **set a fixed width** for the item, and `flex-grow` or `flex-shrink`
+- If you use `width`: It will set a fixed width for the item, and `flex-grow` or `flex-shrink`
 won’t affect it. The item will stay at that width.
 
 - If you use `flex-basis`: It will set the initial size for the item, and `flex-grow` and 
@@ -433,7 +433,7 @@ Features of CSS Preprocessor :
 
 When you use `box-sizing: border-box` in CSS, adding padding or borders won’t change the actual height and  width of an element. The total size remains as you set it (e.g., 500px height and 500px width).  
 
-Without `box-sizing: border-box` padding and borders **will increase** the total height and width, making the element larger than what you initially set.  
+Without `box-sizing: border-box` padding and borders will increase the total height and width, making the element larger than what you initially set.  
 
 By default, `box-sizing` is set to `content-box`.
 
@@ -456,11 +456,11 @@ only for vertical margins (top and bottom), not horizontal margins.
      <div class="box1"></div>
      <div class="box2"></div>
 
-     If `.box1` has `margin-bottom: 20px` and `.box2` has `margin-top: 30px`, only **30px** margin will be applied 
+     If `.box1` has `margin-bottom: 20px` and `.box2` has `margin-top: 30px`, only 30px margin will be applied 
      between them.
 
 2. Parent and First/Last Child 
-   Margins of a parent element and its **first** or **last child** can collapse if there's no padding, border, 
+   Margins of a parent element and its first or last child can collapse if there's no padding, border, 
    or content between them.
 
    - Example:  
@@ -483,8 +483,8 @@ It simplifies layout rendering by not stacking up margins.
 
 -- Key Points to Remember:
 
-1. Margin collapsing only happens for **vertical margins** (top and bottom) and for block level element.  
-2. The **larger margin** wins, and the smaller one disappears.  
+1. Margin collapsing only happens for vertical margins (top and bottom) and for block level element.  
+2. The larger margin wins, and the smaller one disappears.  
 3. Horizontal margins never collapse.
 
 
@@ -512,7 +512,7 @@ What happens ?
 
 >Solutions to Margin Collapsing
 
-1. **Add Padding**  
+1. Add Padding  
    - Add padding to the parent element nearest element.  
    - Padding creates a "buffer" that prevents margins from collapsing.  
    ```css
@@ -521,7 +521,7 @@ What happens ?
       }
 
    
-   2. **Add Borders**  
+   2. Add Borders  
       - Even a transparent border will stop the collapse.  
       ```css
       .parent {
@@ -529,7 +529,7 @@ What happens ?
       }
 
    
-   3. **Use Overflow Property**  
+   3. Use Overflow Property  
       - Set `overflow` to `hidden`, `auto`, or `scroll` on the parent element to contain the child margins.  
       ```css
       .parent {
@@ -537,7 +537,7 @@ What happens ?
       }
 
    
-   4. **Use Display Properties**  
+   4. Use Display Properties  
       - Change the display type of the parent to `inline-block`, `flex`, or `grid`.  
       - These properties naturally prevent margin collapsing.  
       ```css
@@ -546,7 +546,7 @@ What happens ?
       }
   
    Summary:  
-   The most common and practical methods are **padding** and **overflow: hidden**. These are widely used in the 
+   The most common and practical methods are padding and overflow: hidden. These are widely used in the 
    industry to handle collapsing margins effectively. Keep it clean and efficient.
 
 
@@ -610,8 +610,8 @@ rgb(0, 0, 0): Black (no light emitted from any channel).
 
 >3)RGBA (red,blue,green,alpha)
 
-RGBA in CSS is an extension of the **RGB color model**. It adds an **alpha channel** to specify the color's 
-**opacity** (transparency). While **RGB** focuses solely on the intensity of red, green, and blue, **RGBA** 
+RGBA in CSS is an extension of the RGB color model. It adds an alpha channel to specify the color's 
+opacity (transparency). While RGB focuses solely on the intensity of red, green, and blue, RGBA 
 lets you control how transparent  color is.
 
 -- Syntax:
@@ -623,8 +623,8 @@ rgba(red, green, blue, alpha)
 background-color: rgba(255, 0, 0, 0.5);  A semi-transparent red 
 
 
-- `red`, `green`, and `blue`: These define the intensity of the primary colors, ranging from **0 to 255**.
-- `alpha`: Defines the transparency level, ranging from **0 (completely transparent)** to **1 (completely opaque)**.
+- `red`, `green`, and `blue`: These define the intensity of the primary colors, ranging from 0 to 255.
+- `alpha`: Defines the transparency level, ranging from 0 (completely transparent) to 1 (completely opaque).
 
 
 
@@ -666,7 +666,7 @@ color: hsl(90, 100%, 50%);
 
 >6. HSLA Colors (with Transparency)
 
-HSLA adds an **alpha** channel for transparency, just like `rgba()`.  
+HSLA adds an alpha channel for transparency, just like `rgba()`.  
 - Format: `hsla(hue, saturation, lightness, alpha)`
 
 -- Example:  
@@ -702,9 +702,9 @@ There are four main types:
 
 ---1. Descendant Combinator (Space)
 
-- **What it does:** Styles all elements inside another element, no matter how deeply nested.  
-- **Example:** `div p`  
-  - This means: Style all `<p>` tags that are **inside** a `<div>`.  
+- What it does: Styles all elements inside another element, no matter how deeply nested.  
+- Example: `div p`  
+  - This means: Style all `<p>` tags that are inside a `<div>`.  
 
  
 ```html
@@ -728,14 +728,14 @@ div p {
   color: blue;
 }
 ```  
-- **Result:** All `<p>` tags inside `<div>` will have blue text.  
+- Result: All `<p>` tags inside `<div>` will have blue text.  
 
 
 --2. Child Combinator (`>`)
 
-- **What it does:** Styles only the **direct children** of an element.  
-- **Example:** `div > p`  
-  - This means: Style only `<p>` tags that are **directly inside** a `<div>`.  
+- What it does: Styles only the direct children of an element.  
+- Example: `div > p`  
+  - This means: Style only `<p>` tags that are directly inside a `<div>`.  
 
 
 ```html
@@ -759,14 +759,14 @@ div > p {
   color: green;
 }
 ```  
-- **Result:** Only the first `<p>` inside the `<div>` will have green text.  
+- Result: Only the first `<p>` inside the `<div>` will have green text.  
 
 
 -- 3. General Sibling Combinator (`~`)
 
-- **What it does:** Styles all siblings (on the same level) **after** a specific element.  
-- **Example:** `h1 ~ p`  
-  - This means: Style all `<p>` tags that come **after an `<h1>`** in the same parent.  
+- What it does: Styles all siblings (on the same level) after a specific element.  
+- Example: `h1 ~ p`  
+  - This means: Style all `<p>` tags that come after an `<h1>` in the same parent.  
 
 
 ```html
@@ -788,14 +788,14 @@ h1 ~ p {
 }
 
 ```  
-- **Result:** All `<p>` tags that are siblings after an `<h1>` will have red text.  
+- Result: All `<p>` tags that are siblings after an `<h1>` will have red text.  
 
 
 ---4. Adjacent Sibling Combinator (`+`)
 
-- **What it does:** Styles only the **next immediate sibling** after a specific element.  
-- **Example:** `h1 + p`  
-  - This means: Style only the first `<p>` tag that comes **right after an `<h1>`.**  
+- What it does: Styles only the next immediate sibling after a specific element.  
+- Example: `h1 + p`  
+  - This means: Style only the first `<p>` tag that comes right after an `<h1>`.  
 
 ```html
 
@@ -810,13 +810,13 @@ h1 + p {
   font-weight: bold;
 }
 ```  
-- **Result:** Only the first `<p>` tag after `<h1>` will be bold.  
+- Result: Only the first `<p>` tag after `<h1>` will be bold.  
 
 
 --  Key Difference Between `~` and `+`:  
 
-- **`~` (General Sibling):** Styles **all siblings** after a specific element.  
-- **`+` (Adjacent Sibling):** Styles **only the first sibling** immediately following an element.  
+- `~` (General Sibling): Styles all siblings after a specific element.  
+- `+` (Adjacent Sibling): Styles only the first sibling immediately following an element.  
 
 
 # 17)Box shadow
@@ -872,35 +872,35 @@ Theming: Easily implement themes by switching variable values.
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+, ::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-Ans : **second approach** because:  
+Ans : second approach because:  
 
 1. * (Universal Selector):
 🔹 This applies styles to all elements on the page.
 🔹 It removes default margins & paddings and ensures box-sizing: border-box applies globally.
 🔹 However, it does not affect ::before and ::after pseudo-elements.
 
-2.*::before and *::after :
+2.::before and ::after :
 🔹 This applies styles to all elements AND their pseudo-elements (::before and ::after).
 🔹 It ensures everything, including pseudo-elements, follows the same box-sizing model.
 🔹 More consistent layout handling, especially for UI elements that use ::before and ::after (buttons, tooltips, animations, etc.).
 
 1. It applies styles to both elements and pseudo-elements (`::before`, `::after`), ensuring consistency across all parts of your design.  
 2. Pseudo-elements sometimes have default styles in browsers that can cause unexpected layout issues. The second approach resets those styles too.  
-3. It’s the **standard practice** used by industry experts and frameworks, making your code more professional and future-proof. 
+3. It’s the standard practice used by industry experts and frameworks, making your code more professional and future-proof. 
 
-In short: The **second approach** avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
+In short: The second approach avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
 # 20) Image (img) is a inline element so why we can able to set widht and height of <img> tag (We can set height & widht on inline element) ?
 
-The `<img>` tag is an **inline element**, but since it contains **external content (the image)**, 
+The `<img>` tag is an inline element, but since it contains external content (the image), 
 the browser allows us to set its `height` and `width`. This is because the `<img>` tag is specifically 
-designed to handle images, making it a **special inline element** that supports dimensions for proper display.
+designed to handle images, making it a special inline element that supports dimensions for proper display.
 
 # 21) Float and Clear 
 

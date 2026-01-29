@@ -219,15 +219,15 @@ When "A function" is passed as an argument into "Another function", then it is c
    
 
 5. Importance:
-   - Callbacks allow for **non-blocking operations**, meaning they let code run while waiting for 
+   - Callbacks allow for non-blocking operations, meaning they let code run while waiting for 
    time-consuming tasks (like fetching data).
-   - Vital in **JavaScript** for managing **asynchronous tasks**, such as API calls, file handling, 
+   - Vital in JavaScript for managing asynchronous tasks, such as API calls, file handling, 
    and user interactions.
 
-6. **Drawbacks**:
-   - Using too many callbacks or nesting them deeply can result in **callback hell**, making your 
+6. Drawbacks:
+   - Using too many callbacks or nesting them deeply can result in callback hell, making your 
    code hard to read and maintain.
-   - You can avoid callback hell by using **promises** or **async/await**, which provide a 
+   - You can avoid callback hell by using promises or async/await, which provide a 
    cleaner way to handle asynchronous code.
 
 
@@ -318,8 +318,8 @@ start()
 
 >Summary
 
-In summary, **callback hell** is the challenge of managing deeply nested callbacks in asynchronous code.
-it can make the code hard to read and maintain. Modern solutions like **Promises** and **async/await**
+In summary, callback hell is the challenge of managing deeply nested callbacks in asynchronous code.
+it can make the code hard to read and maintain. Modern solutions like Promises and async/await
 provide cleaner, more manageable ways to handle asynchronous operations, reducing the problems
 associated with callback hell.
 
@@ -630,8 +630,8 @@ print()
 
 Static programming languages, such as Java, C++,Kotlin etc require the developer to explicitly declare the data type of
 variables at the time of declaration. For example, in Java, you would write `int number = 10;`, where the type `int` must 
-be mentioned. These languages use a **compiler** to convert the entire source code into machine code before execution. The 
-compiler scans the whole codebase during this compilation phase, and this process happens **before** the program is run.
+be mentioned. These languages use a compiler to convert the entire source code into machine code before execution. The 
+compiler scans the whole codebase during this compilation phase, and this process happens before the program is run.
 
 If there are any syntax errors, type mismatches, or other issues, they are reported during compilation—before the program 
 even starts executing. This early error detection makes static languages highly suitable for large-scale applications, as
@@ -640,12 +640,12 @@ many problems can be caught early, reducing runtime failures and improving overa
 
 --Dynamic Languages:
 
-Dynamic programming languages, such as Python, JavaScript, PHP etc do **not** require developers to explicitly specify variable 
+Dynamic programming languages, such as Python, JavaScript, PHP etc do not require developers to explicitly specify variable 
 types during declaration. For instance, you can simply write `number = 10` in Python or JavaScript without mentioning the type. 
-These languages use an **interpreter**, which reads and executes the code **line by line** during runtime, unlike static languages
+These languages use an interpreter, which reads and executes the code line by line during runtime, unlike static languages
 where code is compiled beforehand.
 
-In dynamic languages, code is interpreted **at runtime**, so errors are only detected when the interpreter reaches the specific
+In dynamic languages, code is interpreted at runtime, so errors are only detected when the interpreter reaches the specific
 line causing the issue. This means the program may execute partially before throwing an error. While dynamic languages offer more
 flexibility, quicker prototyping, and faster development cycles, they can also introduce unexpected bugs that are harder to trace,
 specially in larger codebases.
@@ -692,9 +692,9 @@ console.log(hoistedVar); // Output: 5
 
 2. `let` and `const`:
 
-- Variables declared with `let` and `const` are also hoisted, but they are **not initialized** during the hoisting phase.  
+- Variables declared with `let` and `const` are also hoisted, but they are not initialized during the hoisting phase.  
 - They remain in the "temporal dead zone" (TDZ) from the start of their scope until the code execution reaches their declaration.  
-- Accessing them **before declaration** results in a `ReferenceError`.
+- Accessing them before declaration results in a `ReferenceError`.
 
 Example with `let`:
 
@@ -752,7 +752,7 @@ b()  //ReferenceError: Cannot access 'b' before initialization
 
 > Key Differences Between `var`, `let`, and `const` in Hoisting:
 
-| **Declaration Type** | **Hoisted**       | **Initialized**           | **Access Before Declaration**     |
+| Declaration Type | Hoisted       | Initialized           | Access Before Declaration     |
 |----------------------|-------------------|---------------------------|-----------------------------------|
 | `var`                | Yes               | Initialized to `undefined`| Allowed, returns `undefined`.     |
 | `let`                | Yes               | Not initialized (TDZ)     | Throws `ReferenceError`.          |
@@ -900,10 +900,10 @@ function myFunction() {
 > Call Stack Behavior:  
 
   - First, the Global Execution Context (GEC) is pushed into the call stack.  
-  - Then, when a function is called, a new execution context is created and **pushed** into the **call stack**.  
-  - Once the function execution is **completed**, its execution context is **removed (popped out)** from the stack.  
-  - This process **repeats for every function call** until all functions are executed, and finally,
-   the **Global Execution Context is removed** once the program finishes.  
+  - Then, when a function is called, a new execution context is created and pushed into the call stack.  
+  - Once the function execution is completed, its execution context is removed (popped out) from the stack.  
+  - This process repeats for every function call until all functions are executed, and finally,
+   the Global Execution Context is removed once the program finishes.  
 
 
 > Function Execution Context
@@ -957,12 +957,12 @@ _-_--------Global Execution Context is removed/end.
       enter in call stack then function execution context.
 
     -  Call Stack:
-      - GEC enters first, functions get **pushed in** when called and **popped out** when done.  
+      - GEC enters first, functions get pushed in when called and popped out when done.  
      - The process repeats until all code executes and GEC is removed.  
 
 - Function Execution Context:
   - Created whenever a function is called.  
-  - Manages function execution using the **call stack**.  
+  - Manages function execution using the call stack.  
 
 - Takeaway: 
   - Memory is allocated before execution. 
@@ -982,15 +982,15 @@ When the original object is modified, all references to it reflect the change.
 
 #15) Event Loop
 
-JavaScript is a **single-threaded language**, meaning it executes code **line by line**. When **asynchronous operations** are 
-involved, they are managed by the **Event Loop**, which ensures **non-blocking** execution.
+JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are 
+involved, they are managed by the Event Loop, which ensures non-blocking execution.
 
-⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the **browser environment** (or **Node.js runtime**).
-JavaScript doesn't have built-in asynchronous capabilities. Instead, **Web APIs**, the **Microtask Queue**, and the **Task (Callback )
+⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the browser environment (or Node.js runtime).
+JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the **Task (Callback )
 Queue** are provided by the runtime environment to handle asynchronous operations efficiently.
 
-The **browser engine** (like **V8** in Chrome,Brave,Microsoft Edge , **SpiderMonkey** in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous
-operations such as `setTimeout`, `fetch`, and **Promises**, without blocking the main thread.
+The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous
+operations such as `setTimeout`, `fetch`, and Promises, without blocking the main thread.
 
 
 >>How the Event Loop Works:
@@ -998,49 +998,49 @@ operations such as `setTimeout`, `fetch`, and **Promises**, without blocking the
 
 --1️⃣ Execution of Synchronous Code
 
-* JavaScript first executes **all synchronous code** in the **Call Stack**.
-* JavaScript **does not process asynchronous tasks** until the Call Stack is empty.
+  JavaScript first executes all synchronous code in the Call Stack.
+  JavaScript does not process asynchronous tasks until the Call Stack is empty.
 
 --- 2️⃣ Asynchronous Code is Handled by Web APIs
 
-* When the JS engine encounters an **asynchronous operation** (e.g., `setTimeout`, `fetch`, or event listeners), it offloads
- them to the **Web APIs**.
-* These APIs handle the operations in the background, freeing up the Call Stack.
+  When the JS engine encounters an asynchronous operation (e.g., `setTimeout`, `fetch`, or event listeners), it offloads
+ them to the Web APIs.
+  These APIs handle the operations in the background, freeing up the Call Stack.
 
 ---3️⃣ Asynchronous Tasks Are Moved to Queues
 
 Once the Web APIs finish their operations, their callbacks are queued in:
 
-* **Microtask Queue** (🎯 Higher Priority)
+  Microtask Queue (🎯 Higher Priority)
 
-  * Includes `Promise.then`, `Promise.catch`, `Promise.finally`, and `MutationObserver`.
-  * Always executed **before** tasks in the Task Queue.
+    Includes `Promise.then`, `Promise.catch`, `Promise.finally`, and `MutationObserver`.
+    Always executed before tasks in the Task Queue.
 
-* **Task Queue (Callback Queue)** (🔁 Lower Priority)
+  Task Queue (Callback Queue) (🔁 Lower Priority)
 
-  * Includes `setTimeout`, `setInterval`, `event listeners`, etc.
-  * Executed **only after** the Microtask Queue is completely empty.
+    Includes `setTimeout`, `setInterval`, `event listeners`, etc.
+    Executed only after the Microtask Queue is completely empty.
 
 
 ---4️⃣ Moving Tasks to the Call Stack
 
-* The **Event Loop** checks:
+  The Event Loop checks:
 
-  1. If the **Call Stack is empty**.
-  2. If there are **Microtasks**, it pushes them into the Call Stack for execution.
-  3. Once all Microtasks are done, it moves tasks from the **Task Queue** to the Call Stack.
-* This cycle **repeats continuously**, ensuring smooth, non-blocking asynchronous execution.
+  1. If the Call Stack is empty.
+  2. If there are Microtasks, it pushes them into the Call Stack for execution.
+  3. Once all Microtasks are done, it moves tasks from the Task Queue to the Call Stack.
+  This cycle repeats continuously, ensuring smooth, non-blocking asynchronous execution.
 
 
 --- 5️⃣ Role of the Event Loop
 
-The **Event Loop** is the mechanism that:
+The Event Loop is the mechanism that:
 
-* Monitors the Call Stack and the Queues.
-* **Prioritizes Microtasks over Task Queue** items.
-* Ensures that the JS engine processes events and tasks in the correct order without blocking the UI or main thread.
+  Monitors the Call Stack and the Queues.
+  Prioritizes Microtasks over Task Queue items.
+  Ensures that the JS engine processes events and tasks in the correct order without blocking the UI or main thread.
 
-👉 This continuous cycle of checking the Call Stack and managing asynchronous queues is what we call the **Event Loop**.
+👉 This continuous cycle of checking the Call Stack and managing asynchronous queues is what we call the Event Loop.
 
 
 ---Example for Better Understanding
@@ -1059,14 +1059,14 @@ console.log("End");
 
 ---Execution Flow
 
-1️⃣ **Synchronous Code Execution:** `"Start"` is logged first.  
-2️⃣ **setTimeout(0)** goes to **Web APIs** and waits.  
-3️⃣ **Promise** goes to **Microtask Queue**.  
-4️⃣ **Synchronous code completes**, logging `"End"`.  
-5️⃣ **Microtask Queue executes first**, logging `"Inside Promise"`.  
-6️⃣ **Task Queue executes next**, logging `"Inside setTimeout"`.  
+1️⃣ Synchronous Code Execution: `"Start"` is logged first.  
+2️⃣ setTimeout(0) goes to Web APIs and waits.  
+3️⃣ Promise goes to Microtask Queue.  
+4️⃣ Synchronous code completes, logging `"End"`.  
+5️⃣ Microtask Queue executes first, logging `"Inside Promise"`.  
+6️⃣ Task Queue executes next, logging `"Inside setTimeout"`.  
 
-**Final Output:**  
+Final Output:  
 
 Start
 End
@@ -1076,10 +1076,10 @@ Inside setTimeout
 
 >Key Takeaways
 
-- **Synchronous code runs first** in the Call Stack.  
-- **Asynchronous tasks go to Web APIs and are queued**.  
-- **Microtask Queue has higher priority** than the Task Queue.  
-- **The Event Loop ensures tasks are executed properly** in the right order. 
+- Synchronous code runs first in the Call Stack.  
+- Asynchronous tasks go to Web APIs and are queued.  
+- Microtask Queue has higher priority than the Task Queue.  
+- The Event Loop ensures tasks are executed properly in the right order. 
 
 
 #16)Primitive Data Types (Store in a Stack ) & Non-Primitive (Store in a Heap)
@@ -1161,7 +1161,7 @@ console.log(first);  // 1
 console.log(second); // 2
 console.log(third);  // 3
 
-Instead of writing `numbers[0]`, `numbers[1]`, etc., **destructuring** makes it shorter and cleaner.  
+Instead of writing `numbers[0]`, `numbers[1]`, etc., destructuring makes it shorter and cleaner.  
 
 --👉 Object Destructuring Example:
 
@@ -1246,7 +1246,7 @@ console.log(updatedUser); // { name: "Yash", age: 22, city: "Nagpur" }
 
 >3️⃣ Rest Operator (`...`) (Collecting)
 
-The **Rest Operator** is used to **collect multiple values** into an array.  
+The Rest Operator is used to collect multiple values into an array.  
 
 ---👉 Function with Multiple Arguments (Rest Operator)
 
@@ -1256,7 +1256,7 @@ function sum(...numbers) {
 
 console.log(sum(1, 2, 3, 4)); // 10
 
-Here, `...numbers` **collects** all arguments into an array `[1, 2, 3, 4]`.  
+Here, `...numbers` collects all arguments into an array `[1, 2, 3, 4]`.  
 
 ----👉 Destructuring with Rest Operator
 
@@ -1267,7 +1267,7 @@ console.log(first); // "Apple"
 console.log(second); // "Mango
 console.log(remainingFruits); // ["Banana", "Grapes"]
 
-Here, `...remainingFruits` **collects** all remaining elements into an array.  
+Here, `...remainingFruits` collects all remaining elements into an array.  
 
 >>> Simple Trick to Remember:
 
@@ -1347,7 +1347,7 @@ abbreviations or short forms.
 - Example:
 
   function calculateAreaOfCircle(radius) { // Descriptive function name
-      return Math.PI * radius * radius;
+      return Math.PI  radius  radius;
   }
 
 --In React and TS 
@@ -1552,33 +1552,33 @@ for (let [index, value] of arr.entries()) {
 
 --- Type Coercion (koversion) (Automatic conversion)
 
-Type coercion is when **JavaScript automatically** converts one data type to another behind your back—**without you asking for it.
+Type coercion is when JavaScript automatically converts one data type to another behind your back—**without you asking for it.
 
 Example:
 
 "5" * 2  // JS converts "5" (string) to 5 (number) → result is 10
 "3" + 1  // JS sees a string, so it makes 1 into "1" → result is "31"
 
-You didn’t tell JS to do this—**it did it by itself**. That’s **type coercion**.
+You didn’t tell JS to do this—it did it by itself. That’s type coercion.
 
 
 ---Type Casting (Manual conversion)
 
-Type casting means **YOU manually** convert one type to another using methods like `Number()`, `String()`, etc.
+Type casting means YOU manually convert one type to another using methods like `Number()`, `String()`, etc.
 
 Example:
 
 Number("5") + 2 // You manually converted "5" to 5 → result is 7
 String(10) + "1" // You manually made 10 a string → result is "101"
 
-Here, **you** are in control. That’s **type casting**.
+Here, you are in control. That’s type casting.
 
 
 ?? So Are They the Same? --- No NO
 
 
-* Type **coercion** = **automatic**, JS decides.
-* Type **casting** = **manual**, **you** decide.
+  Type coercion = automatic, JS decides.
+  Type casting = manual, you decide.
 
 >Note: 
 🤚🙎‍♂️ In JavaScript, type coercion is the automatic or implicit conversion of values "from one data type to 
@@ -1981,7 +1981,7 @@ console.log(total);
 #24)🍰 `slice()` vs 🍕 `splice()` in JavaScript:
 
 
---- 1️⃣ `slice()` – **Non-destructive**, makes a copy
+--- 1️⃣ `slice()` – Non-destructive, makes a copy
 
 
 let arr = [1, 2, 3, 4, 5];
@@ -1990,12 +1990,12 @@ console.log(sliced); // 👉 [2, 3, 4]
 console.log(arr);    // 👉 [1, 2, 3, 4, 5] ✅ Original remains
 
 
-* ✅ Doesn’t modify original array
-* 🧠 Syntax: `array.slice(start, end)` (end is **exclusive**)
-* 📦 Returns a shallow copy of the portion
+  ✅ Doesn’t modify original array
+  🧠 Syntax: `array.slice(start, end)` (end is exclusive)
+  📦 Returns a shallow copy of the portion
 
 
---- 2️⃣ `splice()` – **Destructive**, changes original array
+--- 2️⃣ `splice()` – Destructive, changes original array
 
 
 let arr = [1, 2, 3, 4, 5];
@@ -2003,22 +2003,22 @@ let spliced = arr.splice(1, 2);
 console.log(spliced); // 👉 [2, 3]
 console.log(arr);     // 👉 [1, 4, 5] ❌ Original changed
 
-* ❌ Modifies original array
-* 🧠 Syntax: `array.splice(startIndex, deleteCount, repalceitems)`
-* 🧨 Can delete, insert, or replace items
+  ❌ Modifies original array
+  🧠 Syntax: `array.splice(startIndex, deleteCount, repalceitems)`
+  🧨 Can delete, insert, or replace items
 
 
 --- 3️⃣ Use `slice()` when:
 
-* You want to extract a piece of the array
-* You **don't** want to touch the original array
-* Works great for copying arrays or strings
+  You want to extract a piece of the array
+  You don't want to touch the original array
+  Works great for copying arrays or strings
 
 
 --- 4️⃣ Use `splice()` when:
 
-* You want to **edit** the array (insert, remove, replace)
-* You’re okay with changing the original array
+  You want to edit the array (insert, remove, replace)
+  You’re okay with changing the original array
 
 
 --- 5️⃣ Visual Difference Table 📊
@@ -2035,8 +2035,8 @@ console.log(arr);     // 👉 [1, 4, 5] ❌ Original changed
 
 >🔁 Throttling:
 
-=> It depends on the event, but limits how **frequently** the function runs.
-=> Even if the event is triggered **100 times**, throttling lets the function run
+=> It depends on the event, but limits how frequently the function runs.
+=> Even if the event is triggered 100 times, throttling lets the function run
  only once in a specific time (like every 1 second).
 
 👉 Example:
@@ -2050,7 +2050,7 @@ So we throttle the location update API to fire every 5 seconds, even if GPS send
 >⏳ Debouncing:
 
 => It depends on the event, but waits for the user to stop triggering it.
-=> If the event keeps firing, the function **never runs**. It runs **only after a pause (when no event triggers for X ms).
+=> If the event keeps firing, the function never runs. It runs **only after a pause (when no event triggers for X ms).
 
 👉 Example:
 Typing in a search bar → debounce waits till you stop typing → runs the search function after 500ms of silence.

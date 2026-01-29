@@ -884,4 +884,4 @@ let num = [1, 1, 1, 1, 1];
 
 // console.log(id);
 // console.log(name);
-console.log(details);
+// console.log(details);

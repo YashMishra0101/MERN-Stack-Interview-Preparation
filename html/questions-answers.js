@@ -70,7 +70,7 @@ Responsive design ensures that websites adapt to different screen sizes and orie
 # 3)What is the diffrent between HTML and XHTML ?
 Ans:
 
-XHTML stands for *Extensible Hypertext Markup Language*. It’s a combination of HTML and XML (Extensible Markup Language). 
+XHTML stands for Extensible Hypertext Markup Language. It’s a combination of HTML and XML (Extensible Markup Language). 
 It was developed to make HTML more strict and well-structured, like XML. It enforces strict rules, like:
 
 - Tags must always be properly closed (e.g., `<br />` instead of `<br>`).
@@ -80,14 +80,14 @@ It was developed to make HTML more strict and well-structured, like XML. It enfo
 
 -- Differences Between HTML5 and XHTML:
 
-| Feature                  | **HTML5**                                         | **XHTML**                                         |
+| Feature                  | HTML5                                         | XHTML                                         |
 |--------------------------|---------------------------------------------------|---------------------------------------------------|
-| **Syntax Rules**          | More flexible, you can skip closing some tags    | Very strict, all tags must be closed properly     |
-| **Case Sensitivity**      | Tag names are not case-sensitive (`<DIV>` = `<div>`) | Tag names must be in lowercase (`<div>`, not `<DIV>`) |
-| **Error Handling**        | More forgiving, browsers try to fix your errors  | Very strict, browsers won't display pages with errors |
-| **Doctype Declaration**   | Simple and short: `<!DOCTYPE html>`              | Complex and longer: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">` |
-| **Multimedia Support**    | Built-in support for audio, video, and canvas    | No built-in multimedia support, requires plugins like Flash. |
-| **Browser Compatibility** | Designed to be compatible with modern browsers and mobile devices | Limited Browser Support older browsers.     |
+| Syntax Rules          | More flexible, you can skip closing some tags    | Very strict, all tags must be closed properly     |
+| Case Sensitivity      | Tag names are not case-sensitive (`<DIV>` = `<div>`) | Tag names must be in lowercase (`<div>`, not `<DIV>`) |
+| Error Handling        | More forgiving, browsers try to fix your errors  | Very strict, browsers won't display pages with errors |
+| Doctype Declaration   | Simple and short: `<!DOCTYPE html>`              | Complex and longer: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">` |
+| Multimedia Support    | Built-in support for audio, video, and canvas    | No built-in multimedia support, requires plugins like Flash. |
+| Browser Compatibility | Designed to be compatible with modern browsers and mobile devices | Limited Browser Support older browsers.     |
 
 XHTML was developed before HTML5. XHTML, short for Extensible Hypertext Markup Language, was introduced in 2000 as an 
 effort to make HTML more strict and compatible with XML and HTML5 came later, officially introduced in 2014.
@@ -310,23 +310,23 @@ A semantic element clearly describes its meaning to both the Browser and the Dev
 
  Semantic Tags Examples :
 
-- **`<header>`**: Defines the top section of a webpage, typically where navigation links, logos, or the page title are placed.
+- `<header>`: Defines the top section of a webpage, typically where navigation links, logos, or the page title are placed.
 
-- **`<footer>`**: Marks the bottom part of a webpage, usually containing copyright information, links, or contact details.
+- `<footer>`: Marks the bottom part of a webpage, usually containing copyright information, links, or contact details.
 
-- **`<article>`**: Wraps around independent content that can stand alone, like blog posts, news stories, or articles. Each `<article>` is a complete piece of content.
+- `<article>`: Wraps around independent content that can stand alone, like blog posts, news stories, or articles. Each `<article>` is a complete piece of content.
 
-- **`<section>`**: Groups related content into sections, like chapters or different topics on a page, helping to organize the layout.
+- `<section>`: Groups related content into sections, like chapters or different topics on a page, helping to organize the layout.
 
-- **`<nav>`**: Contains navigation links for the website, such as menus, so users can easily find and move to different pages.
+- `<nav>`: Contains navigation links for the website, such as menus, so users can easily find and move to different pages.
 
-- **`<aside>`**: Holds side content that’s related but not essential to the main content, like ads, links, or extra info that supports the main text.
+- `<aside>`: Holds side content that’s related but not essential to the main content, like ads, links, or extra info that supports the main text.
 
-- **`<main>`**: Represents the primary content of the page that is unique to that page.It doesn’t include repeated parts like headers, footers, or sidebars.
+- `<main>`: Represents the primary content of the page that is unique to that page.It doesn’t include repeated parts like headers, footers, or sidebars.
 
-- **`<address>`**: Used for providing contact information, like an address, phone number, or email, often about the author or site owner.
+- `<address>`: Used for providing contact information, like an address, phone number, or email, often about the author or site owner.
 
-- **`<details>`**: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
+- `<details>`: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
 
 # 13)Headin Tag ?
 Ans:

@@ -1,21 +1,21 @@
 /*
 #1)Sorting in Javascript .
 
-1. **Sorting helps in arranging elements in ascending or descending order, finding smallest and greatest elements**  
+1. Sorting helps in arranging elements in ascending or descending order, finding smallest and greatest elements  
   => Sorting is used to organize data systematically.
 
-2. **By default, `sort()` converts array elements to strings and sorts them alphabetically.**  
+2. By default, `sort()` converts array elements to strings and sorts them alphabetically.  
   =>  The default behavior of `sort()` is string-based sorting.
 
-3. **If we need to sort numbers, we must use a comparison function because, by default, `sort()` treats numbers as strings.**  
+3. If we need to sort numbers, we must use a comparison function because, by default, `sort()` treats numbers as strings.  
   => Without a comparison function, numbers like `[100, 2, 50]` converted into string for that we need to use comparison 
   operator.
 
-4. **Sorting modifies the original array.**  
+4. Sorting modifies the original array.  
   => The `sort()` method mutates the original array. If you want to keep the original array unchanged, 
   use `.slice()` to create a copy before sorting.
 
-5. **By default, uppercase letters are sorted before lowercase letters.**  
+5. By default, uppercase letters are sorted before lowercase letters.  
   => This is due to the Unicode values of characters (uppercase letters have lower values than lowercase ones).
 
 
@@ -35,7 +35,7 @@ as numbers instead of strings.
 
 >> Comparator Functions in Sorting
 
-When working with sorting in JavaScript, **comparator functions** use comparison logic to determine order. These can be 
+When working with sorting in JavaScript, comparator functions use comparison logic to determine order. These can be 
 customized based on your requirements.
 
 - Numerical Sorting:

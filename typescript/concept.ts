@@ -1,8 +1,8 @@
 /*
 #Quick Points
 
-- **TypeScript cannot run directly on a browser** because browsers only understand JavaScript. TypeScript needs
- to be **transpiled (or compiled) into JavaScript** before it can be executed in the browser.
+- TypeScript cannot run directly on a browser because browsers only understand JavaScript. TypeScript needs
+ to be transpiled (or compiled) into JavaScript before it can be executed in the browser.
 - npm install -g typescript  —>> tsc --version —>> tsc app.ts —> node app.js
 - tsc —init (if there is any error use this : npx tsc —init )
 - tsc —watch
@@ -60,7 +60,7 @@ console.log(currentStatus); // Output: 1
 #3)Any , Unknow , Void ,Null , Undefine , Never
 
 1. Any
-The `any` type means that a variable can hold **any type of value**—numbers, strings, objects, anything.
+The `any` type means that a variable can hold any type of value—numbers, strings, objects, anything.
 It bypasses TypeScript’s type-checking, which is useful when you don't know the variable’s type in advance.
 
 
@@ -77,7 +77,7 @@ temporarily.
 2. Unknown
 
 `unknown` is a safer version of `any`. You can assign any type to it, but before you use it, you need to 
-**check the type**. It forces you to be careful.
+check the type. It forces you to be careful.
 
 
 let b: unknown; 
@@ -91,11 +91,11 @@ if (typeof b === "string") {
 }
 
 
-- **Use Case**: When you want flexibility like `any`, but with more control and type safety.
+- Use Case: When you want flexibility like `any`, but with more control and type safety.
 
 3.Void
 
-`void` is used for **functions** that **don't return anything**. If a function is only supposed to 
+`void` is used for functions that don't return anything. If a function is only supposed to 
 perform an action and not return a value, you use `void`.
 
 
@@ -113,7 +113,7 @@ let abcTwo = (): string => {
 
 4. Null and Undefined
 
-`null` and `undefined` are their own types in TypeScript. They represent **no value** or **an uninitialized 
+`null` and `undefined` are their own types in TypeScript. They represent no value or **an uninitialized 
 variable.
 
 
@@ -165,14 +165,14 @@ let errorFunction = (): never => {
 - Purpose: Function runs and finishes without returning anything.
 
 2.`never`:
-- Use: For functions that **never finish** or **terminate unexpectedly**.
+- Use: For functions that never finish or terminate unexpectedly.
 
 -Purpose: Used for functions that throw errors or run infinitely.
 
 Key Difference:
 
-- `void`: Function completes but **returns nothing**.
-- `never`: Function **never completes** normally (throws an error or loops forever).
+- `void`: Function completes but returns nothing.
+- `never`: Function never completes normally (throws an error or loops forever).
 
 */
 
@@ -191,11 +191,11 @@ function throwError(message: string): never {
 
 Summary of Usage:
 
-- **`any`**: Allows any type (use sparingly).
-- **`unknown`**: Safer than `any`, requires type-checking before use.
-- **`void`**: For functions that don't return anything.
-- **`null` and `undefined`**: Represent absence of value.
-- **`never`**: For functions that don't return, like those that throw errors.
+- `any`: Allows any type (use sparingly).
+- `unknown`: Safer than `any`, requires type-checking before use.
+- `void`: For functions that don't return anything.
+- `null` and `undefined`: Represent absence of value.
+- `never`: For functions that don't return, like those that throw errors.
 
 --------------------
 

@@ -10,16 +10,16 @@ console.log("JS Logical Questions Section Is Working");
   - Odd Numbers  
   - Prime Numbers
 
----2) Write a JavaScript function `printPrimeNumber(n)` that returns all **prime numbers** from 2 to `n` (inclusive) as a **string**, separated by spaces.
+---2) Write a JavaScript function `printPrimeNumber(n)` that returns all prime numbers from 2 to `n` (inclusive) as a string, separated by spaces.
 
-A **prime number** is a number greater than 1 that has no positive divisors other than 1 and itself.
+A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
 Your function should:
 
-* Accept a positive integer `n`.
-* Check each number from 2 up to `n`.
-* Collect all prime numbers in a string, separated by a single space.
-* Return the final string.
+  Accept a positive integer `n`.
+  Check each number from 2 up to `n`.
+  Collect all prime numbers in a string, separated by a single space.
+  Return the final string.
 
 Example:
 console.log(printPrimeNumber(25));
@@ -41,8 +41,7 @@ n=5;
 2)Pattern Two
 n=5;
 
-*
-**
+  **
 ***
 ****
 *****
@@ -72,9 +71,7 @@ n=5;
 ****
 ***
 **
-*
-
-6)Pattern Six
+  6)Pattern Six
 n=5;
 
 12345
@@ -92,8 +89,7 @@ n=5;
 7       
 9
 
-      *
-     ***
+        ***
     *****
    *******
   *********
@@ -112,13 +108,10 @@ n=5;
  *******
   *****
    ***
-    *
-    
-9)Pattern Nine 
+      9)Pattern Nine 
 n=5;
 
-    *
-   ***
+      ***
   *****
  *******
 *********
@@ -126,22 +119,17 @@ n=5;
  *******
   *****
    ***
-    *
-
-10)Pattern Ten
+      10)Pattern Ten
 n=5;
 
-*
-**
+  **
 ***
 ****
 *****
 ****
 ***
 **
-*
-
-11)Pattern Eleven
+  11)Pattern Eleven
 n=5;
 
 1
@@ -221,10 +209,10 @@ n=5;
 **********
 **** ****
 ***   ***
-**     **
-*       *
-*       *
-**     **
+     
+  *
+  *
+     
 ***   ***
 **** ****
 **********
@@ -233,35 +221,34 @@ n=5;
 n=5;
 
 
-*         *
-**       **
+  *
+       
 ***     ***
 ****   ****
 ***** *****
 ****   ****
 ***     ***
-**       **
-*         *
+       
+  *
 
 21)Pattern Twentyone
 n=5;
 
 
 *****
-*   *
-*   *
-*   *
+  *
+  *
+  *
 *****
 
 22)Pattern Twentytwo
 n=5;
 
 
-*   *
- * * 
-  *  
- * * 
-*   *
+  *
+   * 
+      
+  *
 
 23)Pattern Twenthree
 n=4;
@@ -889,7 +876,7 @@ function calculateSum(a, b, c, d, e) {
 ---1)Problem 7: Function with Variable Arguments
 
 Task: Write a function called 'multiply' that takes the first number as a multiplier and multiplies it with all remaining numbers, then returns the sum of results.
-Example: multiply(2, 3, 4, 5) should return 2*3 + 2*4 + 2*5 = 24
+Example: multiply(2, 3, 4, 5) should return 23 + 24 + 2*5 = 24
 
 function multiply( your parameters here ) {
   your code here
@@ -946,29 +933,29 @@ Do this using both:
 
 #26) Demonstrate Encapsulation using a Class.
 Task:
-Create a class `BankAccount` that demonstrates the concept of **Encapsulation** in JavaScript.
+Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
 
 >Requirements:
 
-* Use a **private field** `#balance` (initial value should be ₹100).
+  Use a private field `#balance` (initial value should be ₹100).
 
-* Implement the following **public methods**:
+  Implement the following public methods:
 
-  1. **`deposit(amount)`**
+  1. `deposit(amount)`
 
-     * Adds the amount to the balance **only if** it’s greater than 0.
-     * Logs the updated balance.
+       Adds the amount to the balance only if it’s greater than 0.
+       Logs the updated balance.
 
-  2. **`withdraw(amount)`**
+  2. `withdraw(amount)`
 
-     * Deducts the amount from balance **only if** sufficient balance is available.
-     * Otherwise, logs an "insufficient balance" message.
+       Deducts the amount from balance only if sufficient balance is available.
+       Otherwise, logs an "insufficient balance" message.
 
-  3. **`checkBalance()`**
+  3. `checkBalance()`
 
-     * Logs the current balance.
+       Logs the current balance.
 
-* Finally, create an object of the class and demonstrate all three methods.
+  Finally, create an object of the class and demonstrate all three methods.
 
 #27) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
 
@@ -1040,10 +1027,10 @@ const user = {
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
 Question 1:
-How would you create a new array with only `"Vani"` and `"Code"` **without modifying** the original?
+How would you create a new array with only `"Vani"` and `"Code"` without modifying the original?
 
 Question 2:
-How would you **remove** `"Code"` and `"Fun"` from the array and **add** `"Success"` in their place?
+How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
 
 #34)How to generate a random number between two numbers ?
 
@@ -1083,9 +1070,9 @@ console.log(age());
 With the help of these commands (--version, -v, --v, and -version), we can check the version of 
 installed tools. But, but, but...
 
-For checking versions, **--version** and **-v** are the most commonly used and reliable commands.
+For checking versions, --version and -v are the most commonly used and reliable commands.
 , --v and -version  may also work, but they are not supported by all tools. 
-For example, in **TypeScript**, all these commands work. However, in Node.js, --v and -version 
+For example, in TypeScript, all these commands work. However, in Node.js, --v and -version 
 do not work. 
 
 >>Therefore, it's better to use --version and -v consistently to avoid issues.
@@ -1219,8 +1206,8 @@ console.log(p);
 Using:
 let radius = 5;
 
-1. Find the **circumference of a circle** using the formula:
-  👉 `2 * π * r`
+1. Find the circumference of a circle using the formula:
+  👉 `2  π  r`
   (Result must be a number, not a string and limited to 2 decimal places.)
 
 #48) Given an array of integers, calculate the total of all its values.
@@ -1294,8 +1281,7 @@ let str = "zZabcdedcjbAeeee";
  *******
   *****
    ***
-    *
-   ***
+      ***
   *****
  *******
 *********
@@ -1304,19 +1290,14 @@ let str = "zZabcdedcjbAeeee";
 5)Write a program to print the Diamond Star Pattern.
 n=5;
 
-    *
-   ***
+      ***
   *****
  *******
 ********* 
  *******
   *****
    ***
-    *
-
-
-
-6)Write a program to print a 3×3 grid of numbers from 1 to 9.
+      6)Write a program to print a 3×3 grid of numbers from 1 to 9.
 1 2 3 
 4 5 6 
 7 8 9 

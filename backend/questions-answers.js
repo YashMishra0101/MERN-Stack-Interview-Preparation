@@ -3,7 +3,7 @@
 
 CORS = Cross-Origin Resource Sharing
 
-It's a **security feature** implemented by browsers to control which websites can access resources from your backend server.
+It's a security feature implemented by browsers to control which websites can access resources from your backend server.
 
 -- What is CORS?
 
@@ -71,9 +71,9 @@ fetch("https://api.example.com/user")
 
 Here:
 
-* Frontend sends a request
-* Backend returns **JSON**
-* Frontend receives JSON and uses it
+  Frontend sends a request
+  Backend returns JSON
+  Frontend receives JSON and uses it
 
 Claude
 ---https://claude.ai/public/artifacts/1f1d7e88-ed18-470f-9855-14b61fde420e

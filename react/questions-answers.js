@@ -71,8 +71,8 @@ When you see something like:
 
 "react": "^19.0.1"
 
--> The **caret (`^`)** means:
-  Install the **latest minor and patch versions** of that package, but **don’t upgrade the major version**.
+-> The caret (`^`) means:
+  Install the latest minor and patch versions of that package, but don’t upgrade the major version.
 
 Example:
 
@@ -82,13 +82,13 @@ Example:
 19.0.1  →  19.x.x  (latest minor/patch)
   ```
 
-but it **will not automatically upgrade** to version **20.0.0** (because major version changes may break compatibility).
+but it will not automatically upgrade to version 20.0.0 (because major version changes may break compatibility).
 
 --- Comparison with other symbols:
-* `"~19.0.1"` → Only allow patch updates (like `19.0.2`, `19.0.3`) but not minor (`19.1.0`).
-* `"19.0.1"` (no symbol) → Exactly that version, no auto-updates.
-* `"*"` → Install absolutely any version (very risky).
-* `"latest"` → Always pulls the newest available version.
+  `"~19.0.1"` → Only allow patch updates (like `19.0.2`, `19.0.3`) but not minor (`19.1.0`).
+  `"19.0.1"` (no symbol) → Exactly that version, no auto-updates.
+  `"*"` → Install absolutely any version (very risky).
+  `"latest"` → Always pulls the newest available version.
 
 --- So in short:
 `^` keeps you safe from breaking changes (major updates) but still lets you get bug fixes and new features from minor/patch updates not from major updates.
@@ -200,11 +200,11 @@ For most modern React projects, --template react-swc is the better choice. The s
 
 -- `Link` and `NavLink`
 
-✅ **Used only inside JSX**
-❌ **Cannot be used inside JavaScript logic or functions**
+✅ Used only inside JSX
+❌ Cannot be used inside JavaScript logic or functions
 
-They are **React components**, not functions or hooks.
-So they can only appear **in your JSX return part**, like this:
+They are React components, not functions or hooks.
+So they can only appear in your JSX return part, like this:
 
 return (
   <div>
@@ -215,17 +215,17 @@ return (
 
 🧠 They are perfect for:
 
-* Static navigation (when a user clicks something)
-* Menus, navbars, or in-page links
-* Showing which page is "Active" (`NavLink` only)
+  Static navigation (when a user clicks something)
+  Menus, navbars, or in-page links
+  Showing which page is "Active" (`NavLink` only)
 
 
 -- `useNavigate`
 
-✅ **Used inside JS logic or functions**
-❌ **Cannot be used directly in JSX**
+✅ Used inside JS logic or functions
+❌ Cannot be used directly in JSX
 
-It’s a **hook**, not a component.
+It’s a hook, not a component.
 You call it in your logic to navigate programmatically.
 
 Example:
@@ -244,12 +244,12 @@ navigate(1);  // go forward
 
 --🧠 It’s perfect for:
 
-* Redirecting after actions (like login, logout, form submission)
-* Conditional navigation (like “if user not logged in → go to /login”)
-* Going back or forward in history
+  Redirecting after actions (like login, logout, form submission)
+  Conditional navigation (like “if user not logged in → go to /login”)
+  Going back or forward in history
 
--- 🔸 Link / NavLink** = JSX Components → used for **static navigation
--- 🔸 useNavigate** = Hook → used for **dynamic navigation (logic-based)
+-- 🔸 Link / NavLink = JSX Components → used for static navigation
+-- 🔸 useNavigate = Hook → used for dynamic navigation (logic-based)
 
 #11)What is ? (Optional Chaining) ?
 Optional chaining is a feature in JavaScript that allows you to safely access properties of an object or call functions without running into errors when a value in the chain is undefined or null. Normally, if you try to access a property of undefined or null, JavaScript throws an error and your app may crash. Optional chaining solves this problem by using the ?. operator. When you write object?.property, JavaScript first checks if object is defined. If it is, it returns the property value. If it is undefined or null, it simply returns undefined instead of throwing an error. This makes your code cleaner and safer, especially when working with data from APIs, where some properties might be missing or delayed.
