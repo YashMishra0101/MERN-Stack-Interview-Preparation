@@ -1299,7 +1299,7 @@ Ctrl + F ➤ Just search in concepts section : #15)
 Ctrl + F ➤ Just search in concepts section : #14) 
 
 #Ans 23)
----Callback, Callbachell, Promises->.then and async await concepts are available in “Concepts” section.
+---Callback, Callback hell, Promises->.then and async await concepts are available in “Concepts” section.
 Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)  
 
 #Ans 24)

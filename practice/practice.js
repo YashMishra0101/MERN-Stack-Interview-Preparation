@@ -868,7 +868,6 @@ let num = [1, 1, 1, 1, 1];
 // console.log(secondOne);
 // console.log(average(...remainingValues));// Spread operator (expands array into arguments)
 
-
 // const student = {
 //   id: 1,
 //   name: 'Sarah',
@@ -879,9 +878,28 @@ let num = [1, 1, 1, 1, 1];
 //   behavior: 'excellent'
 // };
 
-
 // const {id,name,...details}=student;
 
 // console.log(id);
 // console.log(name);
 // console.log(details);
+
+// console.log("Start");
+
+// setTimeout(() => {
+//     console.log("Inside setTimeout");
+// }, 0);
+
+// Promise.resolve().then(() => {
+//     console.log("Inside Promise");
+// });
+
+// console.log("End");
+
+//Start
+//End
+//Inside Promise
+//Inside setTimeout
+
+// console.log(this);
+

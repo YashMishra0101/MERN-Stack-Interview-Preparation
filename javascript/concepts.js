@@ -848,125 +848,64 @@ trying to convert a non-numeric value to a number. For example, using Number('he
 because 'hello' cannot be converted into a valid number.
 
 In JavaScript, NaN occurs when you try to convert a value (like a string) into a number, but the conversion fails, resulting in
-an invalid number (In simple lang we try to convert value like string into number and it's falied then it's gives NaN)
-
-#14) Global Execution Context and Execution Context/Function Execution Context (In Detail)
-
-> Global Execution Context in JavaScript:
-
-- An Global execution context is the environment where JavaScript code is executed,This is the first execution context 
-that is created when JavaScript starts running. It is the default environment where the entire JavaScript code runs.
-
-So, the global execution context is just one type of execution context, and it is the first and main one that 
-JavaScript creates before executing any other function.
-
-First Global Execution Context is created then other Execution Context is created inside the Global Execution Context.
+an invalid number (In simple lang we try to convert value like string into number and it's failed then it's gives NaN)
 
 
->It has two main phases:
+#14)  Global Execution Context and Execution Context (Detailed)
 
+Global Execution Context (GEC) is the default execution environment where JavaScript code starts running. It is the first execution context created when JavaScript begins execution, before any code is executed.
 
---1️⃣ Memory Allocation Phase (Hoisting Phase):  
+JavaScript first creates the Global Execution Context and then creates additional Function Execution Contexts, which are managed using the Call Stack.
 
-   - Memory allocation for variables and funtions.
-   - Variables declared with `var` are initialized as `undefined`.  
-   - Variables declared with `let` and `const` are stored in memory but remain in the "Temporal Dead Zone" until they are assigned a value.
-   - Functions are stored with their full body.  
+# Global Execution Context Have Two Main Phases
 
-   
-Example:Example for Better Understanding :
+---1️⃣ Memory Creation Phase (Hoisting Phase)
 
-console.log(myVar); // Output: undefined (hoisted but not initialized)
-console.log(myFunction()); // Output: "Hello, Yashu" (function is hoisted with name + body)
+- Memory is allocated for variables and functions.
+- Variables declared with `var` are initialized with `undefined because of hoisting.
+- Variables declared with `let` and `const` are hoisted but they are stay in the Temporal Dead Zone (TDZ) until their declaration is executed.
+- Function declarations are stored in memory with their entire function body.
+- This → initialized (The value of `this` is set (browser → `window`, Node.js → empty object {} i.e : module.exports) in the global space)
 
-// Memory Allocation Phase:
-// - myVar: undefined
-// - myFunction: function () { return "Hello, Yashu!"; }
+--- 2️⃣ Code Execution Phase
 
-var myVar = 10;
-function myFunction() {
-   return ("Hello, Yashu")
-}
+- JavaScript executes code line by line.
+- Variables are assigned their actual values.
+- When a function is called: A new Function Execution Context is created then it is pushed in to the Call Stack.
+- After the function finishes execution: Its execution context is popped from the call stack.
 
+--- Call Stack Behavior
 
----2️⃣ Code Execution Phase:
+- The Global Execution Context is pushed first.
+- Each function call creates a new execution context, which is pushed on top of the stack.
+- After execution, the function’s execution context is removed.
+- This continues until all code is executed.
+- The Global Execution Context remains until the program finishes.
 
-   - Code executes line by line.  
-   - Variables are assigned their actual values.  
-   - When a function is called, a new execution context is created and pushed into the call stack(Upon Global Execution Context).  
-   - After the function finishes execution, its execution context is popped out of the call stack.  
+--- Function Execution Context
 
+- Created whenever a function is invoked.
+- Each function call creates a new execution context.
+- Managed using the call stack (LIFO – Last In, First Out).
 
-> Call Stack Behavior:  
+--- Example Flow
 
-  - First, the Global Execution Context (GEC) is pushed into the call stack.  
-  - Then, when a function is called, a new execution context is created and pushed into the call stack.  
-  - Once the function execution is completed, its execution context is removed (popped out) from the stack.  
-  - This process repeats for every function call until all functions are executed, and finally,
-   the Global Execution Context is removed once the program finishes.  
+1️⃣ Global Execution Context is created
+2️⃣ Global code starts execution
+3️⃣ Function is called → new execution context created
+4️⃣ Function execution completes → context removed
+5️⃣ Global code resumes
+6️⃣ Program ends → Global Execution Context completes
 
+--- Key Takeaways
 
-> Function Execution Context
+- JavaScript creates memory before executing code.
+- Execution Context has two phases.
+- Hoisting happens during memory creation.
+- Call stack manages execution order.
+- Global Execution Context is the base of all execution.
 
-- Created whenever a function is called.
-- Each function call generates a new execution context.
-- Function execution contexts are managed by the call stack:
-  - A new execution context is pushed onto the stack when a function is invoked, It is popped outr from the stack once the function completes execution.
-
-
-Example for better Understand
-
-_-_--------Global Execution Context is created.
-
-console.log("Start");  // Runs inside Global Execution Context
-
-function sayHello() {
-    console.log("Hello, Yashu!");  // New Execution Context is created
-}
-
-sayHello();  // Function call → New Execution Context created in Call Stack
-
-console.log("End");  // Still inside Global Execution Context
-
-_-_--------Global Execution Context is removed/end.
-
---Flow of Execution Context:
-
-1️⃣ Global Execution Context is created first.  
-2️⃣ `console.log("Start")` runs inside the GEC.  
-3️⃣ `sayHello()` is called → A new execution context is created inside the Call Stack.  
-4️⃣ `console.log("Hello, Yashu!")` runs inside this new execution context.  
-5️⃣ After execution, the function’s execution context is removed from the stack.  
-6️⃣ `console.log("End")` runs inside the Global Execution Context.  
-7️⃣ Once all code is executed, the Global Execution Context is removed from the call stack. 
-
-
->>Key Points (Short & Simple):
-
-- Global Execution Context (GEC) is the first environment where JavaScript code runs.  
-
-- Phases of Execution Context:  
-  1️⃣ Memory Allocation Phase:  
-    - `var` is hoisted as `undefined`, while `let` and `const` stay in the Temporal Dead Zone (TDZ).  
-    - Function declarations are hoisted with their full body.  
-
-  2️⃣ Code Execution Phase: 
-    - Code runs line by line.  
-    - Variables get actual values.  
-    - Function calls create new execution contexts inside the call stack but first global execution context 
-      enter in call stack then function execution context.
-
-    -  Call Stack:
-      - GEC enters first, functions get pushed in when called and popped out when done.  
-     - The process repeats until all code executes and GEC is removed.  
-
-- Function Execution Context:
-  - Created whenever a function is called.  
-  - Manages function execution using the call stack.  
-
-- Takeaway: 
-  - Memory is allocated before execution. 
-  - Call stack controls function execution. 
+-------------------
 
 ??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It ?
 
@@ -980,17 +919,17 @@ When the original object is modified, all references to it reflect the change.
 
 - While objects are stored in heap memory and accessed via references stored in the stack.
 
+---------------------
+
 #15) Event Loop
 
-JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are 
-involved, they are managed by the Event Loop, which ensures non-blocking execution.
+JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are involved, they are managed by the Event Loop, which ensures non-blocking execution.
 
 ⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the browser environment (or Node.js runtime).
-JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the **Task (Callback )
-Queue** are provided by the runtime environment to handle asynchronous operations efficiently.
+JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the Task (Callback ) Queue are provided by the runtime environment to handle asynchronous operations efficiently.
 
 The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous
-operations such as `setTimeout`, `fetch`, and Promises, without blocking the main thread.
+operations such as `setTimeout`, `fetch`, Promises etc without blocking the main thread.
 
 
 >>How the Event Loop Works:
@@ -1003,20 +942,22 @@ operations such as `setTimeout`, `fetch`, and Promises, without blocking the mai
 
 --- 2️⃣ Asynchronous Code is Handled by Web APIs
 
-  When the JS engine encounters an asynchronous operation (e.g., `setTimeout`, `fetch`, or event listeners), it offloads
- them to the Web APIs.
-  These APIs handle the operations in the background, freeing up the Call Stack.
+  When the JS engine encounters an asynchronous operation (e.g., `setTimeout`, `fetch`, or event listeners), it offloads them to the Web APIs. These APIs handle the operations in the background, freeing up the Call Stack.
 
 ---3️⃣ Asynchronous Tasks Are Moved to Queues
 
 Once the Web APIs finish their operations, their callbacks are queued in:
 
-  Microtask Queue (🎯 Higher Priority)
+  Microtask Queue (Higher Priority)
 
+    Handles: callbacks, queueMicrotask and some API-related micro operations.
+    
     Includes `Promise.then`, `Promise.catch`, `Promise.finally`, and `MutationObserver`.
     Always executed before tasks in the Task Queue.
 
-  Task Queue (Callback Queue) (🔁 Lower Priority)
+  Task Queue/Macrotasks (Lower Priority)
+  
+    Handles: setTimeout, setInterval, and other callback-based tasks.
 
     Includes `setTimeout`, `setInterval`, `event listeners`, etc.
     Executed only after the Microtask Queue is completely empty.
@@ -1060,8 +1001,8 @@ console.log("End");
 ---Execution Flow
 
 1️⃣ Synchronous Code Execution: `"Start"` is logged first.  
-2️⃣ setTimeout(0) goes to Web APIs and waits.  
-3️⃣ Promise goes to Microtask Queue.  
+2️⃣ setTimeout and Promise goes to Web APIs and waits.  
+3️⃣ Promise goes to Microtask Queue and setTimeout goes into Task queue.
 4️⃣ Synchronous code completes, logging `"End"`.  
 5️⃣ Microtask Queue executes first, logging `"Inside Promise"`.  
 6️⃣ Task Queue executes next, logging `"Inside setTimeout"`.  
