@@ -1060,10 +1060,9 @@ async function age(){
 }
 console.log(age());
 
-
 #38) What is Bable , SWC and Bundlers (Webpack, Parcel, Vite, esbuild, rollup)? 
 
-#39) Why Node.js is necessary? (For Knowledge Purpose)
+#39) Why Node.js is necessary on the frontend? (For Knowledge Purpose)
 
 # For version Checking which command is good: --version, -v, --v, or -version ?
 
@@ -1197,7 +1196,7 @@ console.log(p);
 >A) Generate OTPs
 
 1. Generate a 6-digit OTP 
-2. Generate 4,6,8 digit OTPs , you have to creat same single code logic for that.
+2. Generate 4,6,8 digit OTPs , you have to create same single code logic for that.
 3. Generate a 6-digit OTP. Do not use Math.random; use a cryptographically secure method instead.
 
 
@@ -1281,7 +1280,8 @@ let str = "zZabcdedcjbAeeee";
  *******
   *****
    ***
-      ***
+    * 
+   ***
   *****
  *******
 *********
@@ -1289,15 +1289,16 @@ let str = "zZabcdedcjbAeeee";
 
 5)Write a program to print the Diamond Star Pattern.
 n=5;
-
-      ***
+    *
+   ***
   *****
  *******
 ********* 
  *******
   *****
    ***
-      6)Write a program to print a 3×3 grid of numbers from 1 to 9.
+    *
+6)Write a program to print a 3×3 grid of numbers from 1 to 9.
 1 2 3 
 4 5 6 
 7 8 9 
@@ -1339,8 +1340,7 @@ Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 ---Context :
 
 >>Recursion
-Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, 
-continuing until a base case is reached.
+Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, continuing until a base case is reached.
 
 >>Backtracking
 Backtracking is a method where we try all the possible options.If one option doesn’t lead to a valid solution, we go back and try another option.
@@ -1366,7 +1366,7 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#65)Reverse the array  using Bubble sort or Selection Sort or Insertio sort and Merge sort.
+#65)Reverse the array  using Bubble sort or Selection Sort or Insertion sort and Merge sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
 #66)Merge Two sorted array ?

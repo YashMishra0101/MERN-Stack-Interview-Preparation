@@ -194,37 +194,7 @@ When "A function" is passed as an argument into "Another function", then it is c
    - Event handling, such as responding to button clicks.
    - Timers, using `setTimeout` or `setInterval`.
 
-3. Example of Synchronous Callback:
-
-   function calculate(a, b, callback) {
-       let sum = a + b;
-       callback(sum);  // Executes immediately after sum is calculated
-   }
-   calculate(3, 5, (result) => {
-       console.log('Sum:', result); // Output: 'Sum: 8'
-   });
-
-
-4. Example of Asynchronous Callback:
-
-   function fetchData(callback) {
-       setTimeout(() => {
-           console.log('Data fetched');
-           callback();  // Executes after 2 seconds
-       }, 2000);
-   }
-   fetchData(() => {
-       console.log('Processing data after fetching');  // Output after 2 sec
-   });
-   
-
-5. Importance:
-   - Callbacks allow for non-blocking operations, meaning they let code run while waiting for 
-   time-consuming tasks (like fetching data).
-   - Vital in JavaScript for managing asynchronous tasks, such as API calls, file handling, 
-   and user interactions.
-
-6. Drawbacks:
+3. Drawbacks:
    - Using too many callbacks or nesting them deeply can result in callback hell, making your 
    code hard to read and maintain.
    - You can avoid callback hell by using promises or async/await, which provide a 
@@ -233,8 +203,7 @@ When "A function" is passed as an argument into "Another function", then it is c
 
 #5)About Callback Hell :
 
-Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to 
-deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug.
+Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug.
 
 
 >Explanation
@@ -432,7 +401,6 @@ one()
     console.log("Code End");
   });
 start();
-
 
 
 #7)Asyn await
@@ -864,8 +832,8 @@ JavaScript first creates the Global Execution Context and then creates additiona
 - Memory is allocated for variables and functions.
 - Variables declared with `var` are initialized with `undefined because of hoisting.
 - Variables declared with `let` and `const` are hoisted but they are stay in the Temporal Dead Zone (TDZ) until their declaration is executed.
-- Function declarations are stored in memory with their entire function body.
-- This → initialized (The value of `this` is set (browser → `window`, Node.js → empty object {} i.e : module.exports) in the global space)
+- Function declarations are hoisted with their entire function body
+- This value → initialized (The value of `this` is set (browser → `window`, Node.js → empty object {} / module.exports) in the global space)
 
 --- 2️⃣ Code Execution Phase
 
