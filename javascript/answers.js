@@ -899,7 +899,7 @@ for (let b in userInfo) {
 }
 
 #Ans 10)
- Call, apply and blind are the pre build method in javascript with the helps that we can invoke the funciton with the help of this keyword.
+ Call, apply and blind are the pre build method in javascript with the helps that we can invoke the function with the help of this keyword.
 
 --1. `call()` Method
 
@@ -1580,57 +1580,65 @@ Ctrl + F ➤ Just search in concepts section : #20)
 
 -- ✅ For Deep copy:
 
-=> Use `structuredClone()` It can create deep copy, but it cannot work with functions , moder way (Node 17+, Chrome 98+).
+=> Use `structuredClone()` It can create deep copy, but it cannot work with functions , modern way (Node 17+, Chrome 98+).
 => Use `_.cloneDeep()` from Lodash for deep copy it work with functions also. (you're working with older browsers or complex structures)
 
 
 >A)
 //shallow copy 
 
-let profileTwo={...profileOne};
+let copy={...profileOne};
 
-profileTwo.name="Ram";
+copy.name="Ram";
 
-console.log(profileOne);//Yashu
-console.log(profileTwo);//Ram
+console.log(profileOne);//Yash
+console.log(copy);//Ram
+
 
 >B)
 //Deep Copy (In this we can not use shallow copy technique)
 
-let newProfile=structuredClone(profile);
+Reason :
+structuredClone creates a deep copy, so changes in the copied object do not affect the original object. However, if we use the spread operator, it creates a shallow copy and changes to nested properties will also affect the original object.
 
-newProfile.name="Shiva";
-newProfile.social.twitter="shiva@dev"
-
-console.log(profile);
-console.log(newProfile);
-
->C)
-const copy = structuredClone(user);
+let copy=structuredClone(profile);
 
 copy.name="Ram";
-copy.skills.push("Node.js");
-copy.address.city = "Mumbai";
+copy.social.twitter="@ramdev";
 
-console.log("Original:", user);
-console.log("Copy:", copy);
+console.log(profile);
+console.log(copy);
 
->D)
-//Deep copy with Lodash ( _.cloneDeep(); ) and We are Using Lodash via CDN in Vanilla JS
+>C)
 
-let newUser= _.cloneDeep(user);
+let copy=structuredClone(user);
 
-newUser.name = "Vani";
-newUser.skills[0]="Node.js";
-newUser.skills[1]="Express";
-newUser.address.city = "Mumbai";
-newUser.address.pin="9999";
+copy.name="Ram";
+copy.skills[1]="Typescript";
+copy.address.pin=99000;
 
 console.log(user);
-user.info();
+console.log(copy);
 
-console.log(newUser);
-newUser.info()
+
+>D)
+//Deep copy 
+
+Note: Functions (methods) are not cloned by deep copy methods like structuredClone. After copying the data, any methods must be manually reattached to the copied object to ensure they still work.
+
+const { info, ...userData } = user;
+
+const copy = structuredClone(userData);
+
+copy.info = user.info;
+
+copy.name = "Ram";
+copy.skills[1]="Typescript"
+copy.address.city = "Indore";
+copy.address.pin = 99998;
+
+console.log(user.info()); // original unchanged
+console.log(copy.info()); // updated values
 
 #Ans 33)
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];

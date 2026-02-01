@@ -903,3 +903,179 @@ let num = [1, 1, 1, 1, 1];
 
 // console.log(this);
 
+// let one = (callMe) => {
+//   setTimeout(() => {
+//     console.log("One");
+//     callMe();
+//   }, 1000);
+// };
+// let two = (callMe) => {
+//   setTimeout(() => {
+//     console.log("Two");
+//     callMe();
+//   }, 1000);
+// };
+// let three = (callMe) => {
+//   setTimeout(() => {
+//     console.log("Three");
+//     callMe();
+//   }, 1000);
+// };
+// let four = (callMe) => {
+//   setTimeout(() => {
+//     console.log("Four");
+//     callMe();
+//   }, 1000);
+// };
+
+// let five = () => {
+//   setTimeout(() => {
+//     console.log("Five");
+//   }, 1000);
+// };
+
+// let start = () => {
+//   one(() => {
+//     two(() => {
+//       three(() => {
+//         four(() => {
+//           five;
+//         });
+//       });
+//     });
+//   });
+// };
+
+// start();
+
+// function a(b) {
+//   return b();
+// }
+
+// function b() {
+//   console.log(5);
+// }
+
+// a(()=>{
+//     b// not work
+//     b()//work
+// })
+
+// fetch("https://jsonplaceholder.typicode.com/users/1")
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("API fetching completed");
+//   });
+
+// let apiData = async () => {
+//   try {
+//     const apiResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users/1",
+//     );
+//     const data = await apiResponse.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//     console.log("API Calling is completed");
+//   }
+// };
+
+// apiData()
+
+// const profileOne = {
+//   name: "Yash",
+// };
+
+// let copy={...profileOne};
+
+// copy.name="Ram";
+
+// console.log(profileOne);//Yash
+// console.log(copy);//Ram
+
+// const profile = {
+//   name: "Yashu",
+//   social: {
+//     twitter: "@yashdev"
+//   }
+// };
+
+// let copy=structuredClone(profile);
+
+// copy.name="Ram";
+// copy.social.twitter="@ramdev";
+
+// console.log(profile);
+// console.log(copy);
+// // structuredClone creates a deep copy, so changes in the copied object do not affect the original object. However, if we use the spread operator, it creates a shallow copy and changes to nested properties will also affect the original object.
+
+// const user = {
+//   name: "Yashu",
+//   skills: ["JS", "React"],
+//   address: {
+//     city: "Delhi",
+//     pin: 110001
+//   },
+//   createdAt: new Date()
+// };
+
+// let copy=structuredClone(user);
+
+// copy.name="Ram";
+// copy.skills[1]="Typescript";
+// copy.address.pin=99000;
+
+// console.log(user);
+// console.log(copy);
+
+// const user = {
+//   name: "Yashu",
+//   skills: ["JS", "React"],
+//   address: {
+//     city: "Delhi",
+//     pin: 110001,
+//   },
+//   createdAt: new Date(),
+//   info() {
+//     return `My name is ${this.name}, my skills are ${this.skills[0]} and ${this.skills[1]}, and I live in ${this.address.city} ${this.address.pin}`;
+//   },
+// };
+
+// // separate method
+// const { info, ...userData } = user;
+
+// const copy = structuredClone(userData);
+
+// copy.info = user.info;
+
+
+// copy.name = "Ram";
+// copy.skills[1]="Typescript"
+// copy.address.city = "Indore";
+// copy.address.pin = 99998;
+
+
+// console.log(user.info()); // original unchanged
+// console.log(copy.info()); // updated values
+
+// const profileOne = {
+//   name: "Yash",
+//   check:[1,2,3]
+// };
+
+// let copy=structuredClone(profileOne)
+
+// copy.name="Ram";
+// copy.check[0]=8888888
+
+// console.log(profileOne);//Yash
+// console.log(copy);//Ram

@@ -183,6 +183,9 @@ console.log(abc("Yashu"))
 When "A function" is passed as an argument into "Another function", then it is called a callback function.
 (It executed either immediately, after the main function completes its task, or at a later time, depending on how the callback is used.
 
+
+---Extra Info For Knowledge Purpose
+
 1. Types of Callbacks:
    - Synchronous Callbacks: Executed right after the main function completes its task (typically 
    in simple operations like calculations).
@@ -203,7 +206,7 @@ When "A function" is passed as an argument into "Another function", then it is c
 
 #5)About Callback Hell :
 
-Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug.
+Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug, this is called callback hell.
 
 
 >Explanation
@@ -275,8 +278,7 @@ start()
 
  Problems with Callback Hell:
 
-   - Error Handling: Callback functions don't have built-in error handling like Promises or async/await. That's one of their 
-    biggest weaknesses.There’s no structured way like .catch() in Promises or try...catch in async/await to handle errors.
+   - Error Handling: Callback functions don't have built-in error handling like Promises or async/await. That's one of their biggest weaknesses.There’s no structured way like .catch() in Promises or try...catch in async/await to handle errors.
 
    - Readability: Deeply nested callbacks make it hard to read and understand the code.
 
@@ -287,16 +289,13 @@ start()
 
 >Summary
 
-In summary, callback hell is the challenge of managing deeply nested callbacks in asynchronous code.
-it can make the code hard to read and maintain. Modern solutions like Promises and async/await
+In summary, callback hell is the challenge of managing deeply nested callbacks in asynchronous code.it can make the code hard to read and maintain. Modern solutions like Promises and async/await
 provide cleaner, more manageable ways to handle asynchronous operations, reducing the problems
 associated with callback hell.
 
 #6)Promises
 
-Promises are a better alternative to callbacks for handling code. If our code is successful, it resolves with 
-the help of the resolve function. If our code fails, we can handle it with the help of the reject function,
-and we can use catch for handling errors in promises.
+Promises are a better alternative to callbacks for handling code. If our code is successful, it resolves with the help of the resolve function. If our code fails, we can handle it with the help of the reject function and we can use catch for handling errors in promises.
 
 --A promise can have three states:
 
@@ -316,7 +315,7 @@ and we can use catch for handling errors in promises.
 
 --Why are Promises Used?
 
-.To avoid callback hell: Writing a lot of nested callbacks makes code hard to read. Promises simplify that.
+.To avoid callback hell: Writing a lot of nested callbacks makes code hard to read, promises simplify that.
 .Better error handling: Promises handle errors in a clear way using .catch().
 .Easier chaining: You can run tasks one after another using .then().
 
@@ -405,18 +404,13 @@ start();
 
 #7)Asyn await
 
-Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides 
-additional functionality. With the help of async, a Promise is created automatically. 
+Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides additional functionality. With the help of async, a Promise is created automatically. 
 
-The resolved and rejected 
-states are handled using try and catch blocks. When the code is resolved, it is executed inside the try block, 
-and if the code is rejected, it is handled with the help of the catch block.
+The resolved and rejected states are handled using try and catch blocks. When the code is resolved, it is executed inside the try block and if the code is rejected, it is handled with the help of the catch block.
 
-async: It is a keyword that you place in front of a function. It tells JavaScript that this function will 
-contain asynchronous code and will return a Promise.
+async: It is a keyword that you place in front of a function. It tells JavaScript that this function will contain asynchronous code and will return a Promise.
 
-await: It is used inside an async function. It makes JavaScript wait for a Promise to resolve (or reject) 
-before moving to the next line of code.
+await: It is used inside an async function. It makes JavaScript wait for a Promise to resolve (or reject) before moving to the next line of code.
 
 >>Example of async/await
 
@@ -470,7 +464,7 @@ let start = async () => {
 
 start();
 
->API callig with Promises and async await
+>API calling with Promises and async await
 
 --Using Promises (then/catch):
 
@@ -877,14 +871,14 @@ JavaScript first creates the Global Execution Context and then creates additiona
 
 ??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It ?
 
-Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value.
-When the original value changes, the copied value does not change.
+Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value. When the original value changes, the copied value does not change.
 
-- Primitive values are stored directly in the stack
+--Extra Info: 
+-Primitive values are stored directly in the stack
 
-Non-primitive data types (objects, arrays, functions) are assigned by reference.
-When the original object is modified, all references to it reflect the change.
+Non-primitive data types (objects, arrays, functions) are assigned by reference. When the original object is modified, all references to it reflect the change.
 
+--Extra Info:
 - While objects are stored in heap memory and accessed via references stored in the stack.
 
 ---------------------
@@ -1008,8 +1002,7 @@ Changes to the new variable don’t affect the original.
 
 Examples: Object, Array, Function
 
-Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new 
-object, changing the same memory block.
+Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new object, changing the same memory block.
 
 Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will 
 affect the original data.
@@ -1051,7 +1044,7 @@ console.log(arr);//8888
 - Primitive Data Types -> Store in Stack -> Immutable,values cannot be changed -> Any modification results in the 
 creation of a new value -> String,numbers etc.
 
-- Non-Primitive Data Types -> Store in Healp -> Mutable,values can be changed -> Values can be changed without creating a new 
+- Non-Primitive Data Types -> Store in Heap -> Mutable,values can be changed -> Values can be changed without creating a new 
 object -> Array,objects,function etc.
 
 
@@ -1085,8 +1078,8 @@ You can directly extract values from objects without `person.name` or `person.ag
 
 >>2️⃣ Spread Operator (`...`) (Expanding)
 
-The spread operator (...) is used to expand the values of an array or object.
-It is mainly used for copying, merging, or passing values.
+The spread operator (...)  mainly used for copying, merging or passing the values and it is also used to expand the values of an array or object.
+
 
 --👉 Copying an Array
 
@@ -1181,7 +1174,7 @@ Here, `...remainingFruits` collects all remaining elements into an array.
 >>> Simple Trick to Remember:
 
 - Destructuring → Extracting values (`{}` or `[]`)  
-- Spread (`...`) → Expanding values
+- Spread (`...`) → Copy, Merge, Passing, Expanding - the values
 - Rest (`...`) → Collecting values
 
 #18)Naming conventions
@@ -1461,7 +1454,7 @@ for (let [index, value] of arr.entries()) {
 
 --- Type Coercion (koversion) (Automatic conversion)
 
-Type coercion is when JavaScript automatically converts one data type to another behind your back—**without you asking for it.
+Type coercion is when JavaScript automatically converts one data type to another behind your back, without you asking for it.
 
 Example:
 
@@ -1473,7 +1466,7 @@ You didn’t tell JS to do this—it did it by itself. That’s type coercion.
 
 ---Type Casting (Manual conversion)
 
-Type casting means YOU manually convert one type to another using methods like `Number()`, `String()`, etc.
+Type casting means YOU manually convert one type to another data type using methods like `Number()`, `String()`, etc.
 
 Example:
 
@@ -1482,33 +1475,16 @@ String(10) + "1" // You manually made 10 a string → result is "101"
 
 Here, you are in control. That’s type casting.
 
-
-?? So Are They the Same? --- No NO
-
+--
+?? So Are They the Same? --- No.
 
   Type coercion = automatic, JS decides.
   Type casting = manual, you decide.
 
->Note: 
-🤚🙎‍♂️ In JavaScript, type coercion is the automatic or implicit conversion of values "from one data type to 
-another" (It converts one data type to another depending on the situation). It doesn't just convert to strings 
-depending on the context, it can also convert values to numbers,booleans, or other types during operations.
+>Concatenation vs Strings Concatenation
 
->Concatenation
-Concatenation primarily refers to combining strings together to form a single string. However, it can also be used more broadly to
-describe the process of combining or linking together multiple items or entities, not just limited to strings. 
-
-In the context of programming, especially with languages like JavaScript, concatenation commonly refers to combining strings by 
-appending one string to the end of another. For example, combining words or phrases to form a sentence, or combining different 
-parts of a URL.
-
-While concatenation often involves combining strings, the concept can also be applied to other types of data, such as combining arrays, 
-objects, or even numbers. However, in the context of programming languages, the term "concatenation" is most commonly associated 
-with string manipulation.
-
-??Summmary: Concatenation
-Concatenation in JavaScript means joining two or more strings together to form a single string.
-It is usually done using the + operator.
+Concatenation refers to the process of combining two or more values.
+String concatenation specifically means joining two or more strings together to form a single string.
 
 #21)Recursion and Backtracking
 

@@ -926,7 +926,7 @@ Do this using both:
 
 1).then()
 
-2)async/await
+2)async/await with try and catch
 
 
 #25)Write a JavaScript program that demonstrates the use of classes and object creation.
@@ -965,13 +965,12 @@ Create a class `BankAccount` that demonstrates the concept of Encapsulation in J
 
 #30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
-#31) What is Type Coercion (koversion) vs Type casting and Concatenation.
+#31) What is Type Coercion (koversion) vs Type casting and Concatenation vs Strings Concatenation
 
 #32) Shallow copy and deep copy question.
 
 >A) 
-Create a shallow copy of the profileOne object using any method you prefer.
-After copying, change the name property in the copied object and make sure the original object does not change.
+Create a shallow copy of the profileOne object using any method you prefer.After copying, change the name property in the copied object and make sure the original object does not change.
 
 const profileOne = {
   name: "Yashu",
@@ -979,8 +978,7 @@ const profileOne = {
 
 >B)
 Create a deep copy of the profile object using any method you prefer.
-Since it has a nested object (social), a shallow copy will not be enough. Make sure changes in the copied object 
-do not affect the original object.
+Since the object contains a nested object (social), a shallow copy will not be sufficient.Ensure that modifying the social property in the copied object does not affect the original object.
 
 const profile = {
   name: "Yashu",
@@ -991,8 +989,7 @@ const profile = {
 
 >C)
 Create a deep copy of the user object given below.
-This object contains nested objects, arrays, and a Date property. Ensure that all levels are copied independently so
-that changes in the copied object do not affect the original.
+This object contains nested objects, arrays, and a Date property. Ensure that all levels are copied independently so that changes in the copied object do not affect the original.
 
 const user = {
   name: "Yashu",
@@ -1006,8 +1003,7 @@ const user = {
 
 >D)
 Create a deep copy of the user object given below.
-This object contains nested objects, arrays, a Date property, and also a method (info). Make sure the deep copy handles 
-all these properties correctly without affecting the original object.
+This object contains nested objects, arrays, a Date property, and also a method (info). Make sure the deep copy handles all these properties correctly without affecting the original object.
 
 const user = {
   name: "Yashu",
