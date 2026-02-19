@@ -30,31 +30,31 @@ This guide covers the most common and practical topics for **entry-level** and *
 ```
 Interview-Preparation/
 ├── html/
-│   └── questions-answers.js       - HTML interview Q&A
+│   └── questions-answers.js
 ├── css/
-│   └── questions-answers.js       - CSS interview Q&A
+│   └── questions-answers.js
 ├── javascript/
-│   ├── questions.js               - JavaScript interview questions
-│   ├── answers.js                 - JavaScript interview answers
-│   └── concepts.js                - Core JavaScript concepts
+│   ├── questions.js
+│   ├── answers.js
+│   └── concepts.js
 ├── logical-building/
-│   ├── questions.js               - Logic-building problems
-│   └── answers.js                 - Solutions with explanations
+│   ├── questions.js
+│   └── answers.js
 ├── react/
-│   └── questions-answers.js       - React interview Q&A
+│   └── questions-answers.js
 ├── typescript/
-│   └── concepts.ts                - TypeScript fundamentals
+│   └── concepts.ts
 ├── backend/
-│   └── questions-answers.js       - Node.js, Express & MongoDB Q&A
+│   └── questions-answers.js
 ├── dsa/
-│   └── basic-notes.js             - Sorting & algorithm notes
+│   └── basic-notes.js
 ├── practice/
-│   ├── practice.html              - HTML practice file
-│   ├── practice.css               - CSS practice file
-│   └── practice.js                - JavaScript practice file
+│   ├── practice.html
+│   ├── practice.css
+│   └── practice.js
 ├── .gitignore
-├── IMPORTANT-NOTE.md              - Better Comments extension setup
-├── LICENSE                        - MIT License
+├── IMPORTANT-NOTE.md
+├── LICENSE
 └── readme.md
 ```
 
