@@ -30,31 +30,31 @@ This guide covers the most common and practical topics for **entry-level** and *
 ```
 Interview-Preparation/
 ├── html/
-│   └── questions-answers.js       # HTML interview Q&A
+│   └── questions-answers.js       - HTML interview Q&A
 ├── css/
-│   └── questions-answers.js       # CSS interview Q&A
+│   └── questions-answers.js       - CSS interview Q&A
 ├── javascript/
-│   ├── questions.js               # JavaScript interview questions
-│   ├── answers.js                 # JavaScript interview answers
-│   └── concepts.js                # Core JavaScript concepts
+│   ├── questions.js               - JavaScript interview questions
+│   ├── answers.js                 - JavaScript interview answers
+│   └── concepts.js                - Core JavaScript concepts
 ├── logical-building/
-│   ├── questions.js               # Logic-building problems
-│   └── answers.js                 # Solutions with explanations
+│   ├── questions.js               - Logic-building problems
+│   └── answers.js                 - Solutions with explanations
 ├── react/
-│   └── questions-answers.js       # React interview Q&A
+│   └── questions-answers.js       - React interview Q&A
 ├── typescript/
-│   └── concepts.ts                # TypeScript fundamentals
+│   └── concepts.ts                - TypeScript fundamentals
 ├── backend/
-│   └── questions-answers.js       # Node.js, Express & MongoDB Q&A
+│   └── questions-answers.js       - Node.js, Express & MongoDB Q&A
 ├── dsa/
-│   └── basic-notes.js             # Sorting & algorithm notes
+│   └── basic-notes.js             - Sorting & algorithm notes
 ├── practice/
-│   ├── practice.html              # HTML practice file
-│   ├── practice.css               # CSS practice file
-│   └── practice.js                # JavaScript practice file
+│   ├── practice.html              - HTML practice file
+│   ├── practice.css               - CSS practice file
+│   └── practice.js                - JavaScript practice file
 ├── .gitignore
-├── IMPORTANT-NOTE.md              # Better Comments extension setup
-├── LICENSE                        # MIT License
+├── IMPORTANT-NOTE.md              - Better Comments extension setup
+├── LICENSE                        - MIT License
 └── readme.md
 ```
 
