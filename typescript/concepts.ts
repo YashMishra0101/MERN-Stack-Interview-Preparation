@@ -36,7 +36,7 @@ let bFour: [number, string] = [5, "naam"];
 
 Enums in TypeScript are a way to group together related values that are constants, making your code easier to read
 and maintain. Instead of using individual variables for each constant, you use an enum to give them meaningful
-names. (Bascially Enums in TypeScript group values together so we don’t have to write them separately or 
+names. (Basically, Enums in TypeScript group values together so we don’t have to write them separately or 
 manage them as different variables. )
 
 Always use enums** when you need to represent fixed categories (like roles or statuses), and you want 
@@ -57,7 +57,7 @@ let currentStatus: Status = Status.Success;
 console.log(currentStatus); // Output: 1
 
 
-#3)Any , Unknow , Void ,Null , Undefine , Never
+#3)Any, Unknown, Void, Null, Undefined, Never
 
 1. Any
 The `any` type means that a variable can hold any type of value—numbers, strings, objects, anything.
@@ -201,7 +201,7 @@ Summary of Usage:
 
 #5)What is type Inference in TypeScript ?
 
-Automatic identify kr naaa
+Automatic identification
 
 Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
 variable or expression based on its value or context, without needing explicit type annotations. 
@@ -296,7 +296,7 @@ let user: Person = {
 console.log(user);
 
 
-#9)What is type inference in TypeScript ?
+#9)What is Type Inference in TypeScript? (Recap of #5)
 
 Type inference in TypeScript is the ability of the compiler to automatically determine the type of a 
 variable or expression based on its value or context, without needing explicit type annotations. 

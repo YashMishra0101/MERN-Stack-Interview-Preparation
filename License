@@ -1,24 +1,21 @@
-License
+MIT License
 
-© Yash Mishra. All rights reserved.
+Copyright (c) 2025 Yash Mishra
 
-The content in this repository, including code, designs, documentation and any related materials, is protected under this license, Any attempt to misuse or ignore these terms will not be tolerated and violations will lead to serious and appropriate action. Please follow these rules and regulations strictly.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Terms of Use:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-1. No Unauthorized Use: You can't use, share, change or create anything based on this work without my written permission. This rule applies whether it’s for personal, business, college or any other use.
-
-2. Proper Credit: If you want to use any part of this work, you need to get permission from me first and then give me credit as the author.
-
-3. Collaboration: I’m open to working together. If you want to contribute or talk about possible projects, please reach out to me.
-
-Contact Information:
-
-For inquiries about usage, collaboration or permissions, please contact me directly:
-
-- Email: yashrkm0011@gmail.com
-- LinkedIn: https://www.linkedin.com/in/yash-mishra-356280223/
-- Twitter (X): https://x.com/YashRKMishra1
-
-Note:
-Respect my rights as the author. Your honesty as a developer is important. Any violation will lead to immediate action, including possible reports, legal steps and other strict measures. Unauthorized use is not only a breach of these terms but also a breach of trust and it won’t be taken lightly. Strict action will be taken if any terms and conditions are not followed.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

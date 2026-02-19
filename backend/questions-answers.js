@@ -23,7 +23,7 @@ Basically, it stops unauthorized cross-origin access unless the server explicitl
 CORS is like a bouncer 🧍‍♂️ at a club (your backend) who checks the ID (origin) of anyone (frontend) trying to enter. Only the ones you approve get access inside.
 
 
-#2) What is Middleware.
+#2) What is Middleware?
 
 Basically, middleware is a function that has access to the request and response objects. It can either end the request-response cycle or, if certain conditions are met (like authentication), forward the request to the next middleware or route.
 
@@ -33,7 +33,7 @@ A middleware is a function that has access to the request object (req), the resp
 
 It can modify the request and response objects, execute code, end the request-response cycle, or call the next middleware in the stack using next().
 
-#3)What is Json.
+#3) What is JSON?
 
 “JSON (JavaScript Object Notation) is a lightweight, text-based format used to store and transfer data between a client and a server. It is easy to read for humans and easy for machines to parse. JSON is used in both websites and mobile apps — whenever data travels between frontend and backend through APIs, it usually travels in JSON format.”
 
@@ -78,13 +78,13 @@ Here:
 Claude
 ---https://claude.ai/public/artifacts/1f1d7e88-ed18-470f-9855-14b61fde420e
 
-#4)What is BSON.
+#4) What is BSON?
 
 Claude
 ---https://claude.ai/public/artifacts/979a2fce-fdbd-4d6d-aae4-e1eccc992f40
 
-#5)What is multer.
-#6)What is mongoose-aggreate-paginate-v2
+#5) What is Multer?
+#6) What is mongoose-aggregate-paginate-v2?
 #7)Cors
 #8)Cloudinary
 #9)Cookieparser

@@ -1,276 +1,12 @@
-console.log("JS Logical Questions Section Is Working");
+console.log("JS Interview Questions Section Is Working");
 /*
-#Section One : Logical Building
+#JavaScript Interview Questions
 
-#This questions are mainly for improving your logic-building skills. They aren't directly tied to JavaScript concepts or interview preparation, but they are super helpful for developing strong logical thinking.
+#In this section, JavaScript-based questions are covered for interview preparation, along with other commonly asked output-based and conceptual questions which are frequently asked in coding rounds.
 
----1) Write a JavaScript program to check whether a number is even, odd, or prime, and then print all even, odd, and prime numbers within a given range. You can choose any two numbers as the range limits: start and end.
+>Note: For logic-building questions (Even/Odd/Prime numbers, Star Patterns, etc.), check the `logical-building` folder.
 
-  - Even Numbers  
-  - Odd Numbers  
-  - Prime Numbers
-
----2) Write a JavaScript function `printPrimeNumber(n)` that returns all prime numbers from 2 to `n` (inclusive) as a string, separated by spaces.
-
-A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
-
-Your function should:
-
-  Accept a positive integer `n`.
-  Check each number from 2 up to `n`.
-  Collect all prime numbers in a string, separated by a single space.
-  Return the final string.
-
-Example:
-console.log(printPrimeNumber(25));
-
-Output:
-"2 3 5 7 11 13 17 19 23"
-
----3) Print the following Star Patterns (Total 23 Questions): 
-
-1)Pattern One
-n=5;
-
-*****
-*****
-*****
-*****
-*****
-
-2)Pattern Two
-n=5;
-
-  **
-***
-****
-*****
-
-3)Pattern Three
-n=5;
-
-1
-12
-123
-1234
-12345
-
-4)Pattern Four
-n=5;
-
-1
-22
-333
-4444
-55555
-
-5)Pattern Five (Decending Order)
-n=5;
-
-*****
-****
-***
-**
-  6)Pattern Six
-n=5;
-
-12345
-1234
-123
-12
-1
-
-7)Pattern Seven
-n=5;
-
-1
-3
-5
-7       
-9
-
-        ***
-    *****
-   *******
-  *********
-
-8)Pattern Eight (Reverse of Pattern Seven)
-n=5;
-
-9
-7
-5
-3
-1
-
-
-*********
- *******
-  *****
-   ***
-      9)Pattern Nine 
-n=5;
-
-      ***
-  *****
- *******
-*********
-*********
- *******
-  *****
-   ***
-      10)Pattern Ten
-n=5;
-
-  **
-***
-****
-*****
-****
-***
-**
-  11)Pattern Eleven
-n=5;
-
-1
-0 1
-1 0 1
-0 1 0 1
-1 0 1 0 1
-
-12)Pattern Twelve
-n=5;
-
-1      1
-12    21
-123  321
-12344321
-
-13)Pattern Thirteen
-n=5;
-
-
-1
-2 3
-4 5 6
-7 8 9 10
-11 13 14 15
-
-14)Pattern Fourteen
-n=5;
-
-A
-A B
-A B C
-A B C D
-A B C D E
-
-15)Pattern Fifteen
-n=5;
-
-A B C D E
-A B C D
-A B C
-A B
-A
-
-16)Pattern Sixteen
-n=5;
-
-A
-B B
-C C C
-D D D D
-E E E E E
-
-17)Pattern Seventeen
-n=5;
-
-
-    A
-   ABA
-  ABCBA
- ABCDCBA
-ABCDEDCBA
-
-18)Pattern Eighteen
-n=5;
-
-
-E 
-D E 
-C D E 
-B C D E 
-A B C D E 
-
-19)Pattern Nineteen
-n=5;
-
-**********
-**** ****
-***   ***
-     
-  *
-  *
-     
-***   ***
-**** ****
-**********
-
-20)Pattern Twenty
-n=5;
-
-
-  *
-       
-***     ***
-****   ****
-***** *****
-****   ****
-***     ***
-       
-  *
-
-21)Pattern Twentyone
-n=5;
-
-
-*****
-  *
-  *
-  *
-*****
-
-22)Pattern Twentytwo
-n=5;
-
-
-  *
-   * 
-      
-  *
-
-23)Pattern Twenthree
-n=4;
-7*7
-
-4 4 4 4 4 4 4 
-4 3 3 3 3 3 4 
-4 3 2 2 2 3 4 
-4 3 2 1 2 3 4 
-4 3 2 2 2 3 4 
-4 3 3 3 3 3 4 
-4 4 4 4 4 4 4 
-
-
-------------------------------------------------------------------
-
-#Section 2 : For interviews
-
-#In this section, JavaScript-based questions are covered for interview preparation, along with other commonly asked questions which are asked in coding rounds.
-
-
-#)1
+#1)
 
 --a)
 let a=5;
@@ -314,9 +50,9 @@ console.log(
 ); 
 
 
-#2) Implement callback function in JavaScript by passing one function into another , then print it's value?
+#2) Implement a callback function in JavaScript by passing one function into another, then print its value.
 
-#3) Tells the output without running the code.
+#3) Tell the output without running the code.
 
 function firstFunction() {
   console.log("First Function Start");
@@ -336,7 +72,7 @@ function thirdFunction() {
 
 firstFunction();
 
-#4)Tells the output without running the code in the proper sequence.
+#4) Tell the output without running the code, in the proper sequence.
 
 console.log("line number 1", varName);
 var varName = 10;
@@ -359,7 +95,7 @@ console.log("line number 6", varName);
 fn();
 
 
-#5)Tells the output without running the code in the proper sequence.
+#5) Tell the output without running the code, in the proper sequence.
 
 var a = 10;
 console.log("line number 1", a);
@@ -379,7 +115,7 @@ console.log("line number 6", a);
 
 fn();
 
-#6) Tells The output
+#6) Tell the output.
 
 let letFruit = "orange";
 var varFruit = "orange";
@@ -405,11 +141,11 @@ let person = {
 
 console.log(person.fullName());
 
-#8)What is lexical scop/lexical scoping ?
+#8) What is lexical scope / lexical scoping?
     
-#9)Can we use the for...of loop for objects ?
+#9) Can we use the for...of loop for objects?
 
-#10)Explain the use of call(), apply(), and bind() in JavaScript and then solve this question.
+#10) Explain the use of call(), apply(), and bind() in JavaScript, and then solve this question.
 
 --1)Output-based (call)
 
@@ -467,7 +203,7 @@ car1.getBrand.call(car2);
 
 //Method borrowing allows one object to use another object’s method by changing the value of this using call or apply.
 
-#11)What "this keyword" is javascript ?
+#11) What is the "this" keyword in JavaScript?
 
 #12) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
 
@@ -492,7 +228,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-#13)Tell the output without running the code.
+#13) Tell the output without running the code.
 --1)
 let person = {
   firstName: "Yash",
@@ -537,7 +273,7 @@ function abc() {
 
 abc();
  
-#14) What will be the output of the following code in a proper sequence ?
+#14) What will be the output of the following code, in the proper sequence?
 
 --1) Code Without `await`:
 
@@ -590,7 +326,7 @@ async function main() {
 main()
 
 
-#15) Find the output of this codes ?
+#15) Find the output of these code snippets.
 
 >a)
 for (let a = 1; a <= 5; a++) {
@@ -608,7 +344,7 @@ for (var a = 1; a <= 5; a++) {
 }
 
 
-#16)Give me output of these question:
+#16) Give me the output of these questions:
 
 a)
 for (let a = 1; a <= 5; a++) {
@@ -693,7 +429,7 @@ for(var a=1; a<=5; a++){
     console.log(a);
 }
     
-#17)Tell me correct output .
+#17) Tell me the correct output.
 
 a)
 const a = 1;
@@ -717,7 +453,7 @@ direct console.log, the first a++ also throws a TypeError, but since there’s n
 the error appears. Key point: asynchronous callbacks scheduled before an error can still execute, while synchronous code stops 
 immediately when a const is modified.
 
-#18)Tell me the output of this code.
+#18) Tell me the output of this code.
 
 >a)
 let count = 0;
@@ -757,7 +493,7 @@ function immediate() {
 immediate();
 
 
-#19)Tell me the output of this code in proper sequence manner .
+#19) Tell me the output of this code, in proper sequence.
 
 let outerFun = (() => {
     
@@ -786,7 +522,7 @@ see();
 seeTwo();
 
 
-#20) What is `Destructuring`, `Spread operator` and `Rest operator`and solve this problem.
+#20) What is `Destructuring`, `Spread Operator`, and `Rest Operator`? Solve these problems.
 
 --Destructuring: Extracts values.
 --Spread : Copying & Merging, (expands values).
@@ -911,11 +647,11 @@ const student = {
   behavior: 'excellent'
 };
 
-#21)Explain Event loop.
+#21) Explain the Event Loop.
 
-#22)Explain Global Execution context.
+#22) Explain the Global Execution Context.
 
-#23)What is callback,callback hell, promise.
+#23) What is a Callback, Callback Hell, and Promise?
 
 #24) Write a program with proper error handling to fetch a user's data from this API:
 👉👨‍💻 Note:First check if the API URL is working before using it. Sometimes the API may not respond.
@@ -929,7 +665,7 @@ Do this using both:
 2)async/await with try and catch
 
 
-#25)Write a JavaScript program that demonstrates the use of classes and object creation.
+#25) Write a JavaScript program that demonstrates the use of classes and object creation.
 
 #26) Demonstrate Encapsulation using a Class.
 Task:
@@ -965,9 +701,9 @@ Create a class `BankAccount` that demonstrates the concept of Encapsulation in J
 
 #30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
-#31) What is Type Coercion (koversion) vs Type casting and Concatenation vs Strings Concatenation
+#31) What is Type Coercion vs Type Casting, and Concatenation vs String Concatenation?
 
-#32) Shallow copy and deep copy question.
+#32) Shallow copy and deep copy questions.
 
 >A) 
 Create a shallow copy of the profileOne object using any method you prefer.After copying, change the name property in the copied object and make sure the original object does not change.
@@ -1018,7 +754,7 @@ const user = {
   }
 };
 
-#33)Based on slice and splice
+#33) Based on `slice` and `splice`.
 
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
@@ -1028,21 +764,21 @@ How would you create a new array with only `"Vani"` and `"Code"` without modifyi
 Question 2:
 How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
 
-#34)How to generate a random number between two numbers ?
+#34) How to generate a random number between two numbers?
 
-#35)Tell me the output of both of these lines and explain why:
+#35) Tell me the output of both of these lines and explain why:
 
 console.log([] == false);  
 console.log([] === false);
 
 
-#36)Which of the following is NOT an immutable operation ?
+#36) Which of the following is NOT an immutable operation?
 a) `map()`
 b) `filter()`
 c) `splice()`
 d) `concat()`
 
-#37)What is the output of this code ?
+#37) What is the output of this code?
 
 >a)
 async function name(){
@@ -1056,7 +792,7 @@ async function age(){
 }
 console.log(age());
 
-#38) What is Bable , SWC and Bundlers (Webpack, Parcel, Vite, esbuild, rollup)? 
+#38) What is Babel, SWC, and Bundlers (Webpack, Parcel, Vite, esbuild, Rollup)? 
 
 #39) Why Node.js is necessary on the frontend? (For Knowledge Purpose)
 
@@ -1066,7 +802,7 @@ With the help of these commands (--version, -v, --v, and -version), we can check
 installed tools. But, but, but...
 
 For checking versions, --version and -v are the most commonly used and reliable commands.
-, --v and -version  may also work, but they are not supported by all tools. 
+However, --v and -version may also work, but they are not supported by all tools. 
 For example, in TypeScript, all these commands work. However, in Node.js, --v and -version 
 do not work. 
 
@@ -1077,7 +813,7 @@ do not work.
 
 -g (Global Installation):
 When you use the -g flag with npm (e.g., npm install -g <package-name>), it means you are installing the 
-package globally on your system. This means the package will be available system and can be used 
+package globally on your system. This means the package will be available system-wide and can be used 
 in any project without needing to install it separately in each project folder.
 
 >>Global Installation :
@@ -1087,7 +823,7 @@ in any project without needing to install it separately in each project folder.
 Installs the package only in the current project’s node_modules folder, and it is available only within that 
 specific project.
 
-#40)What is JSX ?
+#40) What is JSX?
 
 #41) Swap two variables using three different methods.
 
@@ -1098,14 +834,14 @@ let b=600;
 Can you write the same array destructuring swap logic for three variables?
 Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
 
-#43) Tell me the output of this code .
+#43) Tell me the output of this code.
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#44) Solve this
+#44) Solve this:
 let a=5859;
 
 1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
@@ -1187,7 +923,7 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-#47) Solve These Questions.
+#47) Solve these questions.
 
 >A) Generate OTPs
 
@@ -1222,43 +958,43 @@ let arr1 = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
 let arr2 = [50, 50, 50, 50];
 let arr3 = [99, 99, 99, 89, 87];
 
-#52)Reverse the array
+#52) Reverse the array.
 
 let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
 let arr2=[0,45,98,1,33,1,-7,55];
 
-#53)Put 0s on left and 1s on right side.
+#53) Put 0s on the left and 1s on the right side.
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
-#54)Print Each Charcter on new line.
+#54) Print each character on a new line.
 
 let s="ramratan";
 
-#55)Print the each Charcter on a reverse order on new line.
+#55) Print each character in reverse order, on a new line.
 
 let s="ramratan";
 
-#56)Check the string is Palindrom or not .
+#56) Check whether the string is a palindrome or not.
 
 let a="abcdef";
 
-#57)Find two numbers in a sorted array whose sum equals the "target" using two pointers, Your target is 13 and the array is sorted.
+#57) Find two numbers in a sorted array whose sum equals the "target" using two pointers. Your target is 13 and the array is sorted.
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-#58)Write a JavaScript function to toggle the case of each character in a given string Without using built-in methods like toUpperCase() or toLowerCase().
+#58) Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
 let str="YAsh";
 
 #59)
-Count how many times each character repeats in a string.(This is a : Frequency counter pattern)
+Count how many times each character repeats in a string. (This is a Frequency Counter pattern.)
 
 let str = "zZabcdedcjbAeeee";
 
 #60)
 1)Use console.log() to display the current year.
 
-2)Create a for loop that calculate the factorial of 5.
+2) Create a for loop that calculates the factorial of 5.
 
 3)Write a program to print a 6×6 grid star pattern.
 ---n=6;
@@ -1300,7 +1036,7 @@ n=5;
 7 8 9 
 
 
-#61)In JavaScript, what happens if you declare a variable without using let, const, or var?
+#61) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
 #62) Fibonacci Series – 4 Variations
 
@@ -1329,9 +1065,9 @@ Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
-#63)What is Memoization ?
+#63) What is Memoization?
 
-#64)Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+#64) Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context :
 
@@ -1362,18 +1098,18 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#65)Reverse the array  using Bubble sort or Selection Sort or Insertion sort and Merge sort.
+#65) Sort the array using Bubble Sort, Selection Sort, Insertion Sort, or Merge Sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
-#66)Merge Two sorted array ?
+#66) Merge two sorted arrays.
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
 
-#67)You are given a sorted array of distinct integers in ascending order and a target value. Your task is to implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+#67) You are given a sorted array of distinct integers in ascending order and a target value. Implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
 let target = 25;
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 
-#68)Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#68) Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -1382,13 +1118,13 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#69)Write a function to calculate the sum of first n natural numbers without using a loop.
+#69) Write a function to calculate the sum of the first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#70)Write a function to print Fibonacci numbers till n without using a loop.
+#70) Write a function to print Fibonacci numbers up to n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]

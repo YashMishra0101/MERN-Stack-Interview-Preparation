@@ -1,5 +1,5 @@
 /*
-#1)Sorting in Javascript .
+#1)Sorting in JavaScript
 
 1. Sorting helps in arranging elements in ascending or descending order, finding smallest and greatest elements  
   => Sorting is used to organize data systematically.
@@ -19,7 +19,7 @@
   => This is due to the Unicode values of characters (uppercase letters have lower values than lowercase ones).
 
 
->>About Unique Code Value
+>>About Unicode Value
 
 Every character (like A, B, C, D), every emoji, and every currency symbol has a unique Unicode value that helps the computer understand 
 them. When we put any number inside double quotes or single quotes, it becomes a string. At this point, the number is no longer 

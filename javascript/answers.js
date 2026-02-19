@@ -1,723 +1,11 @@
-console.log("Js Question Section");
+console.log("JS Interview Answers Section Is Working");
 
 /*
-#Section One : Logical Building
+#JavaScript Interview Answers
 
-#Ans 1)
+#This file contains the answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
 
-----Checking Even or Odd Number
-
-let checkEvenOdd=(number)=>{
-if(!Number.isInteger(number)){
-  return "Please enter valid number";
-}
-
-return number %2===0 ? "Even number" : "Odd number";
-}
-
-console.log(checkEvenOdd(5));
-
-TC:O(1)
-SC:O(1)
-
-
-----Printing Even Number Between the two number
-
-let printEvenNumbers = (valueOne, valueTwo) => {
-  if (!Number.isInteger(valueOne) || !Number.isInteger(valueTwo)) {
-    return "Please enter valid number";
-  }
-
-  if(valueOne>valueTwo){
-    return "Value one must be less than equal to value two"
-  }
-
-  if(valueOne%2 !==0){
-    valueOne++;
-  }
-
-  let storeEven=[];
-  for (let a=valueOne; a<=valueTwo; a +=2){
-       storeEven.push(a)
-  }
-  return storeEven.length !==0 ? storeEven : "No even number available";
-};
-
-console.log(printEvenNumbers(2,2));
-
-TC:O(N)
-SC:O(N)
-
-
-----Printing Odd Number Between the two number
-
-let printOddNumbers = (numOne, numTwo) => {
-
-  if (!Number.isInteger(numOne) || !Number.isInteger(numTwo)) {
-    return "Please enter a valid number";
-  }
-
-  if (numOne > numTwo) {
-    return "Number one must be less or equal to Number Two";
-  }
-
-  if (numOne % 2 === 0) {
-    numOne++;
-  }
-  let printOdd = [];
-  for (let a = numOne; a <= numTwo; a += 2) {
-    printOdd.push(a);
-  }
-  return printOdd.length !== 0 ? printOdd : "No odd number available";
-};
-
-console.log(printOddNumbers(7, 15));
-
-TC:O(N)
-SC:O(N)
-
-
-----Checking Prime Number
-
-let checkPrimeNumber = (number) => {
-  if (!Number.isInteger(number)) {
-    return "Please enter a valid number";
-  }
-
-  if (number <= 1) {
-    return "It is not a prime number";
-  }
-
-  for (let check = 2; check <= Math.sqrt(number); check++) {
-    if (number % check === 0) {
-      return "It is not a prime number";
-    }
-  }
-  return "It's a prime number";
-};
-
-console.log(checkPrimeNumber(8));
-
-TC:O(√N)
-SC:O(1)
-
-
-----Print Prime number between Two numbers
-
-let printPrime = (valueOne, valueTwo) => {
-  if (!Number.isInteger(valueOne) || !Number.isInteger(valueTwo)) {
-    return "Please enter valid number";
-  }
-
-  if (valueOne > valueTwo) {
-    return "Value one must be less than or equal to value two";
-  }
-
-  let storePrime = [];
-
-  for (let check = Math.max(2, valueOne); check <= valueTwo; check++) {
-    let isPrime = true;
-
-    for (let a = 2; a <= Math.sqrt(check); a++) {
-      if (check % a === 0) {
-        isPrime = false;
-        break;
-      }
-    }
-
-    if (isPrime) {
-      storePrime.push(check);
-    }
-  }
-
-  return storePrime.length === 0 ? "No Prime number available" : storePrime;
-};
-
-console.log(printPrime(2, 11));
-
-TC:O(N√N)
-SC:O(N)
-
-#Ans 2 : Printing Prime number from 2 to n .
-
-  let storePrime = "";
-  for (let a = 2; a <= n; a++) {
-    let isPrime = true;
-    for (let b = 2; b <= Math.sqrt(a); b++) {
-      if (a % b === 0) {
-        isPrime = false;
-      }
-    }
-     if(isPrime){
-      storePrime+=a + " ";
-    }
-  }
-  return storePrime;
-};
-
-console.log(printPrimeNumber(25));
-
-TC:O(√N)
-SC:O(N)
-
-
-#Ans 3 : Patterns Question Answer
-
-----1)
-
-let patternOne = (num) => {
-  let store = "";
-  for (let i = 1; i <= num; i++) {
-    for (let a = 1; a <= num; a++) {
-      store += " * ";
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternOne(5));
-
-TC:O(N²)
-SC:O(N²)
-
-----2)
-
-let patternTwo = (value) => {
-  let store = "";
-  for (let a = 1; a <= value; a++) {
-    for (let b = 1; b <= a; b++) {
-      store += " * ";
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternTwo(5));
-
-TC:O(N²)
-SC:O(N²)
-
----3)
-
-let patternThree = (number) => {
-  let store = "";
-  for (let a = 1; a <= number; a++) {
-    for (let b = 1; b <= a; b++) {
-      store += b + " ";
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternThree(5));
-
-TC:O(N²)
-SC:O(N²)
-
----4)
-let patternFour = (value) => {
-  let store = "";
-  for (let a = 1; a <= value; a++) {
-    for (let b = 1; b <= a; b++) {
-      store += a + " ";
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternFour(5));
-
-TC:O(N²)
-SC:O(N²)
-
----5)
-let patternFive = (value) => {
-  let store = "";
-  for (let a = value; a >= 1; a--) {
-    for (let b = 1; b <=a; b++) {
-      store += " * " ;
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternFive(5));
-
-TC:O(N²)
-SC:O(N²)
-
-
----6)
-
-let patternSix = (value) => {
-  let store = "";
-  for (let a = value; a >= 1; a--) {
-    for (let b = 1; b <= a; b++) {
-      store += b;
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternSix(5));
-
-TC:O(N²)
-SC:O(N²)
-
----7)
-
-let printPatternSeven = (number) => {
-    let store = "";
-    
-    for (let a = 1; a <= number; a++) {
-        for (let space = 1; space <= number - a; space++) {
-            store += " ";  
-        }
-        for (let star = 1; star <= 2 * a - 1; star++) {
-            store += "*";  
-        } 
-        store += "\n";  
-    }
-
-    return store;
-};
-
-console.log(printPatternSeven(5));
-
-TC:O(N²)
-SC:O(N²)
-
----8)
-
-let patternEight=(number)=>{
-  let store="";
-  for(let a=number; 1<=a; a--){
-      for(let space=1; space<=number-a; space++){
-          store+=" ";
-      }
-      for(let star=1; star<=2*a-1; star++){
-          store+="*";
-      }
-       store+="\n";
-  }
- return store;
-}
-
-console.log(patternEight(5))
-
-TC:O(N²)
-SC:O(N²)
-
-
----9)
-
-let patternNine = (number) => {
-  let store = "";
-
-  for (let a = 1; a <= number; a++) {
-    for (let space = 1; space <= number - a; space++) {
-      store += " ";
-    }
-    for (let star = 1; star <= 2 * a - 1; star++) {
-      store += "*";
-    }
-    store += "\n";
-  }
-  for (let a = number; 1 <= a; a--) {
-    for (let space = 1; space <= number - a; space++) {
-      store += " ";
-    }
-    for (let star = 1; star <= 2 * a - 1; star++) {
-      store += "*";
-    }
-    store += "\n";
-  }
-
-  return store;
-};
-
-console.log(patternNine(5));
-
-TC:O(N²)
-SC:O(N²)
-
----10)
-
-let patternTen=(value)=>{
-    let store="";
-    for(let a=1; a<=value*2-1; a++){
-         let star=a;
-         if(a>value){
-             star=2*value-a;
-         }
-        for(let b=1; b<=star; b++){
-            store+="*";
-        }
-        store+="\n";
-    }
-    return store;
-}
-
-console.log(patternTen(5))
-
-TC:O(N²)
-SC:O(N²)
-
----11)
-
-let patternEleven = (number) => {
-  let store = "";
-  for (let a = 1; a <= number; a++) {
-    for (let b = 1; b <= a; b++) {
-      a % 2 === 0
-        ? 
-        b % 2 === 0 ? (store += 1 + " "): (store += 0 + " ")
-        : 
-        b % 2 === 0 ? (store += 0 + " "): (store += 1 + " ");
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternEleven(5));
-
-TC:O(N²)
-SC:O(N²)
-
----12)
-
-let patternTwelve=(number)=>{
-    let store="";
-    for (let a=1; a<=number; a++){
-        for (let b=1; b<=a; b++){
-            store +=b;
-        }
-        for(let c=1; c<=2number-a2;c++){
-            store+=" ";
-        }
-        for(let d=a; 1<=d; d--){
-            store+=d;
-        }
-        store+="\n";
-    }
-    return store;
-}
-
-console.log(patternTwelve(5))
-
-TC:O(N²)
-SC:O(N²)
-
---13)
-
-let patternThirtheen=(n)=>{
-    let store="";
-    let c=1;
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=a; b++){
-            store+=c+" ";
-            c++;
-        }
-        store+="\n";
-    }
-    return store;
-}
-
-console.log(patternThirtheen(5))
-
-TC:O(N²)
-SC:O(N²)
-
---14)
-
-let patternFourteen = (value) => {
-  let store = "";
-  for (let a = 1; a <= value; a++) {
-    let print = 65;
-    for (let b = 1; b <= a; b++) {
-      (store += String.fromCharCode(print) + " "), print++;
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(patternFourteen(5));
-
-TC:O(N²)
-SC:O(N²)
-
---15)
-
-let patternFifteen=(value)=>{
-    let store="";
-    for (let a=value; a>=1; a--){
-        let print=65;
-        for (let b=1; b<=a; b++){
-            store+=String.fromCharCode(print)+" ";
-            print++;
-        }
-        store+="\n";
-    }
-    return store;
-}
-
-console.log(patternFifteen(5))
-
-TC:O(N²)
-SC:O(N²)
-
---16)
-
-let patternFifteen = (value) => {
-  let store = "";
-  let print = 65;
-  for (let a = 1; a <= value; a++) {
-    for (let b = 1; b <= a; b++) {
-      store += String.fromCharCode(print) + " ";
-    }
-    store += "\n";
-    print++;
-  }
-  return store;
-};
-
-console.log(patternFifteen(5));
-
-TC:O(N²)
-SC:O(N²)
-
----17)
-
-function patternSevenTeen(n) {
-  let store = "";
-  for (let a = 1; a <= n; a++) {
-    let alphabet = 65;
-    for (let space = 1; space <= n - a; space++) {
-      store += " ";
-    }
-    for (let b = 1; b <= 2 * a - 1; b++) {
-      store += String.fromCharCode(alphabet);
-      if(b>=a){
-        alphabet--
-      }
-      else{
-        alphabet++
-      }
-    }
-    store += "\n";
-  }
-  return store;
-}
-
-console.log(patternSevenTeen(5));
-
-TC:O(N²)
-SC:O(N²)
-
---18)
-
-let patternEighteen=(n)=>{
-    let store="";
-  for(let a=0; a<n; a++){
-      let alphabet=64;
-      let print=alphabet+n-a;
-      for(let b=0; b<=a; b++){
-          store+=String.fromCharCode(print) + " ",
-          print++;
-      }
-      store+="\n"
-  }
-  return store;
-}
-
-console.log(patternEighteen(5));
-
-TC:O(N²)
-SC:O(N²)
-
---19)
-
-let patternNineteen = (n) => {
-  let store = "";
-  let startCount = n;
-  let totalspace = 0;
- 
-    for (let firstPhase = 1; firstPhase <= n; firstPhase++) {
-      for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
-        store += "*";
-      }
-      for (let space = 1; space < totalspace * 2; space++) {
-        store += " ";
-      }
-      for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-        store += "*";
-      }
-      store += "\n";
-      if (firstPhase < n) {
-        startCount--; //5-4-3-2-1
-        totalspace++; //0-1-2-3-4
-      } else {
-        break;
-      }
-    }
-
-
-    for (let secondPhase = 1; secondPhase <= n; secondPhase++) {
-      for (let rightSideStar = 1;rightSideStar <= startCount;rightSideStar++
-      ) {
-        store += "*";
-      }
-      for (let space = 1; space < totalspace * 2; space++) {
-        store += " ";
-      }
-      for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-        store += "*";
-      }
-      store += "\n";
-      if (secondPhase < n) {
-        startCount++;
-        totalspace--;
-      } else {
-        break;
-      }
-    }
-    return store;
-};
-
-
-console.log(patternNineteen(5));
-
-TC:O(N²)
-SC:O(N²)
-
---20)
-
-let patternTwenty = (n) => {
-  let store = "";
-  let startCount = 1;
-  let totalspace = n - 1;
-
-  for (let firstPhase = 1; firstPhase <= n; firstPhase++) {
-    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
-      store += "*";
-    }
-    for (let space = 1; space <= totalspace * 2; space++) {
-      store += " ";
-    }
-    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-      store += "*";
-    }
-    store += "\n";
-
-    if (firstPhase < n) {
-      startCount++;
-      totalspace--;
-    } else {
-      startCount--;
-      totalspace++;
-    }
-  }
-  for (let secondPhase = 1; secondPhase < n; secondPhase++) {
-    for (let rightSideStar = 1; rightSideStar <= startCount; rightSideStar++) {
-      store += "*";
-    }
-    for (let space = 1; space <= totalspace * 2; space++) {
-      store += " ";
-    }
-    for (let leftSideStar = 1; leftSideStar <= startCount; leftSideStar++) {
-      store += "*";
-    }
-    store += "\n";
-    if (secondPhase < n) {
-      startCount--;
-      totalspace++;
-    } else {
-      break;
-    }
-  }
-  return store;
-};
-
-console.log(patternTwenty(5));
-
-TC:O(N²)
-SC:O(N²)
-
---21)
-let patternTwentyOne=(n)=>{
-    let store="";
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=n; b++){
-            if(a===1 || b===1 || a===n || b===n){
-                store+="*";
-            }
-            else{
-                store+=" ";
-            }
-        }
-        store+="\n";
-    }
-     return store;
-}
-
-console.log(patternTwentyOne(5))
-
-TC:O(N²)
-SC:O(N²)
-
---22)
-
-let patternTwentyOne=(n)=>{
-    let store="";
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=n; b++){
-            if(a===1 && (b===1 || b===n) || a===n && (b===1 || b===n) ||  a===2 && (b===2 || b===4)||  a===3 && b===3 || a===4 && (b===2 || b===4)){
-                store+="*";
-            }
-            else{
-                store+=" ";
-            }
-        }
-        store+="\n";
-    }
-     return store;
-}
-
-console.log(patternTwentyOne(5))
-
-TC:O(N²)
-SC:O(N²)
-
---23)
-
-let partternTwentyThree = (n) => {
-  let size = 2 * n - 1;
-  let store = "";
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      let minimumNumber = Math.min(i, j, size - i - 1, size - j - 1);
-      let print = n - minimumNumber;
-      store += print + " ";
-    }
-    store += "\n";
-  }
-  return store;
-};
-
-console.log(partternTwentyThree(4));
-
-TC:O(N²)
-SC:O(N²)
-----------------------------------------------------------------------------------------------------------------
-#Section 2 : For interviews
+>Note: For logic-building answers (Even/Odd/Prime numbers, Star Patterns, etc.), check the `logical-building` folder.
 
 #Ans 1
 
@@ -899,7 +187,7 @@ for (let b in userInfo) {
 }
 
 #Ans 10)
- Call, apply and blind are the pre build method in javascript with the helps that we can invoke the function with the help of this keyword.
+ Call, apply, and bind are pre-built methods in JavaScript. With their help, we can invoke a function with a specified `this` keyword.
 
 --1. `call()` Method
 
@@ -994,7 +282,7 @@ output:25
 output:Audi
 
 
-#Asn 11)
+#Ans 11)
 
 "this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js) and it also depends on how the function is called.
 
@@ -1055,7 +343,7 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 (In the global space, this refers to the window object (Browser). That is why, when we use an arrow function and try to print this, it gives us the window object)
 
 
-#13)
+#Ans 13)
 
 ---output 1)
 // console.log(person.seeOne());//My name is Yash Mishra.
@@ -1569,10 +857,10 @@ console.log(usersAge.userTwoName);
 
 
 #Ans 31)
----Type Coercion (koversion) vs Type casting and Concatenation concepts are available in “Concepts” section.
+---Type Coercion vs Type Casting and Concatenation concepts are available in the “Concepts” section.
 Ctrl + F ➤ Just search in concepts section : #20)  
 
-#Asn 32)
+#Ans 32)
 
 >🤚 IMP: Summary for Deep vs Shallow Copy:
 
@@ -1775,7 +1063,7 @@ let a=8;
 let b=2;
 
 console.log(8%2)//0
-console.log(2%8)//2 (if a%b and a<b so asnwer will be a)
+console.log(2%8)//2 (if a%b and a<b, the answer will be a)
 
 #Ans 44) 
 let a=5859;
@@ -1862,7 +1150,7 @@ let y=15++;
 console.log(y);
 
 output=Uncaught SyntaxError: Invalid left-hand side expression in postfix operation
-In simple lang we can not apply unary operator on constant value we can put on vairbale but not on constant value.
+In simple language, we cannot apply a unary operator on a constant value; we can apply it on a variable but not on a constant value.
 
 e)
 let p=10;
@@ -1879,7 +1167,7 @@ Same reason we cannot apply unary operator.
 
 let p=10;
 let ans=++(p++)
-First brakcet solved so :  ++(p++)=++11; (so after brakcet solved ++ is applying on constant value that's why it's giving error)
+First bracket solved so:  ++(p++)=++11; (so after bracket solved, ++ is applied on a constant value — that's why it's giving an error)
 
 #Ans 47)
 >A)
@@ -2057,7 +1345,7 @@ console.log(reverse);
 
 >>It modifies the original array
 
-So We can use this approch 
+So we can use this approach:
 
 let reverse=[...arr];
 
@@ -2198,13 +1486,13 @@ const checkPalindrom = (para) => {
 
   while (a < b) {
     if (para[a] !== para[b]) {
-      return "Not a palindrom";
+      return "Not a palindrome";
     }
     a++;
     b--;
   }
 
-  return "It's a palindrom";
+  return "It's a palindrome";
 };
 
 console.log(checkPalindrom(a));
@@ -2399,7 +1687,7 @@ check()
 
 console.log(umar);
 
-#Answer 62)
+#Ans 62)
 
 >>1)
 const fiboNumber = (n) => {
@@ -2498,7 +1786,7 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
-#Answer 64)
+#Ans 64)
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
 --- Loops vs Recursion in JavaScript 
@@ -2550,7 +1838,7 @@ console.log(bubbleSort(arr));
 --SC: O(1)
 
 >>Selection Sort
----Selection Sort is a sorting algorithm where we Repeatedly find the smallest element from the unsorted part of the array and swap it with the correct postion (Initially with first one).
+---Selection Sort is a sorting algorithm where we repeatedly find the smallest element from the unsorted part of the array and swap it with the correct position (initially with the first one).
 let selectionSort = (arr) => {
   for(let a=0; a<arr.length-1; a++){
     let minValue=a;
@@ -2574,7 +1862,7 @@ console.log(selectionSort(arr));
 --SC: O(1)
 
 
->>Insertio sort 
+>>Insertion Sort
 >In insertion sort, we check one element at a time, compare it with the previous elements, and place it in its correct position.
 let insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {

@@ -65,7 +65,7 @@ const userName = () => {
   alert("Hi My Name is Vanin");
 };
 
-#2)What is the meaning of caret ^ symbol.
+#2) What is the meaning of the caret (^) symbol?
 
 When you see something like:
 
@@ -93,7 +93,7 @@ but it will not automatically upgrade to version 20.0.0 (because major version c
 --- So in short:
 `^` keeps you safe from breaking changes (major updates) but still lets you get bug fixes and new features from minor/patch updates not from major updates.
 
-#3)What is useState hook.
+#3) What is the useState hook?
 With the help of that we can update the state.
 
 useState returns an array with two elements. The first element is the current state value and 
@@ -103,7 +103,7 @@ We pass an initial state to `useState()`. This can be any data type: number, str
 
 When we call the update function, React re-renders the component with the new state value.
 
-#4)Fragment Tag in React.
+#4) Fragment Tag in React
 In React, a Fragment (<React.Fragment> or shorthand <> </>) lets us group multiple elements without adding 
 an extra node to the DOM.
 Normally, React components must return a single root element, so we wrap everything in a <div>. But that 
@@ -111,7 +111,7 @@ adds unnecessary DOM nodes. Fragments solve this by grouping elements invisibly.
 Fragments let us group elements without creating unnecessary DOM nodes. This keeps the DOM tree smaller, 
 cleaner, and better for performance in big apps.
 
-#5)Named and Default Exports in JavaScript.
+#5) Named and Default Exports in JavaScript
 Default Export → Only one per file. Imported without curly braces.
 Named Export → Can export multiple values. Imported with curly braces.
 
@@ -124,13 +124,13 @@ export const Add = (a, b) => a + b;
 import Greet from "./Greet";  // default import
 import { Add } from "./Add"; // named import
 
-#6)What is useRef hook.
+#6) What is the useRef hook?
 useRef is mainly designed to store a reference to DOM elements like input fields or buttons. We can access 
 the element using the .current property. Unlike state, changing a ref value does not trigger a re-render. 
 This makes useRef very useful when we want to manipulate the DOM or store mutable values without causing 
 the component to re-render.
 
-#7)What is Pure Component and Impure Component
+#7) What is a Pure Component and Impure Component?
 --Pure Component
 A pure component always renders the same output given the same props and state.
 It doesn’t rely on external factors or introduce side effects.
@@ -154,7 +154,7 @@ const RandomGreeting = ({ name }) => {
 
 A pure component in React behaves like a pure function in JavaScript — it always returns the same output for the same input, which makes it predictable and easy to optimize. An impure component, on the other hand, can produce different outputs for the same input because it depends on external factors like random values or time
 
-#8)Derived State in React
+#8) Derived State in React
 Derived state is a value that is calculated from existing state or props, instead of being stored separately in the state. It allows you to avoid storing redundant information and keeps your components more predictable and easier to maintain.
 
 ---Why Use Derived State:
@@ -191,7 +191,7 @@ SWC does exactly the same job as Babel - both transpiling modern JS for browser 
 
 For most modern React projects, --template react-swc is the better choice. The speed improvements are noticeable, and SWC supports all standard React/JSX features. Unless you have a specific need for Babel plugins, go with SWC!
 
-#10)What the different between Link ,NavLink and useNavigate.
+#10) What is the difference between Link, NavLink, and useNavigate?
 >In short 
 
 “`Link` and `NavLink` are JSX components used only inside the return statement for static navigation, while `useNavigate` is a hook used inside JS logic or functions for dynamic navigation and it can also handle going forward or backward.”
@@ -251,7 +251,7 @@ navigate(1);  // go forward
 -- 🔸 Link / NavLink = JSX Components → used for static navigation
 -- 🔸 useNavigate = Hook → used for dynamic navigation (logic-based)
 
-#11)What is ? (Optional Chaining) ?
+#11) What is ? (Optional Chaining)?
 Optional chaining is a feature in JavaScript that allows you to safely access properties of an object or call functions without running into errors when a value in the chain is undefined or null. Normally, if you try to access a property of undefined or null, JavaScript throws an error and your app may crash. Optional chaining solves this problem by using the ?. operator. When you write object?.property, JavaScript first checks if object is defined. If it is, it returns the property value. If it is undefined or null, it simply returns undefined instead of throwing an error. This makes your code cleaner and safer, especially when working with data from APIs, where some properties might be missing or delayed.
 
 --In simple language

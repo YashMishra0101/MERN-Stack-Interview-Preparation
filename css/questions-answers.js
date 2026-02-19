@@ -10,7 +10,7 @@
 
 --Total : 26 Questions
 
-# 1) How To add css in hmtl ?
+# 1) How to add CSS in HTML?
 
 There are three main ways to add CSS to HTML:
 
@@ -136,7 +136,7 @@ The cascade algorithm in CSS is the process the browser uses to decide which CSS
   position: fixed;
   position: sticky;
   
-There are Four Main Postion Property :
+There are Four Main Position Properties:
 
 1. `static` (Default):  
    - This is the default position for elements.  
@@ -151,14 +151,14 @@ There are Four Main Postion Property :
  
 5. `sticky`:  
    - The element sticks in place while you scroll within it's nearest parent container.  
-   - You have to give something like "top:0px" working it , if you just write postion:sticky so it will no work.
+   - You have to give something like "top:0px" for it to work; if you just write position:sticky, it will not work.
    - It's stops sticking once it reaches the parent's boundary.
    
 4. `fixed`:  
    - The element stays in a fixed spot on the screen, no matter how much you scroll.  
    - If top, bottom, left, or right are used, the element is positioned relative to the 
-   direct viewport(browser window/body) not to nearest parent , no realtive like thing is 
-   working her like with absolute. 
+   direct viewport (browser window/body), not to the nearest parent. No relative-like thing is 
+   working here, unlike with absolute. 
    
    --Key Differences Between Fixed and Sticky :
 
@@ -177,14 +177,14 @@ There are Four Main Postion Property :
 --Quick Revision About flex box
 
 In simple language, flexbox helps you design layouts and arrange items within a container according to our
-needs and it also helps us to creating reponsive design.
+needs, and it also helps us create responsive designs.
 
 > justify-content: justify-content helps aligns flex items along the x axis (Horizontally/row by default) or y axis vertical if `flex-direction` is column.
-> align-items: align-items helps aligns flex items along the y-axis (vertical/colum by default) or x-axis horizontal if flex-direction is set to row.
+> align-items: align-items helps align flex items along the y-axis (vertical/column by default) or x-axis horizontal if flex-direction is set to row.
 > space-between: The space is only between the items no space on the edges (left and right).
 > space-around: Equal space around items, but on edges (left and right) spaces are smaller.  
 > space-evenly: Equal space everywhere —between items and at the edges.  
-> basline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
+> baseline: When you use align-items: baseline, it aligns the text of all items so that their baseline (the line where text sits) is aligned horizontally.
 > align-self: The align-self property specifies the alignment for the selected item inside the flexible container.
 > align-content in CSS is used to control the spacing between multiple rows of items in a flex container. It works only when the container has multiple rows (using flex-wrap: wrap).
   --Works only: When the flex container has multiple lines (enabled by flex-wrap: wrap or wrap-reverse),Does not affect ,Single-line flex containers.
@@ -250,7 +250,7 @@ won’t affect it. The item will stay at that width.
 --1. For Creating Grid
 
 - grid-template-rows:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
-- grid-template-colums:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
+- grid-template-columns:  1rem 1rem 1rem  or  1fr 1fr 1fr  or  repeat(3, 1fr)  or repeat(3, minmax(2rem, 1fr))  or  repeat(auto-fit, minmax(2rem, 1fr))
 
 
 ---2. For Creating Gaps
@@ -865,7 +865,7 @@ Reusability: Change a value in one place, and it updates everywhere.
 Maintainability: Your CSS is easier to read and modify.
 Theming: Easily implement themes by switching variable values.
 
-# 19) Tell me which is the better approach in developemt and Why ?
+# 19) Tell me which is the better approach in development, and why?
 *{
   margin: 0;
   padding: 0;
@@ -896,7 +896,7 @@ Ans : second approach because:
 
 In short: The second approach avoids hidden bugs caused by pseudo-elements and ensures your layout is consistent everywhere.
 
-# 20) Image (img) is a inline element so why we can able to set widht and height of <img> tag (We can set height & widht on inline element) ?
+# 20) Image (img) is an inline element, so why can we set height and width on the <img> tag (We can set height & width on inline elements)?
 
 The `<img>` tag is an inline element, but since it contains external content (the image), 
 the browser allows us to set its `height` and `width`. This is because the `<img>` tag is specifically 
@@ -904,7 +904,7 @@ designed to handle images, making it a special inline element that supports dime
 
 # 21) Float and Clear 
 
---Before flex box and grid we was using Float and Clear 
+--Before flexbox and grid, we used to use Float and Clear.
 
 Float:
 The float property is used to position elements to the left or right within their container, allowing text or 
@@ -919,7 +919,7 @@ When you use float on an element (like an image), other elements (like text) can
 property tells the browser:"Stop wrapping content around the floated element and start below it."
 
 
-# 22)About CSS untis 
+# 22) About CSS Units
 
 ---CSS units Video Link (Lang : English) : https://youtu.be/fzZTvLmmTzM?si=ez-WddNN-JNDefco  [🤚 Watch this video first  ]
 
@@ -985,12 +985,12 @@ li {
 
 # 24)About media query 
 
->Watch video direcly on youtube about media query atleast watch minimum Two videos
+>Watch a video directly on YouTube about media queries. At least watch a minimum of two videos.
 
 English : https://youtu.be/K24lUqcT0Ms?si=eL4f53v2J8LFVknv
 Hindi : https://youtu.be/eHye3PxH4jU?si=qkRLpAbZ69x8NfEe
 
->>Tips for Using Media Querie
+>>Tips for Using Media Queries
 
  1. Start Mobile-First: Define base styles for smaller screens, then override for larger screens.
  2. Use Relative Units: Use `em` or `rem` for breakpoints to maintain scalability.
@@ -1294,7 +1294,7 @@ its corners during the process.
 
 4. Using Absolute Positioning
 <div style="position: relative; height: 100vh;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> --- 🤚🖖 We are applying on child not parent so we if need to center the box acc to parent so we have to use transform: translate(-50%, -50%); without that it will not center acc to parent ( Please do it Pratically 🧑‍💻)
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> --- 🤚🖖 We are applying on the child, not the parent. So if we need to center the box relative to the parent, we have to use transform: translate(-50%, -50%); without that it will not center relative to the parent. (Please do it practically 🧑‍💻)
         Centered Content
     </div>
 </div>

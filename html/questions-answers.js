@@ -5,18 +5,18 @@
 
 > This is for Interview Preparation purposes, not for learning HTML from scratch. Make sure you first learn HTML.  
 
-> I have covered the Most Frequently asked HTML questions and Concepts for Entry-Level and Fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the Most Important topics and Question. This should be sufficient for entry-level roles and for job interviews.  
+> I have covered the Most Frequently asked HTML questions and Concepts for Entry-Level and Fresher job interviews. Since HTML is only a small part of most interviews, I’ve focused on the Most Important topics and Questions. This should be sufficient for entry-level roles and for job interviews.  
 
 -- 💻 Total Questions : 18
 
-# 1) How to apply comment in html ?
+# 1) How to apply a comment in HTML?
 Ans :
 
 Syntax: <!-- Your comment goes here -->
 Anything inside the `<!--    -->` tags is treated as a comment, meaning it won't be rendered on the webpage.>
 
 
-# 2) What is the different between HTML(Hyper Text Markup language) and HTM5 (HTM5 is the Latest Version of HTML)?
+# 2) What is the difference between HTML (HyperText Markup Language) and HTML5 (HTML5 is the latest version of HTML)?
 Ans :
 
  1)
@@ -67,7 +67,7 @@ Responsive design ensures that websites adapt to different screen sizes and orie
 2. Adjusting Zoom Level: The `initial-scale=1.0` part ensures that the page is not zoomed in or out on mobile, making it easier to read without manually resizing.
 
 
-# 3)What is the diffrent between HTML and XHTML ?
+# 3) What is the difference between HTML and XHTML?
 Ans:
 
 XHTML stands for Extensible Hypertext Markup Language. It’s a combination of HTML and XML (Extensible Markup Language). 
@@ -92,11 +92,11 @@ It was developed to make HTML more strict and well-structured, like XML. It enfo
 XHTML was developed before HTML5. XHTML, short for Extensible Hypertext Markup Language, was introduced in 2000 as an 
 effort to make HTML more strict and compatible with XML and HTML5 came later, officially introduced in 2014.
 
-# 4)What is the role of DOCTYPE in HTML and What if we remove the <!DOCTYPE html> from the HTML ?
+# 4) What is the role of DOCTYPE in HTML, and what happens if we remove the <!DOCTYPE html> from the HTML?
 Ans:
 
 The `DOCTYPE` declaration is used to tell the browser which version of HTML you are using in your document. 
-It is important because it helps the browser render the page acc to current version of HTML.
+It is important because it helps the browser render the page according to the current version of HTML.
 
 In simpler terms, the `DOCTYPE` acts like a signal to the browser to handle your HTML code in a proper 
 and consistent way.
@@ -124,7 +124,7 @@ will switch to "Quirks mode", where it uses outdated rendering rules from older 
 2. SEO-related issues: Search engines may not interpret the page correctly, leading to poor rankings.   
 3. Cross-browser compatibility issues: The page may render differently across browsers, causing inconsistencies.   
 
-# 5)What is the Differences between head and body in html and where to place JS link reference ?
+# 5) What are the differences between head and body in HTML, and where should we place the JS link reference?
 Ans:
 
     The<head> element is where you place meta-information (information about the document) are present.
@@ -170,14 +170,14 @@ Ans:
 
 For most cases, placing JavaScript just before `</body>` remains the preferred industry practice.
 
-# 6)What is title tag and it's important?
+# 6) What is the title tag and what is its importance?
 Ans:
 
 =>For adding title 
-  Seo:search engine us the title as the main heading for search results.
+  SEO: Search engines use the title as the main heading for search results.
   Bookmarks/Favorites: When a user bookmarks or adds a webpage to favorites, the <title> tag is used as the default name.
 
-# 7)What is meta tag and tell me some names ?
+# 7) What is a meta tag? Name some common ones.
 Ans:
 
 A meta tag is an HTML element used to provide metadata (information about the webpage) to browsers and search engines. Meta tags 
@@ -208,7 +208,7 @@ page, though it’s less significant in modern SEO.
 Use: Provides a way to target specific search terms for SEO purposes (though modern SEO relies less on this).
 
 
-# 8)What is tags , content and Element in HTML ?
+# 8) What are tags, content, and elements in HTML?
 Ans:
 
                   Opening Tag        Closing Tag  
@@ -222,7 +222,7 @@ Ans:
                           HTML Element 
   (A combination of an opening tag, closing tag and content is called an HTML element.)                       
          
-# 9) What is block and inline tag and what is div and span tag ?
+# 9) What are block and inline tags? What are the div and span tags?
 Ans:
 
 Block tags : Block tags take up the full width of their container by default.
@@ -270,7 +270,7 @@ inline-block or block. This allows inline elements to behave like block elements
 9. `<code>` - Displays code snippets inline.
 10. `<i>` - Italicizes text (often used for stylistic purposes). 
 
-# 10)What is anchor tag ?
+# 10) What is the anchor tag?
 Ans:
 
 With the help of the **anchor (`<a>`) tag, we can create hyperlinks using the `href` attribute, which is placed 
@@ -295,12 +295,12 @@ Ans:
   <hr>
   <p>Second Section</p>
 --
-- `<img>`: with the help if img we can display an image use src attribue and and use alt attribute we can display the image 
+- `<img>`: With the help of img we can display an image using the src attribute, and the alt attribute displays the image 
 description, which appears if the image fails to load.
  
  -- <img src="image.jpg" alt="A description of the image">
 
-# 12)What is semantic tags ?
+# 12) What are semantic tags?
 Ans:
 
 A semantic element clearly describes its meaning to both the Browser and the Developers.
@@ -328,7 +328,7 @@ A semantic element clearly describes its meaning to both the Browser and the Dev
 
 - `<details>`: Creates a collapsible section where users can click to show or hide additional information, like FAQs or extra details.
 
-# 13)Headin Tag ?
+# 13) Heading Tags
 Ans:
 
 There are a total of 6 heading tags, from <h1> to <h6>. <h1> has the largest size, followed by <h2>, which is 
@@ -337,7 +337,7 @@ to define headings on a page, with the main heading usually placed in <h1>. Prop
 an impact on SEO, as search engines give more importance to the content in <h1> for understanding the page’s main 
 topic.
  
-# 14)Empty and Self closing tags ?
+# 14) Empty and Self-Closing Tags
 Ans:
 
 In HTML5, empty tags and self-closing tags are the same and can simply be written without a closing slash.

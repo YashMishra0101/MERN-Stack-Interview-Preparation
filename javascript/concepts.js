@@ -12,7 +12,7 @@ JavaScript was developed by Brendan Eich in just 10 days in 1995 while he was wo
 Initially named Mocha, it was later called LiveScript before adopting the name JavaScript. It's an interpreted language,
 meaning it executes code line by line and is single-threaded.
 
-JavaScript can be run in browsers and Node.js. Browsers use Javascript Enging for running js code like.
+JavaScript can be run in browsers and Node.js. Browsers use a JavaScript Engine for running JS code.
 
 JavaScript Engine : A JavaScript engine is responsible for executing JavaScript code in the browser. 
 It processes JavaScript, optimizes it, and runs scripts efficiently.
@@ -38,7 +38,7 @@ interpreted language, it benefits from JIT compilation in engines like V8, which
 V8 uses just-in-time (JIT) compilation to translate JavaScript into optimized machine code at runtime, which speeds up
 execution. So, while JavaScript benefits from improved performance with V8, it remains rooted in its interpreted nature.
 
--JavaScript is a synchronous single-threaded language means it excute code line by line.
+-JavaScript is a synchronous single-threaded language, meaning it executes code line by line.
 
 #1)Three way to declared variable in javascript (Var,let,Const)
 
@@ -135,7 +135,7 @@ const arrow =(print,printTwo)=>{
     console.log(print,printTwo);
 }
 
-arrow ("I am a arrow Fucntion", "✋Two");
+arrow ("I am an arrow Function", "✋Two");
 
 >If there is a single Parameter in arrow function
 
@@ -402,7 +402,7 @@ one()
 start();
 
 
-#7)Asyn await
+#7)Async Await
 
 Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides additional functionality. With the help of async, a Promise is created automatically. 
 
@@ -507,7 +507,7 @@ userInfo();
 --The async/await version is cleaner and easier to understand, right.
 
 
-#8)Scope chain, Lexical Scope (Closer)
+#8)Scope Chain, Lexical Scope (Closure)
 
 >Scope Chain
 
@@ -569,7 +569,7 @@ In this example:
 -Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
 
 
-#9)What is closer
+#9)What is Closure
 
 A closure in JavaScript means that an inner function has access to the outer function’s variable and even after 
 the outer function has completed execution.
@@ -590,7 +590,7 @@ print()
 
 --Static Languages:
 
-Static programming languages, such as Java, C++,Kotlin etc require the developer to explicitly declare the data type of
+Static programming languages, such as Java, C++, Kotlin, etc. require the developer to explicitly declare the data type of
 variables at the time of declaration. For example, in Java, you would write `int number = 10;`, where the type `int` must 
 be mentioned. These languages use a compiler to convert the entire source code into machine code before execution. The 
 compiler scans the whole codebase during this compilation phase, and this process happens before the program is run.
@@ -602,7 +602,7 @@ many problems can be caught early, reducing runtime failures and improving overa
 
 --Dynamic Languages:
 
-Dynamic programming languages, such as Python, JavaScript, PHP etc do not require developers to explicitly specify variable 
+Dynamic programming languages, such as Python, JavaScript, PHP, etc. do not require developers to explicitly specify variable 
 types during declaration. For instance, you can simply write `number = 10` in Python or JavaScript without mentioning the type. 
 These languages use an interpreter, which reads and executes the code line by line during runtime, unlike static languages
 where code is compiled beforehand.
@@ -610,7 +610,7 @@ where code is compiled beforehand.
 In dynamic languages, code is interpreted at runtime, so errors are only detected when the interpreter reaches the specific
 line causing the issue. This means the program may execute partially before throwing an error. While dynamic languages offer more
 flexibility, quicker prototyping, and faster development cycles, they can also introduce unexpected bugs that are harder to trace,
-specially in larger codebases.
+especially in larger codebases.
 
 
 #11) Hoisting Explained
@@ -729,13 +729,13 @@ b()  //ReferenceError: Cannot access 'b' before initialization
 and `const` variables are hoisted but not initialized (temporal dead zone) and gives ReferenceError ( ReferenceError: Cannot access 'variable' before initialization )
 
 
-#12)Tempory Dead Zone (TDZ)
+#12)Temporal Dead Zone (TDZ)
 
 The Temporal Dead Zone (TDZ) refers to the period in which variables declared with let or const are hoisted but 
 cannot be accessed until the code execution reaches their declaration. If we try to access them before declaration,
  it results in a ReferenceError. This is known as the Temporal Dead Zone.
 
---Simple Explaination
+--Simple Explanation
 
 Temporal Dead Zone (TDZ) means you cannot access a variable declared with let or const before its declaration. If you try, 
 it throws a ReferenceError. (Uncaught ReferenceError: Cannot access 'variableName' before initialization)
@@ -869,7 +869,7 @@ JavaScript first creates the Global Execution Context and then creates additiona
 
 -------------------
 
-??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It ?
+??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It?
 
 Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value. When the original value changes, the copied value does not change.
 
@@ -1315,12 +1315,12 @@ The for loop is used to repeat a block of code a specific number of times.
    console.log(`${key}:${info[key]}`);
  }
 
->Inportant Info
+>Important Info
 
 ??? Can we use a for in loop for an array?
 
 If we use for in with an array, it gives us the index numbers instead of the array values. If we need array values,
-we need to use it this way: console.log(arr[a]) instant of console.log(a).
+we need to use it this way: console.log(arr[a]) instead of console.log(a).
 
 --5)For of loop (use for array)
 
@@ -1330,7 +1330,7 @@ we need to use it this way: console.log(arr[a]) instant of console.log(a).
    console.log(a);
  }
 
-??? Can we use for of loop with obejct ?
+??? Can we use for of loop with objects?
 
 Ans=>we cannot use a for...of loop directly with objects because for...of is designed to iterate over iterable objects, like 
 arrays, strings, maps, and sets. Objects are not inherently iterable.However, you can use for...of with objects indirectly 
@@ -1448,11 +1448,11 @@ for (let [index, value] of arr.entries()) {
  Index: 2, Value: Hello
 
 
-#20)Type Coercion (koversion) vs Type casting and Concatenation
+#20)Type Coercion vs Type Casting and Concatenation
 
 >Coerces
 
---- Type Coercion (koversion) (Automatic conversion)
+--- Type Coercion (Automatic Conversion)
 
 Type coercion is when JavaScript automatically converts one data type to another behind your back, without you asking for it.
 
@@ -1889,7 +1889,7 @@ console.log(spliced); // 👉 [2, 3]
 console.log(arr);     // 👉 [1, 4, 5] ❌ Original changed
 
   ❌ Modifies original array
-  🧠 Syntax: `array.splice(startIndex, deleteCount, repalceitems)`
+  🧠 Syntax: `array.splice(startIndex, deleteCount, replacementItems)`
   🧨 Can delete, insert, or replace items
 
 
