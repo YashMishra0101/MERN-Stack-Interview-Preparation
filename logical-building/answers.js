@@ -1,9 +1,7 @@
-console.log("Logical Building Answers Section Is Working");
-
 /*
 #Logical Building Answers
 
-#This file contains the solutions for all logical building questions — including Even/Odd/Prime number problems and 23 Star Pattern problems. Each solution includes its Time Complexity (TC) and Space Complexity (SC).
+#This file contains the solutions for all logical building questions — including Even/Odd/Prime number problems and 22 Star Pattern problems. Each solution includes its Time Complexity (TC) and Space Complexity (SC).
 
 #Ans 1)
 
@@ -675,32 +673,14 @@ console.log(patternTwentyOne(5))
 TC:O(N²)
 SC:O(N²)
 
---22)
-
-let patternTwentyOne=(n)=>{
-    let store="";
-    for(let a=1; a<=n; a++){
-        for(let b=1; b<=n; b++){
-            if(a===1 && (b===1 || b===n) || a===n && (b===1 || b===n) ||  a===2 && (b===2 || b===4)||  a===3 && b===3 || a===4 && (b===2 || b===4)){
-                store+="*";
-            }
-            else{
-                store+=" ";
-            }
-        }
-        store+="\n";
-    }
-     return store;
-}
-
 console.log(patternTwentyOne(5))
 
 TC:O(N²)
 SC:O(N²)
 
---23)
+--22)
 
-let partternTwentyThree = (n) => {
+let patternTwentyThree = (n) => {
   let size = 2 * n - 1;
   let store = "";
   for (let i = 0; i < size; i++) {
@@ -714,7 +694,7 @@ let partternTwentyThree = (n) => {
   return store;
 };
 
-console.log(partternTwentyThree(4));
+console.log(patternTwentyThree(4));
 
 TC:O(N²)
 SC:O(N²)

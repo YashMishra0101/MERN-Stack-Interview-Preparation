@@ -1,11 +1,7 @@
-console.log("JS Interview Answers Section Is Working");
-
 /*
 #JavaScript Interview Answers
 
 #This file contains the answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
-
->Note: For logic-building answers (Even/Odd/Prime numbers, Star Patterns, etc.), check the `logical-building` folder.
 
 #Ans 1
 
@@ -1576,90 +1572,6 @@ for (let a = 5; a > 0; a--) {
   factorial *= a;
 }
 console.log(factorial);
-
----3)
-let star = 6;
-
-const startPattern = (size) => {
-  let patternStore = "";
-  for (let a = 1; a <= size; a++) {
-    for (let b = 1; b <= size; b++) {
-      patternStore += "*";
-    }
-    patternStore += "\n";
-  }
-  return patternStore;
-};
-
-console.log(startPattern(star));
-
-
----4)
-let n = 5;
-
-const pattern = (count) => {
-  let patternStore = "";
-  for (let row = 0; row < 2 * count - 1; row++) {
-    let currentRow = row < count ? row : 2 * count - row - 2;
-    for (let space = 0; space < currentRow; space++) {
-      patternStore += " ";
-    }
-    let starCount = 2 * (count - currentRow) - 1;
-    for (let star = 0; star < starCount; star++) {
-      patternStore += "*";
-    }
-    patternStore += "\n";
-  }
-  return patternStore;
-};
-
-console.log(pattern(n));
-
---5)
-let n = 5;
-const Diamondpattern = (count) => {
-  let storePattern = "";
-  for (let upperRow = 1; upperRow <= count; upperRow++) {
-    for (let space = upperRow; space < count; space++) {
-      storePattern += " ";
-    }
-    for (let star = 1; star <= 2 * upperRow - 1; star++) {
-      storePattern += "*";
-    }
-    storePattern += "\n";
-  }
-
-  for (let bottomRow = count - 1; bottomRow >= 1; bottomRow--) {
-    for (let space = bottomRow; space < count; space++) {
-      storePattern += " ";
-    }
-    for (let star = 1; star <= 2 * bottomRow - 1; star++) {
-      storePattern += "*";
-    }
-    storePattern += "\n";
-  }
-  return storePattern;
-};
-
-console.log(Diamondpattern(n));
-
---6)
-let n = 3;
-const pattern = (count) => {
-  let num = 1;
-  let patternStore = "";
-  for (let a = 1; a <= count; a++) {
-    for (let printNum = 1; printNum <= count; printNum++) {
-      patternStore += num + " ";
-      num++;
-    }
-    patternStore += "\n";
-  }
-  return patternStore;
-};
-console.log(pattern(n));
-
-
 
 #Ans 61)
 When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from

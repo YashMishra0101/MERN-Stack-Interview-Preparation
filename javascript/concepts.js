@@ -1,10 +1,9 @@
 /*
 ### What’s This Section About ? 
 
-  This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a JavaScript,
-  It's not for complete beginners.
+#This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a JavaScript, It's not for complete beginners.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
 #0)Basic Info
 

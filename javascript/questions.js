@@ -1,10 +1,7 @@
-console.log("JS Interview Questions Section Is Working");
 /*
 #JavaScript Interview Questions
 
 #In this section, JavaScript-based questions are covered for interview preparation, along with other commonly asked output-based and conceptual questions which are frequently asked in coding rounds.
-
->Note: For logic-building questions (Even/Odd/Prime numbers, Star Patterns, etc.), check the `logical-building` folder.
 
 #1)
 
@@ -170,6 +167,7 @@ print();
 print.call(obj);
 
 --3)apply with arguments
+
 function add(a, b, c) {
   return a + b + c;
 }
@@ -190,6 +188,7 @@ bound.call({ age: 40 });
 //Once a function is bound using bind, its this cannot be changed by call or apply.
 
 --5)method borrowing
+
 const car1 = {
   brand: "BMW",
   getBrand() {
@@ -266,6 +265,7 @@ console.log(person.seeFour());
 console.log(person.seeFive());
 
 console.log(this);//in global space
+
 --2)
 function abc() {
   console.log(this);
@@ -334,7 +334,6 @@ for (let a = 1; a <= 5; a++) {
       console.log(a);
     }, 1000);
 }
-
 
 >b)
 for (var a = 1; a <= 5; a++) {
@@ -995,46 +994,6 @@ let str = "zZabcdedcjbAeeee";
 1)Use console.log() to display the current year.
 
 2) Create a for loop that calculates the factorial of 5.
-
-3)Write a program to print a 6×6 grid star pattern.
----n=6;
-******
-******
-******
-******
-******
-******
-
-4)Write a program to print the Hourglass / Inverted Diamond Pattern.
----n=5;
-
-*********
- *******
-  *****
-   ***
-    * 
-   ***
-  *****
- *******
-*********
-
-
-5)Write a program to print the Diamond Star Pattern.
-n=5;
-    *
-   ***
-  *****
- *******
-********* 
- *******
-  *****
-   ***
-    *
-6)Write a program to print a 3×3 grid of numbers from 1 to 9.
-1 2 3 
-4 5 6 
-7 8 9 
-
 
 #61) In JavaScript, what happens if you declare a variable without using let, const, or var?
 

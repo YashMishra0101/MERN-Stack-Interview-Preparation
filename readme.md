@@ -23,7 +23,6 @@ This guide covers the most common and practical topics for **entry-level** and *
 | `typescript/` | 🔷 **TypeScript** |
 | `backend/` | 🛠️ **Backend Basics** |
 | `dsa/` | 📊 **DSA** |
-| `practice/` | 🧑‍💻 **Practice** |
 
 ## 📂 Project Structure
 
@@ -48,10 +47,6 @@ Interview-Preparation/
 │   └── questions-answers.js
 ├── dsa/
 │   └── basic-notes.js
-├── practice/
-│   ├── practice.html
-│   ├── practice.css
-│   └── practice.js
 ├── .gitignore
 ├── IMPORTANT-NOTE.md
 ├── LICENSE

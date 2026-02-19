@@ -1,4 +1,3 @@
-console.log("Logical Building Questions Section Is Working");
 /*
 #Logical Building Questions
 
@@ -6,7 +5,7 @@ console.log("Logical Building Questions Section Is Working");
 
 #Topics Covered:
   - Even, Odd, and Prime Number Problems
-  - Star Pattern Problems (23 Questions)
+  - Star Pattern Problems (22 Questions)
 
 ---1) Write a JavaScript program to check whether a number is even, odd, or prime, and then print all even, odd, and prime numbers within a given range. You can choose any two numbers as the range limits: start and end.
 
@@ -93,10 +92,11 @@ n=5;
 7       
 9
 
-        ***
-    *****
-   *******
-  *********
+    *
+   *** 
+  *****
+ *******
+*********
 
 8)Pattern Eight (Reverse of Pattern Seven)
 n=5;
@@ -107,15 +107,17 @@ n=5;
 3
 1
 
-
 *********
  *******
   *****
    ***
-      9)Pattern Nine 
+    *
+    * 
+9)Pattern Nine 
 n=5;
 
-      ***
+    *
+   ***
   *****
  *******
 *********
@@ -123,17 +125,22 @@ n=5;
  *******
   *****
    ***
-      10)Pattern Ten
+    *
+
+10)Pattern Ten
 n=5;
 
-  **
+*
+**
 ***
 ****
 *****
 ****
 ***
 **
-  11)Pattern Eleven
+*
+
+11)Pattern Eleven
 n=5;
 
 1
@@ -152,7 +159,6 @@ n=5;
 
 13)Pattern Thirteen
 n=5;
-
 
 1
 2 3
@@ -213,10 +219,9 @@ n=5;
 **********
 **** ****
 ***   ***
-     
-  *
-  *
-     
+**     **    
+*       *
+**     **
 ***   ***
 **** ****
 **********
@@ -225,15 +230,15 @@ n=5;
 n=5;
 
 
-  *
-       
+*         *
+**       ** 
 ***     ***
 ****   ****
 ***** *****
 ****   ****
 ***     ***
-       
-  *
+**       **
+*         *  
 
 21)Pattern Twenty-One
 n=5;
@@ -245,16 +250,7 @@ n=5;
   *
 *****
 
-22)Pattern Twenty-Two
-n=5;
-
-
-  *
-   * 
-      
-  *
-
-23)Pattern Twenty-Three
+22)Pattern Twenty-Three
 n=4;
 7*7
 
