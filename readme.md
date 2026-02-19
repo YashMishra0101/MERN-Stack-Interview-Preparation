@@ -13,26 +13,53 @@ Welcome! This repository documents the interview questions, answers, and core co
 
 This guide covers the most common and practical topics for **entry-level** and **junior** positions:
 
-| Folder | Topic | Contents |
-|--------|-------|----------|
-| `html/` | 🌐 **HTML** | Interview questions & answers |
-| `css/` | 🎨 **CSS** | Interview questions & answers |
-| `javascript/` | ⚙️ **JavaScript** | Interview questions, answers & concepts |
-| `logical-building/` | 🧩 **Logical Building** | Even/Odd/Prime numbers & 23 Star Pattern problems |
-| `react/` | ⚛️ **React** | Interview questions & answers |
-| `typescript/` | 🔷 **TypeScript** | Concepts & fundamentals |
-| `backend/` | 🛠️ **Backend Basics** | Node.js, Express & MongoDB questions |
-| `dsa/` | 📊 **DSA** | Sorting & basic algorithm notes |
-| `practice/` | 🧑‍💻 **Practice** | Hands-on practice files (HTML, CSS, JS) |
+| Folder | Topic |
+|--------|-------|
+| `html/` | 🌐 **HTML** |
+| `css/` | 🎨 **CSS** |
+| `javascript/` | ⚙️ **JavaScript** |
+| `logical-building/` | 🧩 **Logical Building** |
+| `react/` | ⚛️ **React** |
+| `typescript/` | 🔷 **TypeScript** |
+| `backend/` | 🛠️ **Backend Basics** |
+| `dsa/` | 📊 **DSA** |
+| `practice/` | 🧑‍💻 **Practice** |
 
-## 📂 Structure
+## 📂 Project Structure
 
-Each folder generally contains:
-1. **Interview Questions & Answers** (`questions-answers.js`): Common questions with direct answers.
-2. **Concepts** (`concepts.js`): Simplified explanations to help understand the 'why' and 'how'.
-3. **Separate Q&A**: Some folders like `javascript/` split questions (`questions.js`) and answers (`answers.js`) into separate files.
+```
+Interview-Preparation/
+├── html/
+│   └── questions-answers.js       # HTML interview Q&A
+├── css/
+│   └── questions-answers.js       # CSS interview Q&A
+├── javascript/
+│   ├── questions.js               # JavaScript interview questions
+│   ├── answers.js                 # JavaScript interview answers
+│   └── concepts.js                # Core JavaScript concepts
+├── logical-building/
+│   ├── questions.js               # Logic-building problems
+│   └── answers.js                 # Solutions with explanations
+├── react/
+│   └── questions-answers.js       # React interview Q&A
+├── typescript/
+│   └── concepts.ts                # TypeScript fundamentals
+├── backend/
+│   └── questions-answers.js       # Node.js, Express & MongoDB Q&A
+├── dsa/
+│   └── basic-notes.js             # Sorting & algorithm notes
+├── practice/
+│   ├── practice.html              # HTML practice file
+│   ├── practice.css               # CSS practice file
+│   └── practice.js                # JavaScript practice file
+├── .gitignore
+├── IMPORTANT-NOTE.md              # Better Comments extension setup
+├── LICENSE                        # MIT License
+└── readme.md
+```
 
 > **Note:** This repository uses the [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) VS Code extension for color-coded highlights. See `IMPORTANT-NOTE.md` for setup details.
+
 
 ## 🤝 Contributing
 
