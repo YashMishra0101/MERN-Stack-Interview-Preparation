@@ -17,8 +17,8 @@ This guide covers the most common and practical topics for **entry-level** and *
 |--------|-------|
 | `html/` | 🌐 **HTML** |
 | `css/` | 🎨 **CSS** |
+| `logical-building/` | 🧩 **Logical Building** *(Star patterns, even/odd/prime number problems)* |
 | `javascript/` | ⚙️ **JavaScript** |
-| `logical-building/` | 🧩 **Logical Building** |
 | `react/` | ⚛️ **React** |
 | `typescript/` | 🔷 **TypeScript** |
 | `backend/` | 🛠️ **Backend Basics** |
@@ -28,9 +28,15 @@ This guide covers the most common and practical topics for **entry-level** and *
 
 ```
 Interview-Preparation/
-├── html/
+├── backend/
 │   └── questions-answers.js
 ├── css/
+│   └── questions-answers.js
+├── dsa/
+│   ├── questions.js
+│   ├── answers.js
+│   └── basic-notes.js
+├── html/
 │   └── questions-answers.js
 ├── javascript/
 │   ├── questions.js
@@ -43,12 +49,6 @@ Interview-Preparation/
 │   └── questions-answers.js
 ├── typescript/
 │   └── concepts.ts
-├── backend/
-│   └── questions-answers.js
-├── dsa/
-│   ├── questions.js
-│   ├── answers.js
-│   └── basic-notes.js
 ├── .gitignore
 ├── IMPORTANT-NOTE.md
 ├── LICENSE
