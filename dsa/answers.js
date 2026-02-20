@@ -5,6 +5,8 @@
 > This file contains answers and explanations for all DSA questions.
 > Each answer includes multiple approaches where applicable, along with Time Complexity (TC) and Space Complexity (SC).
 
+--Total: 21 Questions
+
 #Ans 1) Array Sum
 let arr = [10, 20, 30, 40, 50];
 
@@ -340,44 +342,7 @@ console.log(count);
 TC = O(n)
 SC = O(n)
 
-#Ans 13) Current Year & Factorial
---1)
-let getCurrentYear = new Date();
-console.log(getCurrentYear.getFullYear());
-
----2)
-let factorial = 1;
-for (let a = 5; a > 0; a--) {
-  factorial *= a;
-}
-console.log(factorial);
-
-#Ans 14) Variable Without let/const/var
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before
-declaring, it gives us an Uncaught ReferenceError.
-
-If you create a global variable by not using let, var, or const, you can definitely re-declare and re-assign it anywhere in your code.
-It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without
-any issues.
-
-This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,
-like Python, Java, or C++, have their own rules and scoping mechanisms.
-
----Example:
-
-function check(){
-  console.log("Just checking");
-  {
-      umar=23;
-  }
-}
-
-check()
-
-console.log(umar);
-
-#Ans 15) Fibonacci Series — 4 Variations
+#Ans 13) Fibonacci Series — 4 Variations
 
 >>1)
 const fiboNumber = (n) => {
@@ -468,7 +433,7 @@ const sumOfFiboNum = (n) => {
 
 console.log(sumOfFiboNum(n));
 
-#Ans 16) Memoization
+#Ans 14) Memoization
 Memoization is an optimization technique used to speed up programs by saving time. It works by storing the
 results of function calls in a cache. When the function is called again with the same inputs, it gets the
 result from the cache instead of running the function again. This helps save time and system resources.
@@ -476,7 +441,7 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
-#Ans 17) Recursion vs Loop (Call Stack)
+#Ans 15) Recursion vs Loop (Call Stack)
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
 --- Loops vs Recursion in JavaScript
@@ -499,7 +464,7 @@ performance, safety, and reliability.
 The JavaScript engine (like V8 in Chrome/Node.js, SpiderMonkey in Firefox, JavaScriptCore in Safari) has a call stack limit
 of usually around 10,000 to 20,000 function calls.
 
-#Ans 18) Sorting Algorithms
+#Ans 16) Sorting Algorithms
 
 >>Bubble Sort
 ---Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones bubble to the end.
@@ -571,7 +536,7 @@ console.log(insertionSort(arr));
 --TC: O(n²)
 --SC: O(1)
 
-#Ans 19) Merge Two Sorted Arrays
+#Ans 17) Merge Two Sorted Arrays
 
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90, 95, 102, 999];
@@ -608,7 +573,7 @@ console.log(mergeArray(arrayOne, arrayTwo));
 - Time Complexity: O(n + m) — where n and m are the lengths of the two arrays
 - Space Complexity: O(n + m)
 
-#Ans 20) Binary Search
+#Ans 18) Binary Search
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 let target = 25;
 
@@ -633,7 +598,7 @@ console.log(binarySearch(arr, target));
 - Time Complexity: O(log n)
 - Space Complexity: O(1)
 
-#Ans 21) Print N to 1 and 1 to N (Recursion)
+#Ans 19) Print N to 1 and 1 to N (Recursion)
 >>N to One
 
 let nToOne = (n) => {
@@ -657,7 +622,7 @@ OneToN(5);
 - Time Complexity: O(n)
 - Space Complexity: O(n) — due to recursive call stack
 
-#Ans 22) Sum of First N Natural Numbers (Recursion)
+#Ans 20) Sum of First N Natural Numbers (Recursion)
 
 let sumNumbers = (n) => {
   if (n === 0) return 0;
@@ -669,7 +634,7 @@ console.log(sumNumbers(10));
 - Time Complexity: O(n)
 - Space Complexity: O(n) — due to recursive call stack
 
-#Ans 23) Fibonacci Without a Loop (Recursion)
+#Ans 21) Fibonacci Without a Loop (Recursion)
 let fiboNumber = (n) => {
   if (n <= 0) return [];
   if (n === 1) return [0];
@@ -684,46 +649,5 @@ console.log(fiboNumber(10));
 
 - Time Complexity: O(n)
 - Space Complexity: O(n) — due to recursive call stack and returned array
-
-#Ans 24) Block Thread
-
----Proper synchronous busy-wait approach (truly blocks the thread)
-
-const blockThread = (seconds) => {
-  const end = Date.now() + seconds * 1000;
-  while (Date.now() < end) {
-    // busy-wait: keeps looping until the time has elapsed
-  }
-  console.log("Done");
-};
-
-console.log("Start");
-blockThread(3);
-// After 3 real seconds, "Done" is printed synchronously
-
-- Time Complexity: O(t) — where t is the number of milliseconds waited
-- Space Complexity: O(1)
-
----Alternative async approach (does not truly block the thread)
-
-> Note: The approach below uses async/await with setTimeout, so it does NOT truly block.
-> It only pauses execution within the async function. Use it when you want a non-blocking delay.
-
-console.log("Start");
-
-let loopDuration = async (para) => {
-  for (let a = 1; a <= para; a++) {
-    await new Promise((res) => {
-      setTimeout(() => {
-        res();
-        console.log(`Loop Duration is ${a}`);
-      }, 1000);
-    });
-  }
-};
-
-loopDuration(6).then(() => {
-  console.log("End");
-});
 
 */

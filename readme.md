@@ -3,11 +3,23 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-green.svg)](https://github.com/YashMishra0101/Interview-Preparation)
 
-Welcome! This repository documents interview questions, answers, and core concepts I have been learning and revising while preparing for MERN stack roles. It focuses on the essentials for **Frontend** and **Basic Backend** interviews.
+Welcome! This is an open-source repository designed to help developers prepare for MERN stack interviews. It covers interview questions, answers, and core concepts across Frontend and Basic Backend topics — structured and written to support genuine understanding, not just memorization.
 
-> 🚧 **Under Active Development** 🚧
+## 💡 Why This Repository?
+
+Preparing for your first technical interview can be challenging, especially when learning resources are scattered or difficult to follow. This repository brings together commonly asked interview questions and core concepts across the MERN stack, organized by topic and written in clear, straightforward language.
+
+It is designed for beginners and candidates applying for entry level roles. The goal is to provide a focused and well structured starting point, not to cover everything, but to cover what truly matters at this stage of a developer’s career.
+
+## 📢 Important Notice
+
+> 🚧 **This repository is under active development.**
 >
-> This is an **open-source project** that is currently under active development. New topics, questions, and concepts are being added regularly. While the existing content is ready for use and study, the repository is not yet complete. Contributions, suggestions, and feedback are always welcome as this project continues to grow.
+> Content is continuously being reviewed, improved, and expanded. New topics, questions, and explanations are added on a regular basis.
+>
+> While every effort is made to ensure accuracy and correctness, minor mistakes may still exist. If you notice an error or have a suggestion, contributions and feedback are always welcome — see the [Contributing](#-contributing) section below.
+>
+> This project is **open source** and free to use for personal learning and interview preparation.
 
 ## 📚 What's Inside?
 
@@ -60,7 +72,7 @@ Interview-Preparation/
 
 ## 🤝 Contributing
 
-Found a mistake or have a better explanation? Contributions are welcome!
+Found a mistake, want to add a new question or topic, or suggest an improvement? Feel free to open a Pull Request. All meaningful contributions are welcome.
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b improve/topic`).
@@ -70,7 +82,7 @@ Found a mistake or have a better explanation? Contributions are welcome!
 
 ## 📄 License
 
-This project is licensed under the [MIT License](./LICENSE). You are free to use, modify, and distribute this project — just give appropriate credit.
+This project is licensed under the [MIT License](./LICENSE). You are free to use, modify, and distribute this project for personal or educational purposes. If you share or build upon this work, please give appropriate credit by mentioning the original repository and author.
 
 ## 👤 Author
 

@@ -4,6 +4,8 @@
 # Note
 > This section covers JavaScript interview questions including output-based, conceptual, and coding problems commonly asked in interviews and coding rounds.
 
+--Total: 50 Questions
+
 #1) Type Coercion — Tell the Output
 
 --a)
@@ -927,6 +929,19 @@ let radius = 5;
 1. Find the circumference of a circle using the formula:
   👉 `2 × π × r`
   (The result must be a number, not a string, and must be limited to 2 decimal places.)
+
+#48) Solve the following:
+1) Use console.log() to display the current year.
+2) Create a for loop that calculates the factorial of 5.
+
+#49) In JavaScript, what happens if you declare a variable without using let, const, or var?
+
+#50) In JavaScript, the main thread is single-threaded.
+Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+
+For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
+
+Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
 
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Questions (Arrays, Strings, Sorting, Searching, Recursion)

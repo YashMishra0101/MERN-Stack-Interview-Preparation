@@ -6,7 +6,7 @@
 > Questions include Arrays, Strings, Sorting Algorithms, Searching, Recursion, and more.
 > For each problem, try to solve it yourself first before checking the answers file.
 
---Total: 24 Questions
+--Total: 21 Questions
 
 #1) Given an array of integers, calculate the total of all its values.
 
@@ -57,13 +57,7 @@ let str="YAsh";
 
 let str = "zZabcdedcjbAeeee";
 
-#13) Solve the following:
-1) Use console.log() to display the current year.
-2) Create a for loop that calculates the factorial of 5.
-
-#14) In JavaScript, what happens if you declare a variable without using let, const, or var?
-
-#15) Fibonacci Series — 4 Variations
+#13) Fibonacci Series — 4 Variations
 
 >Q1. Write a function to print the first `n` Fibonacci numbers.
 Example:
@@ -90,9 +84,9 @@ Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
-#16) What is Memoization?
+#14) What is Memoization?
 
-#17) Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+#15) Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context:
 
@@ -123,18 +117,18 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#18) Sort the array using Bubble Sort, Selection Sort, Insertion Sort, or Merge Sort.
+#16) Sort the array using Bubble Sort, Selection Sort, Insertion Sort, or Merge Sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
-#19) Merge two sorted arrays.
+#17) Merge two sorted arrays.
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90, 95, 102, 999];
 
-#20) You are given a sorted array of distinct integers in ascending order and a target value. Implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+#18) You are given a sorted array of distinct integers in ascending order and a target value. Implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
 let target = 25;
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 
-#21) Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#19) Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -143,22 +137,16 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#22) Write a function to calculate the sum of the first n natural numbers without using a loop.
+#20) Write a function to calculate the sum of the first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#23) Write a function to print Fibonacci numbers up to n without using a loop.
+#21) Write a function to print Fibonacci numbers up to n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 Explanation: Each number is the sum of the previous two numbers.
 
-#24) In JavaScript, the main thread is single-threaded.
-Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
-
-For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
-
-Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
 */

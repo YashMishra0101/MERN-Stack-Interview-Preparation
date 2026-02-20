@@ -4,6 +4,8 @@
 # Note
 > This file contains answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
 
+--Total: 50 Questions
+
 #Ans 1)
 
 In JavaScript, when the `+` operator is used between a string and a number, JavaScript performs type coercion by converting the number into a string and then concatenating them. As a result, you get a combined string. In contrast, other arithmetic operators (`-`, `*`, `/`, `%`) convert strings into numbers to perform mathematical operations. This difference is why `+` concatenates while other operators do normal math.
@@ -1226,6 +1228,85 @@ let radius = 5;
 let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
+#Ans 48) Current Year & Factorial
+
+--1) Display the current year:
+let getCurrentYear = new Date();
+console.log(getCurrentYear.getFullYear());
+
+--2) Calculate the factorial of 5:
+let factorial = 1;
+for (let a = 5; a > 0; a--) {
+  factorial *= a;
+}
+console.log(factorial);
+
+#Ans 49) Variable Declared Without let / const / var
+
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
+anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before
+declaring, it gives us an Uncaught ReferenceError.
+
+If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code.
+It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without
+any issues.
+
+This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,
+like Python, Java, or C++, have their own rules and scoping mechanisms.
+
+---Example:
+
+function check() {
+  console.log("Just checking");
+  {
+    umar = 23;
+  }
+}
+
+check();
+console.log(umar); // 23 — accessible globally
+
+#Ans 50) Block Thread
+
+---Proper synchronous busy-wait approach (truly blocks the thread)
+
+const blockThread = (seconds) => {
+  const end = Date.now() + seconds * 1000;
+  while (Date.now() < end) {
+    // busy-wait: keeps looping until the time has elapsed
+  }
+  console.log("Done");
+};
+
+console.log("Start");
+blockThread(3);
+// After 3 real seconds, "Done" is printed synchronously
+
+- Time Complexity: O(t) — where t is the number of milliseconds waited
+- Space Complexity: O(1)
+
+---Alternative async approach (does not truly block the thread)
+
+> Note: The approach below uses async/await with setTimeout, so it does NOT truly block.
+> It only pauses execution within the async function. Use it when you want a non-blocking delay.
+
+console.log("Start");
+
+let loopDuration = async (para) => {
+  for (let a = 1; a <= para; a++) {
+    await new Promise((res) => {
+      setTimeout(() => {
+        res();
+        console.log(`Loop Duration is ${a}`);
+      }, 1000);
+    });
+  }
+};
+
+loopDuration(6).then(() => {
+  console.log("End");
+});
+
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Answers (Arrays, Strings, Sorting, Searching, Recursion)
 //    have been moved to the dsa/ folder.
