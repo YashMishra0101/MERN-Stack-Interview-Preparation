@@ -7,8 +7,8 @@
 - tsc —init (if there is any error use this : npx tsc —init )
 - tsc —watch
 - tsc --init ( create ts config file)
-- clt + `  (For open current terminal)
-- clt + s 
+- Ctrl + `  (To open the current terminal)
+- Ctrl + S  (To save the file)
 
 #1)Tuples in TypeScript:
 
@@ -39,7 +39,7 @@ and maintain. Instead of using individual variables for each constant, you use a
 names. (Basically, Enums in TypeScript group values together so we don’t have to write them separately or 
 manage them as different variables. )
 
-Always use enums** when you need to represent fixed categories (like roles or statuses), and you want 
+Always use enums when you need to represent fixed categories (like roles or statuses), and you want
 to avoid confusion between numbers or strings. This makes your code cleaner and helps reduce errors. 
 
 🤚Important Note:In enums, we use `=` to assign values, unlike in objects where we use `:`.
@@ -93,7 +93,7 @@ if (typeof b === "string") {
 
 - Use Case: When you want flexibility like `any`, but with more control and type safety.
 
-3.Void
+3. Void
 
 `void` is used for functions that don't return anything. If a function is only supposed to 
 perform an action and not return a value, you use `void`.
@@ -113,7 +113,7 @@ let abcTwo = (): string => {
 
 4. Null and Undefined
 
-`null` and `undefined` are their own types in TypeScript. They represent no value or **an uninitialized 
+`null` and `undefined` are their own types in TypeScript. They represent no value or an uninitialized
 variable.
 
 
@@ -126,7 +126,7 @@ let d: undefined = undefined; // This variable is declared but not initialized
 
 5. Never
 
-`never` represents **a type that never happens. It’s used for functions that throw errors or
+`never` represents a type that never happens. It’s used for functions that throw errors or
  never finish (like infinite loops). It tells TypeScript that a function never returns a value at all.
 
 So, to clarify:
@@ -164,7 +164,7 @@ let errorFunction = (): never => {
   
 - Purpose: Function runs and finishes without returning anything.
 
-2.`never`:
+2. `never`:
 - Use: For functions that never finish or terminate unexpectedly.
 
 -Purpose: Used for functions that throw errors or run infinitely.

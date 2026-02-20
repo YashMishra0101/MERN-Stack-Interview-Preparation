@@ -1,16 +1,17 @@
 /*
-#JavaScript Interview Answers
+# JavaScript Interview Answers
 
-#This file contains the answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
+# Note
+> This file contains answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
 
-#Ans 1
+#Ans 1)
 
-In JavaScript, when the + operator is used between a string and a number, JavaScript performs type coercion (कोर्शन) by converting the number into a string and then concatenating them. As a result, you get a combined string. In contrast, other arithmetic operators (-, *, /, %) convert strings into numbers to perform mathematical operations. This difference is why + concatenates, while other operators do normal math.
+In JavaScript, when the `+` operator is used between a string and a number, JavaScript performs type coercion by converting the number into a string and then concatenating them. As a result, you get a combined string. In contrast, other arithmetic operators (`-`, `*`, `/`, `%`) convert strings into numbers to perform mathematical operations. This difference is why `+` concatenates while other operators do normal math.
 
-"Concatenation" just means joining things together nothing more. When we say "string concatenation," we’re specifically talking about joining strings together. In JavaScript, the + operator is what we use for string concatenation we are joining. So "Concatenation" just means joining things together and "string concatenation," we’re specifically talking about joining strings together.
+"Concatenation" simply means joining things together. "String concatenation" specifically means joining strings. In JavaScript, the `+` operator is used for string concatenation.
 
 >Note:
-so apart form + , for -,/ and % js do normal maths it does care about string.
+Apart from `+`, for `-`, `/`, `*`, and `%`, JavaScript performs normal math and does not care if the value is a string.
 
 ---a)
 let a=5;
@@ -50,10 +51,7 @@ console.log("b-h", b - h, typeof (b - h)); //9,number
 console.log("b+h", b + h, typeof (b + h)); //9, number
 
 console.log("Sum of a + b = " + a + b, typeof ("Sum of a + b = " + a + b)); //Sum of a + b =99 , string
-console.log(
-  a + b + " is a sum of a + b",
-  typeof (a + b + " is a sum of a + b"),
-); //18 is a sum of a + b , string
+console.log(a + b + " is a sum of a + b", typeof (a + b + " is a sum of a + b"),); //18 is a sum of a + b , string
 
 
 #Ans 2)
@@ -63,7 +61,7 @@ let functionOne = (parameter) => {
 }
 
 let functionTwo = () => {
-    return "Hello ji kaise ho aap";
+    return "Hello, how are you?";
 }
 
 console.log(functionOne(functionTwo));
@@ -97,8 +95,8 @@ console.log(functionOne(functionTwo));
 #Ans 6)
 
 //letFruit, orange, varFruit, orange
-//letFruit, apple, varFruit, apple);
-//letFruit, orange, varFruit, apple)
+//letFruit, apple, varFruit, apple
+//letFruit, orange, varFruit, apple
 
 #Ans 7)
 Hello, my name is  Yash Mishra. I am 22 years old.
@@ -148,20 +146,20 @@ func(); // ✅ Still prints "hidden" because of lexical scope
 
 #Ans 9)
 
-✅ for...of loop is used for arrays — it gives the values directly.
+✅ for...of loop is used for arrays — it provides the values directly.
 ✅ for...in loop is used to iterate over object keys.
-✅ for...in loop can be used on arrays — it gives the indexes instead of values.
+✅ for...in loop can be used on arrays — it provides the indexes instead of values.
 ❌ for...of cannot be used directly on objects — because plain objects are not iterable.
 
 
 let arr = [2, 4, 5, 6, 7, 8];
 
 for (let a of arr) {
-    console.log(a); // ✅ for...of → gives values of array
+    console.log(a); // ✅ for...of → provides values of array
 }
 
 for (let a in arr) {
-    console.log(a); // ✅ for...in → gives indexes of array
+    console.log(a); // ✅ for...in → provides indexes of array
 }
 
 let userInfo = {
@@ -170,11 +168,11 @@ let userInfo = {
 }
 
 for (let b in userInfo) {
-    console.log(b); // ✅ for...in → gives keys of object
+    console.log(b); // ✅ for...in → provides keys of object
 }
 
 for (let b in userInfo) {
-    console.log(userInfo[b]); // ✅ now it will gives values
+    console.log(userInfo[b]); // ✅ provides values of the object
 }
 
 ❌ for...of can't be used on plain objects (not iterable)
@@ -183,7 +181,7 @@ for (let b in userInfo) {
 }
 
 #Ans 10)
- Call, apply, and bind are pre-built methods in JavaScript. With their help, we can invoke a function with a specified `this` keyword.
+Call, apply, and bind are built-in methods in JavaScript that allow you to invoke a function with a specified `this` value.
 
 --1. `call()` Method
 
@@ -209,7 +207,7 @@ console.log(userInfo.call(userOne,"Full Stack Developer",23))
 console.log(userInfo.call(userTwo,"frontEnd-Developer",24))
 
 
--- 2. apply()` Method
+-- 2. `apply()` Method
 
 >Definition: `apply()` is similar to `call()`, but it takes the arguments as an array rather than individually.
 
@@ -235,7 +233,7 @@ console.log(userInfo.apply(userTwo,["FrontEnd-Developer","24"])) //--Pass Info I
 
 -- 3. `bind()` Method
 
-> Definition: `bind()` is a method that creates a new function with a specified `this` value, but does not invoke it immediately and arguments provided individually.
+> Definition: `bind()` creates a new function with a specified `this` value but does not invoke it immediately. Arguments are provided individually, just like `call()`.
 
 - Example:
 
@@ -261,7 +259,7 @@ console.log(userDataTwo())
 > Summary:
 - `call()`: Calls a function with a specific `this` value and individual arguments.
 - `apply()`: Like `call()`, but arguments are passed as an array.
-- `bind()`: Creates a new function with a specific `this` value but doesn’t call it immediately and individual arguments not in array form .
+- `bind()`: Creates a new function with a specific `this` value but does not call it immediately. Arguments are passed individually, not as an array.
 
 --Answer:
 1)
@@ -306,14 +304,14 @@ In both browsers and Node.js, `this` becomes `undefined` inside a regular functi
 
 --🔹 3. Inside an Object Method:
 
-If you use a normal function, `this` refers to the object itself and objects values.
+If you use a regular function, `this` refers to the object itself and its properties.
 
 If you use an arrow function, it does not have its own this. Instead, it uses lexical this, meaning it takes "this" from the surrounding scope where the function is defined.
 
 -----
 For arrow function
-- for object values: nothing in the browsers and `undefined` in the node.js 
-- for direct this: `Window object` in browsers and the {}->empty object` in node.js it behave like this value in global space
+- For object property values: returns `undefined` in browsers and `undefined` in Node.js.
+- For `this` directly: returns the `Window` object in browsers and `{}` (empty object) in Node.js — behaves the same as `this` in the global scope.
 ----
 
 
@@ -588,7 +586,7 @@ Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)
 
 #Ans 24)
 
-fetch("https://jsonplaceholder.typicode.com/todos/1")
+fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((response) => {
     return response.json();
   })
@@ -606,10 +604,10 @@ fetch("https://jsonplaceholder.typicode.com/todos/1")
 
 let info = async () => {
   try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
     let data = await response.json();
     console.log(data);
-  } catch {
+  } catch (error) {
     console.log(error);
   } finally {
     console.log("Code End");
@@ -811,8 +809,8 @@ console.log(userOne.userLogin("123")); ❌
 #Ans 30)
 ---Prototype
 
-Every object in JavaScript has a hidden property called [[Prototype]], which refers to another object called its prototype.
-This prototype object contains various properties and methods, which can be inherited by other objects through the prototype chain.
+Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.
+This prototype object contains properties and methods that can be inherited by other objects through the prototype chain.
 
 or 
 
@@ -930,7 +928,7 @@ let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 let ansOne=names.slice(1,3);
 console.log(ansOne);
 
-let ansTwo=names.splice(2,2,"Sucess");
+let ansTwo=names.splice(2,2,"Success");
 console.log(names);
 
 #Ans 34)
@@ -988,7 +986,7 @@ Babel is a JavaScript compiler/transpiler that allows developers to use the late
 
 
 >SWC
-SWC (Speedy Web Compiler) is like Babel’s ultra-fast younger sibling ⚡. It does the same job — compiling modern JavaScript (and TypeScript) into older, browser-compatible code — but it’s written in Rust, which makes it more faster than Babel.
+SWC (Speedy Web Compiler) is like Babel's ultra-fast younger sibling ⚡. It does the same job — compiling modern JavaScript (and TypeScript) into older, browser-compatible code — but it's written in Rust, which makes it significantly faster than Babel.
 
 >Bundlers
 Bundlers (such as Webpack, Parcel, esbuild, rollup and Vite) are powerful tools for the frontend. They take all files and assets (JavaScript, CSS, images, etc.) and bundle them into optimized files to ensure efficient loading. (use this)
@@ -1069,7 +1067,7 @@ console.log(a % 10); // 9
 
 
 #Ans 45) 
-console.log(10>5 && -55<56 && 67<88)//ture
+console.log(10>5 && -55<56 && 67<88)//true
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88<102)//true
@@ -1121,9 +1119,19 @@ console.log(value);//23
 let a = 3, b = 1;
 
 let c = a + b + a++ + b++ + ++a + ++b;
-console.log("a=" + a);
-console.log("b=" + b);
-console.log("c=" + c);
+console.log("a=" + a); // a=5
+console.log("b=" + b); // b=3
+console.log("c=" + c); // c=16
+
+// Step-by-step breakdown:
+// a=3, b=1
+// a   → 3  (a stays 3)
+// b   → 1  (b stays 1)
+// a++ → 3  (returns 3, then a becomes 4)
+// b++ → 1  (returns 1, then b becomes 2)
+// ++a → 5  (a becomes 5, returns 5)
+// ++b → 3  (b becomes 3, returns 3)
+// c = 3 + 1 + 3 + 1 + 5 + 3 = 16
 
 7)
 
@@ -1213,702 +1221,14 @@ applications.
 (In computer security, entropy means randomness or unpredictability)
 
 >B)
-Formula 2pir
-let radius=5;
-let ans =Number((2Math.PIradius).toFixed(2))
+// Formula: 2 × π × r
+let radius = 5;
+let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
-
-#Ans 48)
-let arr = [10, 20, 30, 40, 50];
-
----Simple for loop
-let arrTotal = 0;
-for (let a = 0; a < arr.length; a++) {
-  arrTotal += arr[a];
-}
-console.log(arrTotal);
-
-TC:O(n)
-SC:O(1)
-
----Using for of loop
-let sum = 0;
-for (let value of arr) {
-  sum += value;
-}
-console.log(sum);
-
----Using reduce
-let sum = arr.reduce((accum, next) => {
-  return accum + next;
-});
-console.log(sum);
-
-
-#Ans 49)
-let arr=[10,20,78,30,85,40,50,];
-
----First Solution :
-
-let biggestValue=arr[0]
-for(let i=1; i<arr.length; i++){
-    if(biggestValue<arr[i]){
-        biggestValue=arr[i]
-    }
-}
-
-console.log(biggestValue);
-
-TC:O(n)
-SC:O(1)
-
----Second Solution (In Industry)
-
-let arr=[10,20,78,4,30,85,40,50,];
-
-let max=Math.max(...arr)
-console.log(max);
-
-TC:O(n)
-SC:O(n)
-
-#Ans 50)
-let arr=[10,20,78,4,30,85,40,50,];
-
----First Solution
-
-let smallestValue=arr[0]
-for(let i=1; i<arr.length; i++){
-    if(arr[i]<smallestValue){
-        smallestValue=arr[i]
-    }
-}
-
-console.log(smallestValue);
-
-TC:O(n)
-SC:O(1)
-
----Second Solution 
-
-let arr=[10,20,78,4,30,85,40,50,];
-
-let min=Math.min(...arr)
-console.log(min);
-
-TC:O(n)
-SC:O(n)
-
-#Ans 51)
-let arr = [10, 20, 78, 4, 30, 85, 40, 50, 80, 86, 99, 87, 89, 9, 98, 99];
-let arr = [50, 50, 50, 50];
-let arr = [99, 99, 99,89, 87];
-
-let firstSecondMaxArray = (arr) => {
-  let firstMax = -Infinity;
-  let secondMax = -Infinity;
-  for (let a = 0; a < arr.length; a++) {
-    if (firstMax < arr[a]) {
-      secondMax = firstMax;
-      firstMax = arr[a];
-    } else if (arr[a] > secondMax && arr[a] < firstMax) {
-      secondMax = arr[a];
-    }
-  }
-  if (secondMax === -Infinity) {
-    secondMax = "No second max";
-  }
-
-  return { firstMax, secondMax };
-
-  // return {
-  //   firstMax,
-  //   secondMax: secondMax === -Infinity ? "No second max present" : secondMax,
-  // };
-};
-
-console.log(firstSecondMaxArray(arr1));
-
-#Ans 52)
-
----First Solution
-
-let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
-
-let reverse=arr.reverse();
-console.log(reverse);
-
->>It modifies the original array
-
-So we can use this approach:
-
-let reverse=[...arr];
-
-console.log(reverse.reverse());
-
----Second Way (Not optimal : We are creating New Array based on previous array it take same space like previous array )
-
-let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
-
-let revArray=[];
-for(let a=arr.length-1; a>=0; a--){
-   revArray.push(arr[a])
-}
-
-console.log(revArray);
-
----Third Solution (Optimal)
-
-let arr=[1,2,3,4,5,6,7,8,9,10,11,12];
-let arr=[0,45,98,1,33,1,-7,55];
-
-
-let a = 0;
-let b = arr.length - 1;
-
-while (a < b) {
-  let temp = arr[a];//In temp me 1 hai
-  arr[a] = arr[b];//In arr[a] means a[0]-->10 store huaa hai arr[arr.length-1]
-  arr[b] = temp;//and temp me 1 hai ab vo arr[b] me store ho gaya 
-  a++; 
-  b--;
-}
-
-console.log(arr);
-
-Method name : Two-pointer swapping technique (in-place reversal)
--Time Complexity: O(n)
--Space Complexity: O(1)
-
-#Ans 53)
-
-let arr=[0,0,1,0,1,0,1,1,0,1,0]
-
----First Approach
-let a = 0;
-let b = arr.length - 1;
-while (a < b) {
-  if (arr[a] === 1) {
-    let temp = arr[a];
-    arr[a] = arr[b];
-    arr[b] = temp;
-    b--;
-  }
-  if (arr[a] !== 1) {
-    a++;
-  }
-}
-
-console.log(arr);
-
--Time Complexity: O(n)
--Space Complexity: O(1)
-
----Second Approach (This one is better than first one) (Two Pointer - Partition Process used in QuickSort)
-
-let a=0;
-let b=0;
-
-while(a<arr.length){
-  if(arr[a]===0){
-    let temp=arr[a];
-    arr[a]=arr[b];
-    arr[b]=temp;
-    b++;
-  }
-  a++;
-}
-
-console.log(arr);
-
--Time Complexity: O(n)
--Space Complexity: O(1)
-
-
-#Ans 54) 
-
-let s="ramratan";
-
----Using simple loop
-
-for(let a=0; a<s.length;a++){
-    console.log(s[a]);
-    // console.log(s.charAt(a));
-}
-
----Using for of loop
-
-for(let a of s){
-    console.log(a);
-}
-
-
-#Ans 55)
-
-let s="ramratan";
-
-for(let a=s.length-1; a>0; a--){
-    console.log(s[a]);
-    // console.log(s.charAt(a));
-}
-
-#Ans 56)
-
----Solution One using pre build methods
-
-let checkPalindrom = (string) => {
-  let rev = string.split("").reverse().join("");
-  return rev === string ? true : false;
-};
-
----Second Solution
-
-let checkPalindrom = (string) => {
-    let rev="";
-  for (let i = string.length-1; i >= 0; i--) {
-       rev+=string[i]
-  }
-  return rev ===string ? true : false;
-};
-
-console.log(checkPalindrom("abcdef"));
-
----Third Solution using Two pointer 
-
-const checkPalindrom = (para) => {
-  let a = 0;
-  let b = para.length - 1;
-
-  while (a < b) {
-    if (para[a] !== para[b]) {
-      return "Not a palindrome";
-    }
-    a++;
-    b--;
-  }
-
-  return "It's a palindrome";
-};
-
-console.log(checkPalindrom(a));
-
-
-#Ans 57)
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let target = 13;
-
-const checkTarget = (target) => {
-  let right = 0;
-  let left = arr.length - 1;
-  while (right < left) {
-    let total = arr[right] + arr[left];
-    if (total < target) {
-      right++;
-    } else if (total > target) {
-      left--;
-    } else {
-      console.log(`Found: ${arr[right]} + ${arr[left]} = ${total}`);
-      return;
-    }
-  }
-  console.log("No Target Found");
-  return;
-};
-
-checkTarget(13);
-
--Time Complexity: O(n)
--Space Complexity: O(1)
-
-#Ans 58)
-//ASCII knowledge → A-Z = 65-90, a-z = 97-122
-let str = "YAsh";
-
-const changeCase = (para) => {
-  let newStr = "";
-  for (let a = 0; a < para.length; a++) {
-    let check = para.charCodeAt(a);
-    if (check >= 97 && check <= 122) {
-      newStr += String.fromCharCode(check - 32);
-    } else {
-      newStr += String.fromCharCode(check + 32);
-    }
-  }
-  return newStr;
-};
-console.log(changeCase(str));
-
-
-#Ans 59)
-
-let str = "zZabcdedcjbAeeee";
-
-let count = {};
-
-for (let a = 0; a < str.length; a++) {
-  let char = str[a].toLocaleLowerCase();
-
-  if (count[char]) {
-    count[char]++;
-  } else {
-    count[char] = 1;
-  }
-}
-
-console.log(count);
-
-TC = O(n)
-SC = O(n)
-
-#Ans 60)
---1)
-let getCurrentYear=new Date();
-console.log(getCurrentYear.getFullYear())
-
----2)
-let factorial = 1;
-for (let a = 5; a > 0; a--) {
-  factorial *= a;
-}
-console.log(factorial);
-
-#Ans 61)
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code—even from inside a function or block but after declaring but not before declaring if we try to access before 
-declaring it's gives us Uncaught ReferenceError.
-
-if you create a global variable by not using let, var, or const, you can definitely re-declare and re-assign it anywhere in your code. 
-It’s essentially like having a variable that’s always in the global scope, so you can change its value or even declare it again without 
-any issues.
-
-This behavior is pretty specific to JavaScript because of how it handles variable declarations and the global scope. Other languages, 
-like Python, Java, or C++, have their own rules and scoping mechanisms
-
----Example :
-
-function check(){
-  console.log("Just checking");
-  {
-
-      umar=23;
-  }
-}
-
-check()
-
-console.log(umar);
-
-#Ans 62)
-
->>1)
-const fiboNumber = (n) => {
-  if (n <= 0) return [];
-  if (n === 1) return [0];
-
-  let fiboNum = [0, 1];
-  for (let a = 2; a < n; a++) {
-    fiboNum.push(fiboNum[a - 2] + fiboNum[a - 1]);
-  }
-  return fiboNum;
-};
-
-console.log(fiboNumber(10));
-
---TC:O(n)
---SC:O(n)
-
->>2)
-
-const getFiboNumber = (n) => {
-  if (n < 0) return null;
-  if (n === 1) return 0;
-  if (n === 2) return 1;
-
-  let prev = 0;
-  let curr = 1;
-
-  for (let a = 3; a <= n; a++) {
-    let temp = prev + curr;
-    prev = curr;
-    curr = temp;
-  }
-  return curr;
-};
-
-console.log(getFiboNumber(n));
-
-
---TC:O(n)
---SC:O(1)
-
->>3)
-let n = 34;
-
-const positionOfFiboNum = (n) => {
-  if (n < 0) return "Invalid Number";
-  if (n === 0) return 1;
-  if (n === 1) return 2;
-  let prev = 0;
-  let curr = 1;
-  let position = 2;
-  while (curr < n) {
-    let temp = prev + curr;
-    prev = curr;
-    curr = temp;
-    position++;
-  }
-
-  return curr === n ? position : "Not a Fibonacci Number";
-};
-
-console.log(positionOfFiboNum(n));
-
---TC:O(n)
---SC:O(1)
-
->>4)
-let n = 10;
-
-const sumOfFiboNum = (n) => {
-  if (n <= 0) return null;
-  if (n === 1) return 0;
-  if (n === 2) return 1;
-
-  let prev = 0;
-  let curr = 1;
-  let sum = prev + curr;
-
-  for (let a = 3; a <= n; a++) {
-    let temp = prev+curr;
-    prev = curr;
-    curr = temp;
-    sum += curr;
-  }
-  return sum;
-};
-
-console.log(sumOfFiboNum(n));
-
-#Ans 63)Memoization
-Memoization is an optimization technique used to speed up programs by saving time. It works by storing the 
-results of function calls in a cache. When the function is called again with the same inputs, it gets the 
-result from the cache instead of running the function again. This helps save time and system resources.
-
-In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
-again, the program can return the saved result instead of calculating it again.
-
-#Ans 64)
-The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
-
---- Loops vs Recursion in JavaScript 
-
-In JavaScript, loops like for, while, or do-while run inside a single function call. No matter how many times the loop executes, 
-it doesn't add new function calls to the stack. That makes loops memory-efficient, fast, and safe from stack overflow. 
-They are ideal for simple, repetitive tasks like printing, counting, or iterating over arrays because they maintain a single 
-stack frame throughout execution (With loops, there’s just one function call on the call stack, and the loop runs repeatedly within
-that same frame. There’s no additional stack growth for each iteration, so it remains stable and efficient).
-
-In contrast, recursion creates a new function call for every step. So if the input size is large (for example, recurse(100000)), 
-it results in too many function calls, which can exceed the call stack limit and crash the program with a 👉 "Maximum call stack size 
-exceeded" error.
-
-Most browsers have a call stack size limit ranging from ~10,000 to 100,000 calls, depending on the engine and environment. 
-Recursion is great for problems like tree traversal, divide-and-conquer algorithms, and deeply nested structures. 
-However, JavaScript does not support Tail Call Optimization in most engines, meaning it can't reuse stack frames during deep 
-recursion. So for large input sizes, recursion is risky and must be used carefully, while loops are preferred for performance,
-safety, and reliability.
-
->👇👇👇
-The size of the call stack isn’t fixed in JavaScript by the language itself, The JavaScript engine (like V8 in Chrome/Node.js, 
-SpiderMonkey in Firefox, JavaScriptCore in Safari) the call stack limit is usually around 10,000 to 20,000 function calls.
-
-#Ans 65)
->>Bubble Sort
----Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones move to the end.
-function bubbleSort(arr) {
-  for (let a = 0; a < arr.length; a++) {
-    let isSort=false;
-    for (let b = 0; b < arr.length-1-a; b++) {
-      if (arr[b] > arr[b + 1]) {
-        let temp = arr[b];
-        arr[b] = arr[b + 1];
-        arr[b + 1] = temp;
-        isSort=true;
-      }
-    }
-    if(!isSort){
-        break;
-    }
-  }
-  return arr;
-}
-let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
-console.log(bubbleSort(arr));
-
---TC: O(n²)
---SC: O(1)
-
->>Selection Sort
----Selection Sort is a sorting algorithm where we repeatedly find the smallest element from the unsorted part of the array and swap it with the correct position (initially with the first one).
-let selectionSort = (arr) => {
-  for(let a=0; a<arr.length-1; a++){
-    let minValue=a;
-    for(let b=a+1; b<arr.length; b++){
-      if(arr[b]<arr[minValue]){
-        minValue=b;
-      }
-    }
-    if(minValue !== a){
-      let temp=arr[minValue];
-      arr[minValue]=arr[a];
-      arr[a]=temp;
-    }
-  }
-  return arr;
-};
-
-console.log(selectionSort(arr));
-
---TC: O(n²)
---SC: O(1)
-
-
->>Insertion Sort
->In insertion sort, we check one element at a time, compare it with the previous elements, and place it in its correct position.
-let insertionSort = (arr) => {
-  for (let i = 1; i < arr.length; i++) {
-    let current = arr[i];
-    let a = i - 1;
-    while (a >= 0 && arr[a] > current) {
-      arr[a + 1] = arr[a];
-      a--;
-    }
-    arr[a + 1] = current;
-  }
-  return arr;
-};
-
-console.log(insertionSort(arr));
-
---TC: O(n²)
---SC: O(1)
-
-#Ans 66)Merge Two sorted Array
-
-let arrayOne = [3, 5, 8, 9, 89, 92];
-let arrayTwo = [1, 6, 34, 67, 90,95, 102,999];
-
-let mergeArray = (arrayOne, arrayTwo) => {
-  let a = 0;
-  let b = 0;
-  let store = [];
-  while (a < arrayOne.length && b < arrayTwo.length) {
-    if (arrayOne[a] < arrayTwo[b]) {
-      store.push(arrayOne[a]);
-      a++;
-    } else {
-      store.push(arrayTwo[b]);
-      b++;
-    }
-  }
-
-  while (a < arrayOne.length) {
-    store.push(arrayOne[a]);
-    a++;
-  }
-
-  while (b < arrayTwo.length) {
-    store.push(arrayTwo[b]);
-    b++;
-  }
-
-  return store;
-};
-
-console.log(mergeArray(arrayOne, arrayTwo));
-
-#Ans 67)
-let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
-let target = 25;
-
-let binarySearch = (arr, target) => {
-  let first = 0;
-  let last = arr.length - 1;
-
-  while (first <= last) {
-    let mid = Math.floor(first + (last - first) / 2);
-    if (arr[mid] === target) return mid;
-    else if (arr[mid] < target) {
-      first = mid + 1;
-    } else {
-      last = mid - 1;
-    }
-  }
-  return -1;
-};
-
-console.log(binarySearch(arr, target));
-
-#Ans 68)
->>N to One
-
-let nToOne = (n) => {
-  if (n === 0) return;
-  console.log(n);
-  nToOne(n - 1);
-};
-
-nToOne(5);
-
->>One To N
-
-let OneToN = (n) => {
-  if (n === 0) return;
-  OneToN(n - 1);
-  console.log(n);
-};
-
-OneToN(5);
-
-#Ans 69)
-
-let sumNumbers = (n) => {
-  if (n === 0) return 0;
-  return n + sumNumbers(n - 1);
-};
-
-console.log(sumNumbers(10));
-
-#Ans 70)
-let fiboNumber = (n) => {
-  if (n <= 0) return [];
-  if (n === 1) return [0];
-  if (n === 2) return [0, 1];
-
-  let print = fiboNumber(n - 1);
-  print.push(print[print.length - 2] + print[print.length - 1]);
-  return print;
-};
-
-console.log(fiboNumber(10));
-
-#Ans 71)
-console.log("Start");
-
-let loopDuration = async (para) => {
-  for (let a = 1; a <= para; a++) {
-    await new Promise((res, rej) => {
-      setTimeout(() => {
-        res();
-        console.log(`Loop Duration is ${a}`);
-      }, 1000);
-    });
-  }
-};
-
-loopDuration(6).then(() => {
-  console.log("End");
-});
-
+// ─────────────────────────────────────────────────────────────────
+// 📊 DSA Answers (Arrays, Strings, Sorting, Searching, Recursion)
+//    have been moved to the dsa/ folder.
+//    ➡ See: dsa/questions.js and dsa/answers.js
+// ─────────────────────────────────────────────────────────────────
 */

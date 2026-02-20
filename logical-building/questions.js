@@ -74,6 +74,7 @@ n=5;
 ****
 ***
 **
+*
   6)Pattern Six
 n=5;
 
@@ -250,7 +251,7 @@ n=5;
   *
 *****
 
-22)Pattern Twenty-Three
+22)Pattern Twenty-Two
 n=4;
 7*7
 

@@ -243,7 +243,7 @@ won’t affect it. The item will stay at that width.
 
 # 7) About Grid
 
----Grid Youtube Video Link (Lang : English) (cltr + click 👆) : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first  ]
+---Grid YouTube Video Link (Lang : English) (Ctrl + click 👆) : https://youtu.be/EiNiSFIPIQE?si=64u3vOQwbkieHFux  [🤚 Watch this video first]
 
 >> Parent (Grid Container) Properties :
 
@@ -563,12 +563,11 @@ selector::pseudo-element {
 
 Some Examples of Pseudo-elements 
 
-1. `::first-letter`**: Styles the first letter of a block of text.  
-2. `::selection`**: Styles the part of text selected by the user.  
-3. `::before`**: Adds content before an element's content.  
-4. `::after`**: Adds content after an element's content.  
-5. `::marker`**: is used to style the markers of list items in ordered (<ol>) or unordered (<ul>) 
-lists, such as bullets or numbers.
+1. `::first-letter`: Styles the first letter of a block of text.
+2. `::selection`: Styles the part of text selected by the user.
+3. `::before`: Adds content before an element's content.
+4. `::after`: Adds content after an element's content.
+5. `::marker`: Used to style the markers of list items in ordered (`<ol>`) or unordered (`<ul>`) lists, such as bullets or numbers.
 
 # 15)Tell me what is colors codes and how to use them (How to give colors in css)?
 
@@ -872,7 +871,7 @@ Theming: Easily implement themes by switching variable values.
   box-sizing: border-box;
 }
 
-, ::before, *::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -959,7 +958,7 @@ property tells the browser:"Stop wrapping content around the floated element and
 - 45ch to 75ch: Ideal for readable paragraphs.
 - Usage: Best for setting widths for text-heavy elements like inputs or text blocks. 
 - 🤚 Even if you don’t understand everything, no worries! Just remember to use ch for setting 
-paragraph widths, and keep the value between 45-75 for optimal readability that's it's.
+paragraph widths, and keep the value between 45-75 for optimal readability — that's it.
 
 Example : 
 p {

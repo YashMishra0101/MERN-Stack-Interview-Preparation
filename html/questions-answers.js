@@ -289,7 +289,7 @@ Ans:
 
  -- <p>This is <em>very important</em> information.</p>
  
-- hr>`: Adds a horizontal line to separate sections of content.
+- `<hr>`: Adds a horizontal line to separate sections of content.
 --
   <p>First Section</p>
   <hr>

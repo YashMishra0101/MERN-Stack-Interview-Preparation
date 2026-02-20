@@ -1,5 +1,5 @@
 /*
-##1) What is CORS?
+#1) What is CORS?
 
 CORS = Cross-Origin Resource Sharing
 
@@ -56,7 +56,7 @@ It can modify the request and response objects, execute code, end the request-re
 
 This is the real look of a JSON object — key/value pairs inside curly braces with double quotes.
 
----Example: How a website fetches JSON from backend**
+---Example: How a website fetches JSON from a backend
 
 Frontend code (JavaScript):
 
@@ -75,13 +75,11 @@ Here:
   Backend returns JSON
   Frontend receives JSON and uses it
 
-Claude
----https://claude.ai/public/artifacts/1f1d7e88-ed18-470f-9855-14b61fde420e
+// Reference: https://claude.ai/public/artifacts/1f1d7e88-ed18-470f-9855-14b61fde420e
 
 #4) What is BSON?
 
-Claude
----https://claude.ai/public/artifacts/979a2fce-fdbd-4d6d-aae4-e1eccc992f40
+// Reference: https://claude.ai/public/artifacts/979a2fce-fdbd-4d6d-aae4-e1eccc992f40
 
 #5) What is Multer?
 #6) What is mongoose-aggregate-paginate-v2?
@@ -91,3 +89,4 @@ Claude
 #10)Jsonwebtoken
 #11)Bcrypt
 */
+

@@ -4,13 +4,13 @@ I'm using the **Better Comments** VS Code extension to highlight important notes
 
 > ⚠️ **Note:** This extension is completely optional. If you use it, you'll get a more visually enhanced experience with colored highlights. Otherwise, all notes, concepts, questions, answers, and other content will appear in normal text form. It is purely intended to improve readability and organization while coding. It doesn't affect functionality in any way.
 
-Installation:
+## Installation
 
 1. Open VS Code.
 2. Go to Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`).
 3. Search for **Better Comments** and install it.
 
-Use this setting (optional but recommended):
+## Recommended Configuration (optional)
 
 ```json
   "better-comments.tags": [

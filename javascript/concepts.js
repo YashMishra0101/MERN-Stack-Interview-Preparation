@@ -1,7 +1,7 @@
 /*
 ### What’s This Section About ? 
 
-#This section is mainly for revising JavaScript from the basics, Even though it starts from scratch, BUT you should already know a JavaScript, It's not for complete beginners.
+# This section is mainly for revising JavaScript from the basics. Even though it starts from scratch, you should already know JavaScript. It is not for complete beginners.
 
 ---------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ execution. So, while JavaScript benefits from improved performance with V8, it r
 
 #1)Three way to declared variable in javascript (Var,let,Const)
 
->In var, we can redeclared and reassing them and Var is function scope.
+>In var, we can redeclare and reassign them, and var is function-scoped.
 
 var a = 10;
 var a = 20;
@@ -90,7 +90,7 @@ function one() {
     if(true){
     let a=10;
     }
-    console.log(a)//refrence error
+    console.log(a) // ReferenceError
 }
 
 one()
@@ -140,7 +140,7 @@ arrow ("I am an arrow Function", "✋Two");
 
 const arrowTwo=(value)=>console.log(value);
 
-arrowTwo("I a Value");
+arrowTwo("I am a Value");
 
 --> Reference Assignment (The reference of one variable is given to another variable).
 
@@ -699,16 +699,16 @@ function hoistedFunction() {
 
 a()  //TypeError: a is not a function
 
-var a =function (){
- console.log("Hey I a function")
+var a = function () {
+  console.log("Hey I am a function")
 }
 
 
 b()  //ReferenceError: Cannot access 'b' before initialization
 
- let b =function (){
-  console.log("Hey I a function")
- 
+let b = function () {
+  console.log("Hey I am a function")
+}
 
 
 > Key Differences Between `var`, `let`, and `const` in Hoisting:
@@ -1165,7 +1165,7 @@ const fruits = ["Apple", "Mango", "Banana", "Grapes"];
 const [first, second, ...remainingFruits] = fruits;
 
 console.log(first); // "Apple"
-console.log(second); // "Mango
+console.log(second); // "Mango"
 console.log(remainingFruits); // ["Banana", "Grapes"]
 
 Here, `...remainingFruits` collects all remaining elements into an array.  
@@ -1248,7 +1248,7 @@ abbreviations or short forms.
 - Example:
 
   function calculateAreaOfCircle(radius) { // Descriptive function name
-      return Math.PI  radius  radius;
+      return Math.PI * radius * radius;
   }
 
 --In React and TS 

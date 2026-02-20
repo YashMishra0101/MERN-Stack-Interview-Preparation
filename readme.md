@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-green.svg)](https://github.com/YashMishra0101/Interview-Preparation)
 
-Welcome! This repository documents the interview questions, answers, and core concepts I am learning and revising as I prepare for MERN stack roles. It focuses on the essentials for **Frontend** and **Basic Backend** interviews.
+Welcome! This repository documents interview questions, answers, and core concepts I have been learning and revising while preparing for MERN stack roles. It focuses on the essentials for **Frontend** and **Basic Backend** interviews.
 
 > 🚧 **Under Active Development** 🚧
 >
@@ -46,6 +46,8 @@ Interview-Preparation/
 ├── backend/
 │   └── questions-answers.js
 ├── dsa/
+│   ├── questions.js
+│   ├── answers.js
 │   └── basic-notes.js
 ├── .gitignore
 ├── IMPORTANT-NOTE.md
@@ -60,11 +62,11 @@ Interview-Preparation/
 
 Found a mistake or have a better explanation? Contributions are welcome!
 
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b improve/topic`).
-3.  Commit your changes (`git commit -m 'Improve explanation'`).
-4.  Push to the branch (`git push origin improve/topic`).
-5.  Open a Pull Request.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b improve/topic`).
+3. Commit your changes (`git commit -m 'Improve explanation'`).
+4. Push to the branch (`git push origin improve/topic`).
+5. Open a Pull Request.
 
 ## 📄 License
 
@@ -79,4 +81,4 @@ This project is licensed under the [MIT License](./LICENSE). You are free to use
 - [LinkedIn](https://www.linkedin.com/in/yash-mishra-356280223/)
 
 ---
-*If you find this useful for your interview preparation, feel free to star ⭐️ the repo.*
+*If you find this repository useful for your interview preparation, please consider giving it a star ⭐*

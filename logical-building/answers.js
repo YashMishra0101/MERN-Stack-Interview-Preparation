@@ -476,7 +476,7 @@ SC:O(N²)
 
 --16)
 
-let patternFifteen = (value) => {
+let patternSixteen = (value) => {
   let store = "";
   let print = 65;
   for (let a = 1; a <= value; a++) {
@@ -489,7 +489,7 @@ let patternFifteen = (value) => {
   return store;
 };
 
-console.log(patternFifteen(5));
+console.log(patternSixteen(5));
 
 TC:O(N²)
 SC:O(N²)
