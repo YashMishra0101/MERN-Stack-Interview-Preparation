@@ -2,7 +2,7 @@
 # JavaScript Interview Answers
 
 # Note
-> This file contains answers and explanations for all JavaScript interview questions. Each answer includes detailed explanations, code examples, and expected outputs.
+> This file contains answers and explanations for all JavaScript interview questions.
 
 --Total: 50 Questions
 
@@ -37,12 +37,13 @@ let e=undefined;
 let f=null;
 let g=true;
 let h=false;
-
+let i="9"
 
 console.log("a+b", a + b, typeof (a + b)); //18 , number
 console.log("c+d", c + d, typeof (c + d)); //53 , string
 console.log("a+c", a + c, typeof (a + c)); //95 , string
 console.log("e+a", e + a, typeof (e + a)); // NaN, number
+console.log("e+i", e + i, typeof (e + i)); // undefined9 string
 console.log("e+d", e + d, typeof (e + d)); //undefined3, string
 console.log("a+f", a + f, typeof (a + f)); //9, number
 console.log("d+f", d + f, typeof (d + f)); //3null , string
@@ -59,22 +60,22 @@ console.log(a + b + " is a sum of a + b", typeof (a + b + " is a sum of a + b"),
 #Ans 2)
 
 let functionOne = (parameter) => {
-    return parameter();
-}
+  console.log(parameter());
+};
 
 let functionTwo = () => {
-    return "Hello, how are you?";
-}
+  return "Hey, I am a callback function";
+};
 
-console.log(functionOne(functionTwo));
+functionOne(functionTwo);
 
 #Ans 3)
 
-  console.log("First Function Start");
-  console.log("Second Function Start");
-  console.log("Third Function");
-  console.log("Second Function End");
-  console.log("First Function End");
+  // First Function Start
+  // Second Function Start
+  // Third Function
+  // Second Function End
+  // First Function End
 
 #Ans 4)
 
@@ -96,16 +97,15 @@ console.log(functionOne(functionTwo));
 
 #Ans 6)
 
-//letFruit, orange, varFruit, orange
-//letFruit, apple, varFruit, apple
-//letFruit, orange, varFruit, apple
+// letFruit: orange varFruit: orange
+// letFruit : apple  varFruit : apple
+// letFruit : orange  varFruit : apple
 
 #Ans 7)
 Hello, my name is  Yash Mishra. I am 22 years old.
-
+ 
 #Ans 8)
-Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from.
-Inner Functions can access their parent or outer scope — this is called lexical scoping.
+Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from and Inner Functions can access their parent or outer scope — this is called lexical scoping.
 
 In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called.
 
@@ -183,7 +183,7 @@ for (let b in userInfo) {
 }
 
 #Ans 10)
-Call, apply, and bind are built-in methods in JavaScript that allow you to invoke a function with a specified `this` value.
+Call, apply, and bind are built-in JavaScript methods that control what "this" refers to inside a function. Call and apply invoke the function immediately. Bind, on the other hand, does not call the function right away; instead, it returns a new function with the specified "this" value, and then we have to call it separately. In call and bind, we can pass arguments individually, whereas in apply, arguments must be passed as an array.
 
 --1. `call()` Method
 
@@ -253,9 +253,9 @@ let userInfo=function(age,post){
   return (`${this.firstName} ${this.lastName} ${age} ${post} `)
 }
 
-let userDataOne=userInfo.bind(userOne,"frontEnd-Developer","23"); //--assing to the variable and then call it
+let userDataOne=userInfo.bind(userOne,"frontEnd-Developer","23"); //--assign to the variable and then call it
 console.log(userDataOne())
-let userDataTwo=userInfo.bind(userOne,"frontEnd-Developer","24"); //--assing to the variable and then call it
+let userDataTwo=userInfo.bind(userOne,"frontEnd-Developer","24"); //--assign to the variable and then call it
 console.log(userDataTwo())
 
 > Summary:
@@ -280,47 +280,47 @@ output:Audi
 
 #Ans 11)
 
-"this is a keyword in JavaScript, and its value differs depending on the environment (like the browser or Node.js) and it also depends on how the function is called.
+`this` is a keyword in JavaScript, and its value depends on the environment (browser or Node.js) and on how the function is called.
 
->IMP Note
-If you enable strict mode globally (e.g., using "use strict"; at the top of the file), it applies strict rules to the global scope, such as preventing accidental globals. However, a function’s this behavior depends on whether strict mode is active inside the function’s own scope. If strict mode is not explicitly declared inside the function, the function still defaults to non-strict this behavior. To ensure this is undefined inside a function, you must also enable strict mode inside that function. In short, global strict mode doesn’t override the function’s this unless the function itself is also running in strict mode.
-
-
---🔹 1. Global Scope (Same for Strict and non Strict mode)
+--1. Global Scope (same for strict and non-strict mode)
 
 In browsers, `this` in the global scope refers to the `window` object.
-In Node.js, it refers to an empty object `{}`.
+In Node.js (CommonJS modules), top-level `this` refers to an empty object `{}`.
 
 
---🔹 2. Inside a Function:
+--2. Inside a Function:
 
-  🔸 a. Non-strict mode:
+  a. Non-strict mode:
 
 In browsers, `this` inside a regular function refers to the global object (`window`).
-In Node.js, `this` inside a function refers to the global object (`global`).
+In Node.js, `this` inside a regular function refers to the global object (`global`).
 
- 🔸 b. Strict mode (`'use strict'`):
+  b. Strict mode (`"use strict"`):
 
-In both browsers and Node.js, `this` becomes `undefined` inside a regular function.
-
-
---🔹 3. Inside an Object Method:
-
-If you use a regular function, `this` refers to the object itself and its properties.
-
-If you use an arrow function, it does not have its own this. Instead, it uses lexical this, meaning it takes "this" from the surrounding scope where the function is defined.
-
------
-For arrow function
-- For object property values: returns `undefined` in browsers and `undefined` in Node.js.
-- For `this` directly: returns the `Window` object in browsers and `{}` (empty object) in Node.js — behaves the same as `this` in the global scope.
-----
+In both browsers and Node.js, `this` becomes `undefined` inside a regular function call.
 
 
---🔹 4. This substitution :
+--3. Inside an Object Method:
 
-In non-strict mode, JavaScript has an automatic behavior called 'this' substitution. When this would normally be null or undefined, JavaScript automatically substitutes it with the global object (which is window in browsers).
+If you use a regular function as a method, `this` refers to the object it's self means we can able to access object property.
 
+If you use an arrow function, it does not have its own `this`. Instead, it uses lexical `this`, which means it takes `this` from the surrounding scope where the function is defined (for example, `window` in browsers or `{}` in Node.js CommonJS top-level scope).
+
+
+--------------
+
+>Extra Info
+
+>Important Note
+If you enable strict mode at the top of a script (for example, `"use strict";`), the script runs in strict mode. In that case, regular functions defined in that script also run in strict mode, so `this` inside a regular function call is `undefined`.
+
+For arrow functions:
+- In object properties, an arrow function usually does not point to the object itself; it uses the outer lexical `this`.
+- At the top level, it behaves like top-level `this`: `window` in browsers and `{}` in Node.js CommonJS modules.
+
+--`this` substitution:
+
+In non-strict mode, JavaScript has automatic `this` substitution. When `this` would normally be `null` or `undefined`, JavaScript substitutes it with the global object (`window` in browsers).
 
 #Ans 12)
 console.log(person.regularFunction());
@@ -430,6 +430,10 @@ L)
 4
 5
 
+m)
+6 repeated 5 times
+
+
 
 #Ans 17)
 a)
@@ -446,14 +450,16 @@ stopping the loop. However, the already-scheduled setTimeout still runs, printin
 
 #Ans 18)
 >a)
-0
 3
+0
 
 >b)
 3
 0
 
 >c)
+0
+3
 3
 3
 
@@ -469,7 +475,7 @@ Primitive data types (number, string, boolean, null, undefined, symbol) are copi
 When the original value changes, the copied value does not change.
 
 Non-primitive data types (objects, arrays, functions) are assigned by reference.
-When the original object is modified, all references to it reflect the change.
+When the original value is modified, all references to it reflect the change.
 
 
 #Ans 20)
@@ -492,25 +498,22 @@ console.log(two);
 console.log(three);
 
 b)
-const [one,two,three=["yellow"]]=colorsTwo;
+const [one,two,three="yellow"]=colorsTwo;
 console.log(one);
 console.log(two);
 console.log(three);
 
 --3)Problem 3 Ans:
+const userInfo = {
+  name: "Alice",
+  age: 25,
+};
 
-const userInfo={
-  name:"Alice",
-  age:"25"
+function formatUser({name, age, email = "N/A"}) {
+return `${name},${age},${email}`; 
 }
 
-const{name,age}=userInfo;
-
-function  formatUser(name,age,email="NA"){
-  return `${name},${age},${email}`
-}
-
-console.log(formatUser(name,age));
+console.log(formatUser(userInfo));
 
 >Spread operator
 
@@ -554,21 +557,24 @@ console.log(multiply(2, 3, 4, 5));
 ---2)Problem 8 Ans:
 
 const scores = [95, 87, 92, 78, 85, 90, 88];
-let [firstOne,secondOne,...remainingValues]=scores; // Destructuring (Extract) + Rest operator (Collect)
 
-function average(...values){  // Rest parameter (collects)
- let total=values.reduce((accumulator,currentValue)=>{
-    return accumulator+currentValue;
- })
- return total/values.length;
+let [firstOne, secondOne, ...remaining] = scores; // Destructuring (Extract) + Rest operator (Collect)
+
+function average(remaining) {
+  let total = remaining.reduce((accumulator, nextValue) => {
+    return accumulator + nextValue;
+  });
+  return total / remaining.length;
 }
-console.log(firstOne);//95
-console.log(secondOne);//87
-console.log(average(...remainingValues));//86.6  Spread operator (expands array into arguments)
+
+console.log(average(remaining));
+console.log(firstOne);
+console.log(secondOne);
+
 
 --3)Problem 9:
 
-const {id,name,...details}=student
+const {id,name,...details}=student  // Destructuring (Extract) + Rest operator (Collect)
 
 console.log(id);
 console.log(name);
@@ -1313,3 +1319,4 @@ loopDuration(6).then(() => {
 //    ➡ See: dsa/questions.js and dsa/answers.js
 // ─────────────────────────────────────────────────────────────────
 */
+

@@ -29,11 +29,13 @@ let e=undefined;
 let f=null;
 let g=true;
 let h=false;
+let i="9"
 
 console.log("a+b", a + b, typeof (a + b)); 
 console.log("c+d", c + d, typeof (c + d)); 
 console.log("a+c", a + c, typeof (a + c)); 
 console.log("e+a", e + a, typeof (e + a)); 
+console.log("e+i", e + i, typeof (e + i));
 console.log("e+d", e + d, typeof (e + d)); 
 console.log("a+f", a + f, typeof (a + f)); 
 console.log("d+f", d + f, typeof (d + f)); 
@@ -44,10 +46,7 @@ console.log("b-h", b - h, typeof (b - h));
 console.log("b+h", b + h, typeof (b + h)); 
 
 console.log("Sum of a + b = " + a + b, typeof ("Sum of a + b = " + a + b)); 
-console.log(
-  a + b + " is a sum of a + b",
-  typeof (a + b + " is a sum of a + b"),
-); 
+console.log( a + b + " is a sum of a + b", typeof (a + b + " is a sum of a + b"),); 
 
 
 #2) Implement a callback function in JavaScript by passing one function into another, then print its value.
@@ -74,23 +73,23 @@ firstFunction();
 
 #4) Tell the output without running the code, in the proper sequence.
 
-console.log("line number 1", varName);
-var varName = 10;
+console.log("line number 1", varValue);
+var varValue = 10;
 
 function b() {
-  console.log("line number 2", varName);
+  console.log("line number 2", varValue);
 }
 
-console.log("line number 3", varName);
+console.log("line number 3", varValue);
 
 function fn() {
-  console.log("line number 4", varName);
-  var varName = 20;
+  console.log("line number 4", varValue);
+  var varValue = 20;
   b();
-  console.log("line number 5", varName);
+  console.log("line number 5", varValue);
 }
 
-console.log("line number 6", varName);
+console.log("line number 6", varValue);
 
 fn();
 
@@ -119,13 +118,13 @@ fn();
 
 let letFruit = "orange";
 var varFruit = "orange";
-console.log("letFruit", letFruit, "varFruit", varFruit);
+console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 {
   let letFruit = "apple";
   varFruit = "apple";
-  console.log("letFruit", letFruit, "varFruit", varFruit);
+  console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 }
-console.log("letFruit", letFruit, "varFruit", varFruit);
+console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 
 #7) What will be the output of `console.log(person.fullName())`?
 
@@ -207,7 +206,7 @@ car1.getBrand.call(car2);
 
 #11) What is the "this" keyword in JavaScript?
 
-#12) In JavaScript, what is the difference between using an arrow function and a regular function as a method inside an object? How does the value of `this` differ between the two and what happens if you try to access object properties using `this` inside an arrow function?
+#12) Predict the output of the three `console.log` statements below and explain why `this` behaves differently in `regularFunction`, `arrowFunction`, and `arrowFunctionTwo`.
 
 let person = {
   firstName: "Yash",
@@ -230,7 +229,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-#13) Tell the output without running the code.
+#13) Tell the output according to the browser (not Node.js) without running the code.
 --1)
 let person = {
   firstName: "Yash",
@@ -267,7 +266,7 @@ console.log(person.seeThree());
 console.log(person.seeFour());
 console.log(person.seeFive());
 
-console.log(this);//in global space
+console.log(this);
 
 --2)
 function abc() {
@@ -430,6 +429,16 @@ L)
 for(var a=1; a<=5; a++){
     console.log(a);
 }
+
+m)
+for (var a = 1; a <= 5; a++) {
+  (function () {
+    a;
+    setTimeout(() => {
+      console.log(a);
+    });
+  })();
+}
     
 #17) Tell me the correct output.
 
@@ -449,9 +458,7 @@ for (a; a <= 5; a++) {
   console.log(a);
 }
 
-> Note: Since `a` is declared with `const`, `a++` throws a `TypeError`. In the first snippet, `setTimeout` is scheduled before the error occurs, so it still runs and prints `1`. In the second snippet, the increment is synchronous, so the error stops everything immediately and nothing is printed.
-
-# 18) Tell me the output of this code.
+# 18) Tell the output of the following code snippets.
 
 >a)
 let count = 0;
@@ -459,9 +466,9 @@ let count = 0;
   if (count === 0) {
     let count = 2;
     count++;
-    console.log(count); // What is logged here?
+    console.log(count); 
   }
-  console.log(count); // What is logged here?
+  console.log(count); 
 })();
 
 >b)
@@ -470,9 +477,9 @@ function immediate() {
   if (countTwo === 0) {
     let countTwo = 2;
     countTwo++;
-    console.log(countTwo); // What is logged here?
+    console.log(countTwo); 
   }
-  console.log(countTwo); // What is logged here?
+  console.log(countTwo); 
 }
 
 immediate();
@@ -483,12 +490,15 @@ function immediate() {
   if (countTwo === 0) {
     countTwo = 2;
     countTwo++;
-    console.log(countTwo); // What is logged here?
+    console.log(countTwo);
   }
-  console.log(countTwo); // What is logged here?
+  console.log(countTwo);
 }
+console.log(countTwo);
 
 immediate();
+
+console.log(countTwo);
 
 
 # 19) Tell me the output of this code, in proper sequence.
@@ -522,8 +532,8 @@ seeTwo();
 
 # 20) What is `Destructuring`, `Spread Operator`, and `Rest Operator`? Solve these problems.
 
---Destructuring: Extracts values.
---Spread : Copying & Merging, (expands values).
+--Destructuring: Extracts values (from arrays, objects).
+--Spread : Copying & Merging, expands values.
 --Rest : Collects values.
 
 >Destructuring
@@ -531,7 +541,7 @@ seeTwo();
 ---1) Problem 1: Object Property Extraction
 
 Task: Extract name, city, and the first hobby using destructuring
-Expected output: name = 'John Doe', city = 'New York', firstHobby = 'reading'
+Expected output: John Doe, New York, reading
 
 const user = {
   name: 'John Doe',
@@ -558,13 +568,14 @@ const colorsTwo = ['red', 'green'];
 
 
 ---3) Problem 3: Function Parameter Destructuring
-Task: Write a function named `formatUser` that accepts a user object as its parameter. Use function parameter destructuring to extract `name`, `age`, and `email` directly from the parameter. If `email` is not provided, default it to `"N/A"`.
-The function should return a formatted string in the format: `"name, (age), email"`.
-For example, calling formatUser({ name: 'Alice', age: 25 }) should return "Alice, (25), N/A".
+You are given an object userInfo with the properties name and age:
 
-function formatUser( your destructuring here ) {
-   your code here
-}
+const userInfo = {
+  name: "Alice",
+  age: 25
+};
+
+Your task is to write a function named formatUser that accepts a user object (userInfo) as its parameter. Inside the function definition, use parameter destructuring to directly extract name, age, and email from the object. If the email property is not provided in the object, it should default to "N/A". The function should return a formatted string in the exact format "name, age, email". For example, calling formatUser(userInfo) should return "Alice,25,N/A".
 
 >Spread operator
 
@@ -595,7 +606,7 @@ const userSettings = {
 };
 
 ---3) Problem 6: Function Arguments Spreading
-Task: Calculate the sum of all array values by calling `calculateSum` using the spread operator.
+Task: Calculate the sum of all array values by calling `calculateSum` using the spread operator (Don't use reduce operator).
 Expected output: 150
 
 const numbers = [10, 20, 30, 40, 50];
@@ -657,9 +668,9 @@ const student = {
 Q) Print the user's name in the console.
 Do this using both:
 
-1).then()
+1)Use .then()
 
-2)async/await with try and catch
+2)Use async/await with try and catch
 
 
 # 25) Write a JavaScript program that demonstrates the use of classes and object creation.
@@ -936,16 +947,14 @@ let radius = 5;
 
 #49) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-#50) In JavaScript, the main thread is single-threaded.
-Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+#50) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
 
 For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
 
 Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
 
 // ─────────────────────────────────────────────────────────────────
-// 📊 DSA Questions (Arrays, Strings, Sorting, Searching, Recursion)
-// have been moved to the dsa/ folder.
+// 📊 DSA Questions 
 // ➡ See: dsa/questions.js and dsa/answers.js
 // ─────────────────────────────────────────────────────────────────
 */

@@ -208,7 +208,7 @@ When "A function" is passed as an argument into "Another function", then it is c
 Callback Hell is a situation in JavaScript where multiple nested callbacks are used to handle asynchronous operations, leading to deeply nested and difficult-to-read code. This makes the code hard to maintain, scale, and debug, this is called callback hell.
 
 
->Explanation
+>Extra Info
 
 1. Concept:
    - Callback Hell happens when callbacks are nested within each other, leading to deeply
@@ -302,7 +302,7 @@ Promises are a better alternative to callbacks for handling code. If our code is
 .Resolved (Fulfilled): The work is done successfully.
 .Rejected: The work failed, and there’s an error.
 
---We also have catch and finally  👇👇
+--We also have catch and finally  
 
 .catch(()=>{
 
@@ -312,13 +312,17 @@ Promises are a better alternative to callbacks for handling code. If our code is
 
 })
 
+- `.catch()` is used to handle rejected Promises or errors that occur during asynchronous operations.
+
+- The `finally` block in JavaScript runs regardless of the outcome of a Promise. Whether the Promise is fulfilled (resolved) or rejected, the code inside `finally` always executes.
+
 --Why are Promises Used?
 
-.To avoid callback hell: Writing a lot of nested callbacks makes code hard to read, promises simplify that.
-.Better error handling: Promises handle errors in a clear way using .catch().
-.Easier chaining: You can run tasks one after another using .then().
+- To avoid callback hell: Writing a lot of nested callbacks makes code hard to read, promises simplify that.
+- Better error handling: Promises handle errors in a clear way using .catch().
+- Easier chaining: You can run tasks one after another using .then().
 
->Syntax -
+>Syntax 
 
 let promise = new Promise (function (resolve, reject) {
 
@@ -326,146 +330,10 @@ let promise = new Promise (function (resolve, reject) {
 
 });
 
->>>Example of Promises 
+>Example of Promises (API calling with Promises)
 
-let one = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("My");
-    }, 1000);
-  });
-};
-
-let two = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("name");
-    }, 1000);
-  });
-};
-
-let three = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // resolve("is");
-      reject("is");
-    }, 1000);
-  });
-};
-
-let four = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // reject("yash");
-      resolve("yash");
-    }, 1000);
-  });
-};
-
-let five = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("mishra");
-      // reject("mishra");
-    }, 1000);
-  });
-};
-
-let start = () => {};
-one()
-  .then((mess) => {
-    console.log(mess);
-    return two();
-  })
-  .then((mess) => {
-    console.log(mess);
-    return three();
-  })
-  .then((mess) => {
-    console.log(mess);
-    return four();
-  })
-  .then((mess) => {
-    console.log(mess);
-    return five();
-  })
-  .then((mess) => {
-    console.log(mess);
-  })
-  .catch((error) => {
-    console.log("Error : ",error);
-  })
-  .finally(() => {
-    console.log("Code End");
-  });
-start();
-
-
-#7)Async Await
-
-Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides additional functionality. With the help of async, a Promise is created automatically. 
-
-The resolved and rejected states are handled using try and catch blocks. When the code is resolved, it is executed inside the try block and if the code is rejected, it is handled with the help of the catch block.
-
-async: It is a keyword that you place in front of a function. It tells JavaScript that this function will contain asynchronous code and will return a Promise.
-
-await: It is used inside an async function. It makes JavaScript wait for a Promise to resolve (or reject) before moving to the next line of code.
-
->>Example of async/await
-
-
-let one = () => {
-  return new Promise((resolve, reject) => {
-    resolve("My");
-  });
-};
-let two = () => {
-  return new Promise((resolve, reject) => {
-    resolve("name");
-  });
-};
-let three = () => {
-  return new Promise((resolve, reject) => {
-    resolve("is");
-    // reject("is");
-  });
-};
-let four = () => {
-  return new Promise((resolve, reject) => {
-    resolve("yash");
-  });
-};
-let five = () => {
-  return new Promise((resolve, reject) => {
-    resolve("mishra");
-  });
-};
-
-let start = async () => {
-  try {
-    let messOne = await one();
-    console.log(messOne);
-    let messTwo = await two();
-    console.log(messTwo);
-    let messThree = await three();
-    console.log(messThree);
-    let messFour = await four();
-    console.log(messFour);
-    let messFive = await five();
-    console.log(messFive);
-  } catch (error) {
-    console.log(error);
-  }
-  finally{
-    console.log("Code Ends");
-  }
-};
-
-start();
-
->API calling with Promises and async await
-
---Using Promises (then/catch):
+--Note 
+Promises are used to handle asynchronous operations. You can use .then() to run code when the Promise resolves, providing a callback. Alternatively, async/await is a more readable syntax that still relies on Promises under the hood, making asynchronous code look synchronous.
 
 fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((info) => {
@@ -481,7 +349,19 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
     console.log("Api fetching completed");
   });
 
---Using async await :
+  - `.then()` handles the fulfilled (successful) result of a Promise.
+
+#7)Async Await
+
+Async/await is a better option compared to simple Promises and callbacks. It works with Promises and provides additional functionality. With the help of async, a Promise is created automatically. 
+
+The resolved and rejected states are handled using try and catch blocks. When the code is resolved, it is executed inside the try block and if the code is rejected, it is handled with the help of the catch block.
+
+async: It is a keyword that you place in front of a function. It tells JavaScript that this function will contain asynchronous code and will return a Promise.
+
+await: It is used inside an async function. It makes JavaScript wait for a Promise to resolve (or reject) before moving to the next line of code.
+
+>Example of async/await (API calling with async await)
 
 async function userInfo() {
   try {
@@ -502,9 +382,7 @@ async function userInfo() {
 
 userInfo();
 
-
---The async/await version is cleaner and easier to understand, right.
-
+--The async/await version is cleaner and easier to understand compare to Promises.
 
 #8)Scope Chain, Lexical Scope (Closure)
 
@@ -566,7 +444,6 @@ In this example:
 
 -The scope chain is the path JavaScript follows to find a variable if it's not in the current box. (Because)
 -Lexical scope is like a nested set of boxes. The inner box (function) can look into the outer box (function) to find variables. 
-
 
 #9)What is Closure
 
@@ -811,136 +688,150 @@ because 'hello' cannot be converted into a valid number.
 In JavaScript, NaN occurs when you try to convert a value (like a string) into a number, but the conversion fails, resulting in
 an invalid number (In simple lang we try to convert value like string into number and it's failed then it's gives NaN)
 
+#14) Global Execution Context and Execution Context (Detailed)
 
-#14)  Global Execution Context and Execution Context (Detailed)
+The Global Execution Context (GEC) is the default execution environment where JavaScript code starts running. It is the first execution context created when a JavaScript program Begins Execution (before any code is executed), means the global execution context is created first, even before any code runs.
 
-Global Execution Context (GEC) is the default execution environment where JavaScript code starts running. It is the first execution context created when JavaScript begins execution, before any code is executed.
+All the code runs inside the Global Execution Context. When a function is called, a new Function Execution Context is created for it. However, that function context still runs inside the Global Execution Context. In other words, everything starts and ends within the Global Execution Context.
 
-JavaScript first creates the Global Execution Context and then creates additional Function Execution Contexts, which are managed using the Call Stack.
+JavaScript first creates the Global Execution Context, and then creates additional Function Execution Contexts whenever functions are invoked.
 
-# Global Execution Context Have Two Main Phases
+--Global Execution Context has two main phases:
 
----1️⃣ Memory Creation Phase (Hoisting Phase)
+1. Memory Creation Phase (Hoisting Phase)
+2. Code Execution Phase
+
+1️⃣ Memory Creation Phase (Hoisting Phase)
 
 - Memory is allocated for variables and functions.
-- Variables declared with `var` are initialized with `undefined because of hoisting.
-- Variables declared with `let` and `const` are hoisted but they are stay in the Temporal Dead Zone (TDZ) until their declaration is executed.
-- Function declarations are hoisted with their entire function body
-- This value → initialized (The value of `this` is set (browser → `window`, Node.js → empty object {} / module.exports) in the global space)
+- Variables declared with `var` are hoisted and initialized with `undefined`.
+- Variables declared with `let` and `const` are also hoisted, but they remain in the Temporal Dead Zone (TDZ).
+- Function declarations are hoisted with their entire function body.
+- During hoisting, only the declaration of variables is hoisted, not the initialization and Function declarations are hoisted with their entire function body.
+- The `this` value is initialized.
+  - In browsers → `window`
+  - In Node.js → `global` object
 
---- 2️⃣ Code Execution Phase
+2️⃣ Code Execution Phase
 
 - JavaScript executes code line by line.
-- Variables are assigned their actual values.
-- When a function is called: A new Function Execution Context is created then it is pushed in to the Call Stack.
-- After the function finishes execution: Its execution context is popped from the call stack.
+- Variables are assigned their actual values when their assignment statements are executed.
+- When a function is called:
+  - A new Function Execution Context is created.
+  - It is pushed onto the Call Stack above the Global Execution Context.
+- After the function finishes execution:
+  - Function Execution Context is removed (popped) from the Call Stack.
+- The Global Execution Context remains in the Call Stack until the entire program finishes execution. At the end, the Global Execution Context is removed from the Call Stack.
 
---- Call Stack Behavior
+--What is a Function Execution Context?
 
-- The Global Execution Context is pushed first.
-- Each function call creates a new execution context, which is pushed on top of the stack.
-- After execution, the function’s execution context is removed.
-- This continues until all code is executed.
-- The Global Execution Context remains until the program finishes.
-
---- Function Execution Context
-
-- Created whenever a function is invoked.
+- A Function Execution Context is created whenever a function is invoked.
 - Each function call creates a new execution context.
-- Managed using the call stack (LIFO – Last In, First Out).
+- Execution contexts are managed using the Call Stack.
+- The Call Stack follows the LIFO principle (Last In, First Out).
 
---- Example Flow
+--Example Flow
 
-1️⃣ Global Execution Context is created
-2️⃣ Global code starts execution
-3️⃣ Function is called → new execution context created
-4️⃣ Function execution completes → context removed
-5️⃣ Global code resumes
-6️⃣ Program ends → Global Execution Context completes
+1️⃣ Global Execution Context is created  
+2️⃣ Memory Creation Phase runs  
+3️⃣ Code Execution Phase begins  
+4️⃣ Variables receive their assigned values  
+5️⃣ A function is called → a new Function Execution Context is created  
+6️⃣ The Function Execution Context is pushed onto the Call Stack  
+7️⃣ Function execution completes → its execution context is popped from the Call Stack  
+8️⃣ The remaining global code continues executing
+9️⃣ Program ends → Global Execution Context is removed from the Call Stack
 
---- Key Takeaways
 
-- JavaScript creates memory before executing code.
-- Execution Context has two phases.
-- Hoisting happens during memory creation.
-- Call stack manages execution order.
-- Global Execution Context is the base of all execution.
+--Key Takeaways
 
--------------------
-
-??? 🗂️ Stack vs 🗃️ Heap – Where Does JavaScript Store It?
-
-Primitive data types (number, string, boolean, null, undefined, symbol) are copied by value. When the original value changes, the copied value does not change.
-
---Extra Info: 
--Primitive values are stored directly in the stack
-
-Non-primitive data types (objects, arrays, functions) are assigned by reference. When the original object is modified, all references to it reflect the change.
-
---Extra Info:
-- While objects are stored in heap memory and accessed via references stored in the stack.
-
----------------------
+- JavaScript allocates memory before executing code.
+- Every execution context has two phases: Memory Creation Phase and Code Execution Phase.
+- Hoisting occurs during the Memory Creation Phase.
+- The Call Stack manages the order of execution.
+- Every time a function is called, a new Function Execution Context is created.
+- The Global Execution Context is the base execution context of every JavaScript program.
 
 #15) Event Loop
 
 JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are involved, they are managed by the Event Loop, which ensures non-blocking execution.
 
-⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the browser environment (or Node.js runtime).
-JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the Task (Callback ) Queue are provided by the runtime environment to handle asynchronous operations efficiently.
+⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the browser environment (or Node.js runtime). JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the Task Queue are provided by the runtime environment to handle asynchronous operations efficiently.
 
-The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous
-operations such as `setTimeout`, `fetch`, Promises etc without blocking the main thread.
+The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous operations such as `setTimeout`, `fetch`, Promises etc without blocking the main thread.
 
 
->>How the Event Loop Works:
+>How the Event Loop Works:
 
+--In short
+Web APIs → Queues (Microtask Queue, Task Queue) → Call Stack = Event Loop
 
---1️⃣ Execution of Synchronous Code
+--- 1️⃣ Execution of Synchronous Code
 
-  JavaScript first executes all synchronous code in the Call Stack.
-  JavaScript does not process asynchronous tasks until the Call Stack is empty.
+JavaScript first executes all synchronous code in the Call Stack.
+JavaScript does not process asynchronous tasks until the Call Stack becomes empty.
+
+This means all synchronous code is fully executed first. After that, JavaScript starts handling asynchronous operations with the help of the Event Loop.
+
 
 --- 2️⃣ Asynchronous Code is Handled by Web APIs
 
-  When the JS engine encounters an asynchronous operation (e.g., `setTimeout`, `fetch`, or event listeners), it offloads them to the Web APIs. These APIs handle the operations in the background, freeing up the Call Stack.
+When the JavaScript engine encounters an asynchronous operation 
+(e.g., `setTimeout`, `fetch`, or event listeners), it delegates these tasks to the Web APIs provided by the browser environment.
 
----3️⃣ Asynchronous Tasks Are Moved to Queues
-
-Once the Web APIs finish their operations, their callbacks are queued in:
-
-  Microtask Queue (Higher Priority)
-
-    Handles: callbacks, queueMicrotask and some API-related micro operations.
-    
-    Includes `Promise.then`, `Promise.catch`, `Promise.finally`, and `MutationObserver`.
-    Always executed before tasks in the Task Queue.
-
-  Task Queue/Macrotasks (Lower Priority)
-  
-    Handles: setTimeout, setInterval, and other callback-based tasks.
-
-    Includes `setTimeout`, `setInterval`, `event listeners`, etc.
-    Executed only after the Microtask Queue is completely empty.
+These Web APIs handle the operations in the background, keeping the Call Stack free so that JavaScript can continue executing other code.
 
 
----4️⃣ Moving Tasks to the Call Stack
+--- 3️⃣ Asynchronous Tasks Are Moved to Queues
 
-  The Event Loop checks:
+Once the Web APIs finish their operations, their callbacks are placed into specific queues:
 
-  1. If the Call Stack is empty.
-  2. If there are Microtasks, it pushes them into the Call Stack for execution.
-  3. Once all Microtasks are done, it moves tasks from the Task Queue to the Call Stack.
-  This cycle repeats continuously, ensuring smooth, non-blocking asynchronous execution.
+Microtask Queue (Higher Priority)
+
+Handles smaller, high-priority asynchronous operations.
+
+Includes:
+`Promise.then`
+`Promise.catch`
+`Promise.finally`
+`queueMicrotask`
+`MutationObserver`
+
+Tasks in the Microtask Queue are always executed before tasks in the Task Queue.
 
 
---- 5️⃣ Role of the Event Loop
+Task Queue / Macrotask Queue (Lower Priority)
+
+Handles standard asynchronous tasks such as timers and DOM events.
+
+Includes:
+`setTimeout`
+`setInterval`
+`event listeners`
+`setImmediate` (in some environments such as Node.js)
+
+Tasks in the Task Queue are executed only after the Microtask Queue is completely empty.
+
+
+--- 4️⃣ Moving Tasks to the Call Stack
+
+The Event Loop continuously monitors the system and follows these steps:
+
+1. Check whether the Call Stack is empty.
+2. If the Microtask Queue contains tasks, execute all microtasks first by pushing them to the Call Stack.
+3. After the Microtask Queue is empty, move one task from the Task Queue to the Call Stack.
+
+This cycle repeats continuously, enabling JavaScript to perform non-blocking asynchronous execution efficiently.
+
+
+--- Role of the Event Loop
 
 The Event Loop is the mechanism that:
 
-  Monitors the Call Stack and the Queues.
-  Prioritizes Microtasks over Task Queue items.
-  Ensures that the JS engine processes events and tasks in the correct order without blocking the UI or main thread.
+- Handles asynchronous code with the help of Web APIs.
+- Monitors the Call Stack and the queues.
+- Prioritizes Microtasks over Task Queue items.
+- Ensures that the JavaScript engine processes events and tasks in the correct order without blocking the UI or the main thread.
 
 👉 This continuous cycle of checking the Call Stack and managing asynchronous queues is what we call the Event Loop.
 
