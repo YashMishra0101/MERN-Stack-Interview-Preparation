@@ -881,12 +881,9 @@ Inside setTimeout
 
 Examples: String, Number, Boolean, Null, Undefined;
 
-Immutable: Their original value cannot be changed. Any modification results in the creation of a new value.
+Copied by Value: When a primitive value is assigned to another variable, a new copy of the value is created. Any changes made to the new variable do not affect the original variable, because they store separate copies of the value.
 
 Stored in Stack: These values are stored directly in the stack memory.
-
-Copied by Value: When a primitive value is assigned or copied to another variable, a new copy is created.
-Changes to the new variable don’t affect the original.
 
 > Non-Primitive (Reference) Data Types
 

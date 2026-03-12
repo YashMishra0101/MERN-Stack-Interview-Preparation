@@ -59,15 +59,15 @@ console.log(a + b + " is a sum of a + b", typeof (a + b + " is a sum of a + b"),
 
 #Ans 2)
 
-let functionOne = (parameter) => {
-  console.log(parameter());
-};
+function a(callback){
+    return callback()
+}
 
-let functionTwo = () => {
-  return "Hey, I am a callback function";
-};
+function b(){
+    return "Hey, I am a function b";
+}
 
-functionOne(functionTwo);
+console.log(a(b));
 
 #Ans 3)
 
@@ -102,12 +102,16 @@ functionOne(functionTwo);
 // letFruit : orange  varFruit : apple
 
 #Ans 7)
+1)
 Hello, my name is  Yash Mishra. I am 22 years old.
+
+2)
+undefined
  
 #Ans 8)
 Lexical scope means that the scope of a variable is determined by where it is written in the code, not where it is called from and Inner Functions can access their parent or outer scope — this is called lexical scoping.
 
-In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called.
+In simple language : The scope of a variable is decided by the place where the function is defined, not where it is called and child function can access it's parent function value.
 
 ✅ Scope determined by: Where the function is defined/written
 ❌ NOT determined by: Where the function is called/executed
@@ -290,33 +294,36 @@ In Node.js (CommonJS modules), top-level `this` refers to an empty object `{}`.
 
 --2. Inside a Function:
 
-  a. Non-strict mode:
+>Normal Function
+
+a) Non-strict mode
 
 In browsers, `this` inside a regular function refers to the global object (`window`).
 In Node.js, `this` inside a regular function refers to the global object (`global`).
 
-  b. Strict mode (`"use strict"`):
+b) Strict mode ("use strict")
 
 In both browsers and Node.js, `this` becomes `undefined` inside a regular function call.
 
+> Arrow Function (var,let,const)
+
+Arrow functions do not have their own this. They use lexical this (from the outer scope). Therefore strict mode and non-strict mode do not affect this in arrow functions. In the browser it usually refers to the window object and in Node.js it usually refers to the empty object/module scope ({}) (Depending on the outer context)
 
 --3. Inside an Object Method:
 
-If you use a regular function as a method, `this` refers to the object it's self means we can able to access object property.
+a) Regular Function as Object Method
 
-If you use an arrow function, it does not have its own `this`. Instead, it uses lexical `this`, which means it takes `this` from the surrounding scope where the function is defined (for example, `window` in browsers or `{}` in Node.js CommonJS top-level scope).
+If you use a regular function as a method, this refers to the object itself, which means you can access the object's properties using this. This behavior is the same in both the browser and Node.js. Strict mode does not change this behavior, so in both strict and non-strict mode,this has the same value in the browser and Node.js.
 
+b) Arrow Function as Object Method
 
---------------
+If you use an arrow function, it does not have its own this. Instead, it uses lexical this, which means it takes this from the surrounding scope where the function is defined,they inherit this from the outer scope. Because of this In the browser, this usually refers to the window object .In Node.js (CommonJS), it refers to {} (the module scope object).This behavior is the same in both strict and non-strict mode.
+
+>Imp Note
+
+When we use arrow functions, even if they are written inside an object as a method or used normally as an arrow function, they have the same this value. In the browser, this refers to the window object, and in Node.js it refers to {} (module scope). This behavior is the same in both strict and non-strict mode.
 
 >Extra Info
-
->Important Note
-If you enable strict mode at the top of a script (for example, `"use strict";`), the script runs in strict mode. In that case, regular functions defined in that script also run in strict mode, so `this` inside a regular function call is `undefined`.
-
-For arrow functions:
-- In object properties, an arrow function usually does not point to the object itself; it uses the outer lexical `this`.
-- At the top level, it behaves like top-level `this`: `window` in browsers and `{}` in Node.js CommonJS modules.
 
 --`this` substitution:
 
@@ -330,7 +337,7 @@ console.log(person.arrowFunction());
 // Output: "Arrow: My name is undefined undefined. I am undefined years old."
 
 console.log(person.arrowFunctionTwo());
-//Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+//Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 
 --Reason : 
 Arrow functions do not have their own this. Instead, they inherit this from the outer lexical scope where they are defined—usually the global scope.
@@ -347,7 +354,6 @@ Or, if the arrow function is wrapped inside another function, it inherits this f
 // console.log(person.seeThree());//undefined
 // console.log(person.seeFour());//My name is Yash Mishra.
 // console.log(person.seeFive());//object it's self
-
 // console.log(this);//in global space->window object
 
 ---output 2)
@@ -401,6 +407,8 @@ b)
 c)
 6 repeated 5 times
 
+Reason : The reason is that the variable was declared outside the loop, so it did not create a new block-scoped variable for each iteration. Instead, the same variable was shared across all iterations. By the time the delayed function ran, the loop had already completed, and the variable had the final value, which was 6.
+
 d)
 5 repeated 5 times
 
@@ -421,7 +429,7 @@ h)
 6 repeated 5 times
 
 k)
-6 repeated 5 times
+6 repeated 5 times 
 
 L)
 1
@@ -479,7 +487,7 @@ When the original value is modified, all references to it reflect the change.
 
 
 #Ans 20)
----All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the “Concepts” section. 
+---All the concepts of `Destructuring`, `Spread operator`, and `Rest operator` are available in the "Concepts" section. 
 Ctrl + F ➤ Just search in concepts section :  #17)
 >Destructuring
 
@@ -540,7 +548,7 @@ function calculateSum(a, b, c, d, e) {
   return a + b + c + d + e;
 }
 
-console.log(calculateSum(...numbers)); // spread operator basically we are expanding the value
+console.log(calculateSum(...numbers)); //150, spread operator basically we are expanding the value
 
 >Rest Operator Solutions
 
@@ -581,217 +589,23 @@ console.log(name);
 console.log(details);
 
 #Ans 21)
----Event loop concept is available in “Concepts” section. 
+---Event loop concept is available in "Concepts" section. 
 Ctrl + F ➤ Just search in concepts section : #15) 
 
 #Ans 22)
----Global Execution context concept is available in “Concepts” section.
+---Global Execution context concept is available in "Concepts" section.
 Ctrl + F ➤ Just search in concepts section : #14) 
 
 #Ans 23)
----Callback, Callback hell, Promises->.then and async await concepts are available in “Concepts” section.
+---Callback, Callback hell, Promises->.then and async await concepts are available in "Concepts" section.
 Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)  
 
 #Ans 24)
-
-fetch("https://jsonplaceholder.typicode.com/users/1")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log("error", error);
-  })
-  .finally(() => {
-    console.log("Code End");
-  });
-
---Using Async await (try/catch):
-
-let info = async () => {
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    let data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log("Code End");
-  }
-};
-info();
-
-#Ans 25)
->Constructor
-
-When we create a new object using the new keyword, the constructor inside the class is automatically called. 
-The constructor is mainly used to create and initialize the properties of the object inside the class.
-
-
-class UserInfo {
-  constructor(name, role) {
-    this.name = name;
-    this.role = role;
-  }
-
-  showInfo() {
-    console.log(`User name is ${this.name} and User is a ${this.role}`);
-  }
-}
-
-const userOne = new UserInfo("Yash", "Software Developer");
-console.log(userOne);
-userOne.showInfo();
-
-const userTwo = new UserInfo("Vani", "Backend Developer");
-console.log(userTwo);
-userTwo.showInfo();
-
-const userThree = new UserInfo("Gaurav", "Frontend Developer");
-console.log(userThree);
-userThree.showInfo();
-
-#Ans 26)
->Encapsulation 
-Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
-public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
-unauthorized modifications.
-
---In simple language 
-
-Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private 
-properties (ES2022+).
-
---❓ Why didn’t we use a constructor in this code?
-
-We didn’t use a constructor in this code because the private field #balance is already initialized with a default value (100). 
-If we wanted to make the starting balance dynamic, then we would need a constructor.”
-
-
-
-class BankAccount {
-  #balance = 100;
-
-  deposit(amount) {
-    if (amount <= 0) {
-      console.log("Amount must be greater than 0.");
-      return;
-    }
-
-    this.#balance += amount;
-    console.log(
-      `₹${amount} deposited successfully. Your current balance is ₹${this.#balance}.`
-    );
-  }
-
-  withdraw(amount) {
-    if (amount > this.#balance) {
-      console.log("Insufficient balance.");
-      return;
-    }
-
-    this.#balance -= amount;
-    console.log(
-      `₹${amount} withdrawn successfully. Your current balance is ₹${this.#balance}.`
-    );
-  }
-
-  checkBalance() {
-    console.log(`Your current balance is ₹${this.#balance}.`);
-  }
-}
-
-const userOne = new BankAccount();
-userOne.checkBalance();
-userOne.deposit(1500);
-userOne.withdraw(500);
-
-
-#Ans 27)
->Inheritance
-
-Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
-another class (called the parent or superclass) using the extends keyword in JavaScript.
-
->super keyword
-
-The super keyword is used to call the constructor and methods of the parent class from within the child class.
-
-class TeamInfo {
-  constructor(teamName, teamRole, teamSize) {
-    this.teamName = teamName;
-    this.teamRole = teamRole;
-    this.teamSize = teamSize;
-  }
-
-  getTeamInfo() {
-    return `Team name: ${this.teamName} | Team role: ${this.teamRole} | Team size: ${this.teamSize} members`;
-  }
-}
-
-class TeamCurrentTask extends TeamInfo {
-  constructor(teamName, teamRole, teamSize, currentTask) {
-    super(teamName, teamRole, teamSize);
-    this.currentTask = currentTask;
-  }
-  getTeamInfoWithTask(){
-  return `${super.getTeamInfo()}. Currently, the team is working on ${this.currentTask}.`;
-  }
-}
-
-
-let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
-console.log(teamCurrentTask.getTeamInfoWithTask());
-
-#Ans 28)
---- Polymorphism
-Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
-use case or behavior.
-
-In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
-parent class to provide a different functionality.
-
->Difference (one-liner trick)
-
---Overriding → Same method name, same parameters, but redefined in child class (runtime).
---Overloading → Same method name, different parameters (compile-time → but JS doesn’t true method overloading like C++ and Java).
-
-class SMSNotification {
-  send() {
-    console.log("Sending a generic notification");
-  }
-}
-
-class EmailNotification extends SMSNotification {
-  send() {
-    console.log("Sending Email Notification");
-  }
-}
-
-class PushNotification extends EmailNotification {
-  send() {
-    console.log("Sending Push Notification");
-  }
-}
-
-const sendNotification = [
-  new SMSNotification(),
-  new EmailNotification(),
-  new PushNotification(),
-];
-
-sendNotification.forEach((n) => {
-  n.send();
-});
-
-#Ans 29)
 --Abstraction
 
 Abstraction in JavaScript simply means hiding the internal details and showing only the necessary things to the user.
 
-In JS, we don’t have keywords like abstract (like in Java), but we can achieve abstraction using classes + methods + private 
+In JS, we don't have keywords like abstract (like in Java), but we can achieve abstraction using classes + methods + private 
 fields (or by using functions with closures).
 
 class Login {
@@ -814,7 +628,7 @@ let userOne=new Login("Yash","12345");
 console.log(userOne.userLogin("12345")); ✅ 
 console.log(userOne.userLogin("123")); ❌
 
-#Ans 30)
+#Ans 25)
 ---Prototype
 
 Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.
@@ -858,139 +672,17 @@ console.log(usersAge.userOneName);
 console.log(usersAge.userTwoName); 
 
 
-#Ans 31)
----Type Coercion vs Type Casting and Concatenation concepts are available in the “Concepts” section.
+#Ans 26)
+---Type Coercion vs Type Casting and Concatenation concepts are available in the "Concepts" section.
 Ctrl + F ➤ Just search in concepts section : #20)  
 
-#Ans 32)
-
->🤚 IMP: Summary for Deep vs Shallow Copy:
-
--- ✅For shallow copy, use the spread operator `{...}` or `Object.assign()` — but remember, it only copies the first layer.
-
--- ✅ For Deep copy:
-
-=> Use `structuredClone()` It can create deep copy, but it cannot work with functions , modern way (Node 17+, Chrome 98+).
-=> Use `_.cloneDeep()` from Lodash for deep copy it work with functions also. (you're working with older browsers or complex structures)
-
-
->A)
-//shallow copy 
-
-let copy={...profileOne};
-
-copy.name="Ram";
-
-console.log(profileOne);//Yash
-console.log(copy);//Ram
-
-
->B)
-//Deep Copy (In this we can not use shallow copy technique)
-
-Reason :
-structuredClone creates a deep copy, so changes in the copied object do not affect the original object. However, if we use the spread operator, it creates a shallow copy and changes to nested properties will also affect the original object.
-
-let copy=structuredClone(profile);
-
-copy.name="Ram";
-copy.social.twitter="@ramdev";
-
-console.log(profile);
-console.log(copy);
-
->C)
-
-let copy=structuredClone(user);
-
-copy.name="Ram";
-copy.skills[1]="Typescript";
-copy.address.pin=99000;
-
-console.log(user);
-console.log(copy);
-
-
->D)
-//Deep copy 
-
-Note: Functions (methods) are not cloned by deep copy methods like structuredClone. After copying the data, any methods must be manually reattached to the copied object to ensure they still work.
-
-const { info, ...userData } = user;
-
-const copy = structuredClone(userData);
-
-copy.info = user.info;
-
-copy.name = "Ram";
-copy.skills[1]="Typescript"
-copy.address.city = "Indore";
-copy.address.pin = 99998;
-
-console.log(user.info()); // original unchanged
-console.log(copy.info()); // updated values
-
-#Ans 33)
-let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
-
-let ansOne=names.slice(1,3);
-console.log(ansOne);
-
-let ansTwo=names.splice(2,2,"Success");
-console.log(names);
-
-#Ans 34)
-let randomNumber = (numOne, numTwo) => {
-  return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
-};
-console.log(randomNumber(2, 10));
-console.log(randomNumber(2, 10));
-console.log(randomNumber(2, 10));
-
-#Ans 35)
-console.log([] == false);
-=>true 
-When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
-number, and false is converted into 0, that's why answer is true.
-
-console.log([] === false);
-=>false
-JS does NOT convert values when using === , That’s the whole point of strict equality — it compares values as-is, 
-without converting them, [] is an object (array is technically an object type), Since they are different types 
-(object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
-boolean are not the same type, hence false.
-
-#Ans 36)
- Answer: c) `splice()`
-
-`splice()` modifies the original array → ❌ mutable
-`map()`, `filter()`, and `concat()` return a new array without changing the original → ✅ immutable
-
-So, `splice()` is the only mutable one among them 👀
-
-
-#Ans 37)
->a)
-Promise {<fulfilled>: 'Yash'}
-
-[[Prototype]]: Promise
-[[PromiseState]]: "fulfilled"
-[[PromiseResult]]: "Yash"
-
->b)
-Promise {<pending>}
-
-[[Prototype]]: Promise
-[[PromiseState]]: "fulfilled"
-[[PromiseResult]]: "23"
-
-#Ans 38)
+#Ans 27)
 >Babel
-Babel is a JavaScript compiler/transpiler that allows developers to use the latest JavaScript features without worrying about browser compatibility. It transpiles modern JavaScript code (like ES6+) into versions that older browsers can understand, ensuring wider support and It also converts React’s JSX syntax and TypeScript into regular JavaScript.
+Babel is a JavaScript compiler/transpiler that allows developers to use the latest JavaScript features without worrying about browser compatibility. It transpiles modern JavaScript code (like ES6+) into versions that older browsers can understand, ensuring wider support and It also converts React's JSX syntax and TypeScript into regular JavaScript.
 
 ->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it and it convert jsx and ts code into js.
 
-->Note : Babel is specifically designed for JavaScript. It’s not a general-purpose tool for other programming languages.
+->Note : Babel is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
 
 
 >SWC
@@ -1004,11 +696,11 @@ Bundlers (such as Webpack, Parcel, esbuild, rollup and Vite) are powerful tools 
 --Note 🖖🖖👇: 
 Vite is built using a combination of esbuild and Rollup, so Babel is not required for converting modern JavaScript into older JavaScript or for converting TypeScript/JSX into plain JavaScript. These transformations are handled by esbuild. However, if we choose the SWC option while creating a React project, then SWC performs these transformations instead of esbuild but by default, Vite uses esbuild, not Babel.
 
-#Ans 39)
+#Ans 28)
 
 1. To use npm (Node Package Manager):  
   -Reason: When you install Node.js, it comes with npm (Node Package Manager), which is essential for installing and managing 
-  JavaScript packages like TypeScript, React, and other libraries used in development. Without npm, you can’t easily install 
+  JavaScript packages like TypeScript, React, and other libraries used in development. Without npm, you can't easily install 
   these packages.
   
 2. To run JavaScript outside the browser:  
@@ -1019,62 +711,80 @@ Vite is built using a combination of esbuild and Rollup, so Babel is not require
    - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
    Node.js is required to run these tools for building and optimizing code.
 
-#Ans 40)
+#Ans 29)
 - JSX (JavaScript XML) is a syntax extension for JavaScript used in React. With the help of JSX, we can write HTML-like code 
 inside JavaScript
 
-#Ans 41)
+#Ans 30) Variable Declared Without let / const / var
 
-1)First Way : Using a temporary variable
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
+anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before
+declaring, it gives us an Uncaught ReferenceError.
 
- let c;
+If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code.
+It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without
+any issues.
 
- c=a;
- a=b;
- b=c;
+This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,
+like Python, Java, or C++, have their own rules and scoping mechanisms.
 
- console.log(a);
- console.log(b);
+---Example:
 
-2)Second Way: Using arithmetic operations
+function check() {
+  console.log("Just checking");
+  {
+    umar = 23;
+  }
+}
 
- a=a+b;//630
- b=a-b;//630-600=30
- a=a-b;//630-30=600
+check();
+console.log(umar); // 23 — accessible globally
 
- console.log(a,b);
+#Ans 31)
+console.log([] == false);
+=>true 
+When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
+number, and false is converted into 0, that's why answer is true.
 
-3)Third Way : Using Array destructuring (ES6)
+console.log([] === false);
+=>false
+JS does NOT convert values when using === , That's the whole point of strict equality — it compares values as-is, 
+without converting them, [] is an object (array is technically an object type), Since they are different types 
+(object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
+boolean are not the same type, hence false.
 
-[a,b]=[b,a]
-console.log("a=",a);
-console.log("b=",b);
+#Ans 32)
+ Answer: c) `splice()`
+
+`splice()` modifies the original array → ❌ mutable
+`map()`, `filter()`, and `concat()` return a new array without changing the original → ✅ immutable
+
+So, `splice()` is the only mutable one among them 👀
 
 
-#Ans 42)
+#Ans 33)
+>a)
+Promise {<fulfilled>: 'Yash'}
 
-let x = 1;
-let y = 2;
-let z = 3;
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "Yash"
 
-[x,y,z]=[y,z,x]
-console.log(x,y,z);
+>b)
+Promise {<pending>}
 
-#Ans 43)
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "23"
+
+#Ans 34)
 let a=8;
 let b=2;
 
 console.log(8%2)//0
 console.log(2%8)//2 (if a%b and a<b, the answer will be a)
 
-#Ans 44) 
-let a=5859;
-
-console.log(Math.floor(a / 10)); // 585
-console.log(a % 10); // 9
-
-
-#Ans 45) 
+#Ans 35) 
 console.log(10>5 && -55<56 && 67<88)//true
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
@@ -1082,7 +792,7 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
-#Ans 46)
+#Ans 36)
 Context 
 Unary Operator (++,--)
 
@@ -1181,7 +891,167 @@ let p=10;
 let ans=++(p++)
 First bracket solved so:  ++(p++)=++11; (so after bracket solved, ++ is applied on a constant value — that's why it's giving an error)
 
-#Ans 47)
+#Ans 37)
+
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  })
+  .finally(() => {
+    console.log("Code End");
+  });
+
+--Using Async await (try/catch):
+
+let info = async () => {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("Code End");
+  }
+};
+info();
+
+#Ans 38)
+
+>🤚 IMP: Summary for Deep vs Shallow Copy:
+
+-- ✅For shallow copy, use the spread operator `{...}` or `Object.assign()` — but remember, it only copies the first layer.
+
+-- ✅ For Deep copy:
+
+=> Use `structuredClone()` It can create deep copy, but it cannot work with functions , modern way (Node 17+, Chrome 98+).
+=> Use `_.cloneDeep()` from Lodash for deep copy it work with functions also. (you're working with older browsers or complex structures)
+
+
+>A)
+//shallow copy 
+
+let copy={...profileOne};
+
+copy.name="Ram";
+
+console.log(profileOne);//Yash
+console.log(copy);//Ram
+
+
+>B)
+//Deep Copy (In this we can not use shallow copy technique)
+
+Reason :
+structuredClone creates a deep copy, so changes in the copied object do not affect the original object. However, if we use the spread operator, it creates a shallow copy and changes to nested properties will also affect the original object.
+
+let copy=structuredClone(profile);
+
+copy.name="Ram";
+copy.social.twitter="@ramdev";
+
+console.log(profile);
+console.log(copy);
+
+>C)
+
+let copy=structuredClone(user);
+
+copy.name="Ram";
+copy.skills[1]="Typescript";
+copy.address.pin=99000;
+
+console.log(user);
+console.log(copy);
+
+
+>D)
+//Deep copy 
+
+Note: Functions (methods) are not cloned by deep copy methods like structuredClone. After copying the data, any methods must be manually reattached to the copied object to ensure they still work.
+
+const { info, ...userData } = user;
+
+const copy = structuredClone(userData);
+
+copy.info = user.info;
+
+copy.name = "Ram";
+copy.skills[1]="Typescript"
+copy.address.city = "Indore";
+copy.address.pin = 99998;
+
+console.log(user.info()); // original unchanged
+console.log(copy.info()); // updated values
+
+#Ans 39)
+let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
+
+let ansOne=names.slice(1,3);
+console.log(ansOne);
+
+let ansTwo=names.splice(2,2,"Success");
+console.log(names);
+
+#Ans 40)
+let randomNumber = (numOne, numTwo) => {
+  return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
+};
+console.log(randomNumber(2, 10));
+console.log(randomNumber(2, 10));
+console.log(randomNumber(2, 10));
+
+#Ans 41)
+
+1)First Way : Using a temporary variable
+
+ let c;
+
+ c=a;
+ a=b;
+ b=c;
+
+ console.log(a);
+ console.log(b);
+
+2)Second Way: Using arithmetic operations
+
+ a=a+b;//630
+ b=a-b;//630-600=30
+ a=a-b;//630-30=600
+
+ console.log(a,b);
+
+3)Third Way : Using Array destructuring (ES6)
+
+[a,b]=[b,a]
+console.log("a=",a);
+console.log("b=",b);
+
+
+#Ans 42)
+
+let x = 1;
+let y = 2;
+let z = 3;
+
+[x,y,z]=[y,z,x]
+console.log(x,y,z);
+
+#Ans 43) 
+let a=5859;
+
+console.log(Math.floor(a / 10)); // 585
+console.log(a % 10); // 9
+
+
+#Ans 44)
 >A)
 1)
 const sixDigitOTP = () => {
@@ -1218,7 +1088,7 @@ console.log(generateOTP(6));
 
 ---Explanation:
 
-Math.random() is fine for simple randomness in games or UI, but it’s not secure since it’s a pseudo-random generator, 
+Math.random() is fine for simple randomness in games or UI, but it's not secure since it's a pseudo-random generator, 
 meaning the numbers are generated by a predictable algorithm and are not truly random.
 
 For OTPs, tokens, and authentication, we use cryptographically secure random number generators like crypto.randomInt(). 
@@ -1234,7 +1104,8 @@ let radius = 5;
 let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
-#Ans 48) Current Year & Factorial
+
+#Ans 45) Current Year & Factorial
 
 --1) Display the current year:
 let getCurrentYear = new Date();
@@ -1247,32 +1118,7 @@ for (let a = 5; a > 0; a--) {
 }
 console.log(factorial);
 
-#Ans 49) Variable Declared Without let / const / var
-
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before
-declaring, it gives us an Uncaught ReferenceError.
-
-If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code.
-It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without
-any issues.
-
-This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,
-like Python, Java, or C++, have their own rules and scoping mechanisms.
-
----Example:
-
-function check() {
-  console.log("Just checking");
-  {
-    umar = 23;
-  }
-}
-
-check();
-console.log(umar); // 23 — accessible globally
-
-#Ans 50) Block Thread
+#Ans 46) Block Thread
 
 ---Proper synchronous busy-wait approach (truly blocks the thread)
 
@@ -1313,10 +1159,172 @@ loopDuration(6).then(() => {
   console.log("End");
 });
 
+#Ans 47)
+>Constructor
+
+When we create a new object using the new keyword, the constructor inside the class is automatically called. 
+The constructor is mainly used to create and initialize the properties of the object inside the class.
+
+
+class UserInfo {
+  constructor(name, role) {
+    this.name = name;
+    this.role = role;
+  }
+
+  showInfo() {
+    console.log(`User name is ${this.name} and User is a ${this.role}`);
+  }
+}
+
+const userOne = new UserInfo("Yash", "Software Developer");
+console.log(userOne);
+userOne.showInfo();
+
+const userTwo = new UserInfo("Vani", "Backend Developer");
+console.log(userTwo);
+userTwo.showInfo();
+
+const userThree = new UserInfo("Gaurav", "Frontend Developer");
+console.log(userThree);
+userThree.showInfo();
+
+#Ans 48)
+>Encapsulation 
+Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
+public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
+unauthorized modifications.
+
+--In simple language 
+
+Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private 
+properties (ES2022+).
+
+--❓ Why didn't we use a constructor in this code?
+
+We didn't use a constructor in this code because the private field #balance is already initialized with a default value (100). 
+If we wanted to make the starting balance dynamic, then we would need a constructor."
+
+
+
+class BankAccount {
+  #balance = 100;
+
+  deposit(amount) {
+    if (amount <= 0) {
+      console.log("Amount must be greater than 0.");
+      return;
+    }
+
+    this.#balance += amount;
+    console.log(
+      `₹${amount} deposited successfully. Your current balance is ₹${this.#balance}.`
+    );
+  }
+
+  withdraw(amount) {
+    if (amount > this.#balance) {
+      console.log("Insufficient balance.");
+      return;
+    }
+
+    this.#balance -= amount;
+    console.log(
+      `₹${amount} withdrawn successfully. Your current balance is ₹${this.#balance}.`
+    );
+  }
+
+  checkBalance() {
+    console.log(`Your current balance is ₹${this.#balance}.`);
+  }
+}
+
+const userOne = new BankAccount();
+userOne.checkBalance();
+userOne.deposit(1500);
+userOne.withdraw(500);
+
+
+#Ans 49)
+>Inheritance
+
+Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
+another class (called the parent or superclass) using the extends keyword in JavaScript.
+
+>super keyword
+
+The super keyword is used to call the constructor and methods of the parent class from within the child class.
+
+class TeamInfo {
+  constructor(teamName, teamRole, teamSize) {
+    this.teamName = teamName;
+    this.teamRole = teamRole;
+    this.teamSize = teamSize;
+  }
+
+  getTeamInfo() {
+    return `Team name: ${this.teamName} | Team role: ${this.teamRole} | Team size: ${this.teamSize} members`;
+  }
+}
+
+class TeamCurrentTask extends TeamInfo {
+  constructor(teamName, teamRole, teamSize, currentTask) {
+    super(teamName, teamRole, teamSize);
+    this.currentTask = currentTask;
+  }
+  getTeamInfoWithTask(){
+  return `${super.getTeamInfo()}. Currently, the team is working on ${this.currentTask}.`;
+  }
+}
+
+
+let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
+console.log(teamCurrentTask.getTeamInfoWithTask());
+
+#Ans 50)
+--- Polymorphism
+Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
+use case or behavior.
+
+In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
+parent class to provide a different functionality.
+
+>Difference (one-liner trick)
+
+--Overriding → Same method name, same parameters, but redefined in child class (runtime).
+--Overloading → Same method name, different parameters (compile-time → but JS doesn't true method overloading like C++ and Java).
+
+class SMSNotification {
+  send() {
+    console.log("Sending a generic notification");
+  }
+}
+
+class EmailNotification extends SMSNotification {
+  send() {
+    console.log("Sending Email Notification");
+  }
+}
+
+class PushNotification extends EmailNotification {
+  send() {
+    console.log("Sending Push Notification");
+  }
+}
+
+const sendNotification = [
+  new SMSNotification(),
+  new EmailNotification(),
+  new PushNotification(),
+];
+
+sendNotification.forEach((n) => {
+  n.send();
+});
+
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Answers (Arrays, Strings, Sorting, Searching, Recursion)
 //    have been moved to the dsa/ folder.
 //    ➡ See: dsa/questions.js and dsa/answers.js
 // ─────────────────────────────────────────────────────────────────
 */
-

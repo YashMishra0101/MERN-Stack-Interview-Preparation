@@ -6,7 +6,7 @@
 
 --Total: 50 Questions
 
-#1) Type Coercion — Tell the Output
+#1) What will be the output of the following type coercion question in JavaScript?
 
 --a)
 let a=5;
@@ -121,13 +121,14 @@ var varFruit = "orange";
 console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 {
   let letFruit = "apple";
-  varFruit = "apple";
+  var varFruit = "apple";
   console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 }
 console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 
-#7) What will be the output of `console.log(person.fullName())`?
+#7) What will be the output of `console.log(person.fullName())` in the following two cases?
 
+1)
 let person = {
   firstName: "Yash",
   lastName: "Mishra",
@@ -140,11 +141,24 @@ let person = {
 
 console.log(person.fullName());
 
+2)
+let person = {
+  firstName: "Yash",
+  lastName: "Mishra",
+  age: 22,
+  fullName: function () {
+    let greeting = "Hello, my name is ";
+   `${greeting} ${this.firstName} ${this.lastName}. I am ${this.age} years old.`;
+  },
+};
+
+console.log(person.fullName());
+
 #8) What is lexical scope / lexical scoping?
     
 #9) Can we use the for...of loop for objects?
 
-#10) Explain the use of call(), apply(), and bind() in JavaScript, and then solve this question.
+#10) Explain the use of call(), apply(), and bind() in JavaScript and then tells the output of this question.
 
 --1)Output-based (call)
 
@@ -202,11 +216,11 @@ const car2 = { brand: "Audi" };
 
 car1.getBrand.call(car2);
 
-//Method borrowing allows one object to use another object’s method by changing the value of this using call or apply.
+//Method borrowing allows one object to use another object's method by changing the value of this using call or apply.
 
 #11) What is the "this" keyword in JavaScript?
 
-#12) Predict the output of the three `console.log` statements below and explain why `this` behaves differently in `regularFunction`, `arrowFunction`, and `arrowFunctionTwo`.
+#12) Predict the output of the following three console.log statements (in the browser, non-strict mode) and explain why this behaves differently in regularFunction, arrowFunction, and arrowFunctionTwo.
 
 let person = {
   firstName: "Yash",
@@ -229,7 +243,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-#13) Tell the output according to the browser (not Node.js) without running the code.
+#13) Tell the output according to the browser (in the browser,non-strict mode) without running the code.
 --1)
 let person = {
   firstName: "Yash",
@@ -265,7 +279,6 @@ console.log(person.seeTwo());
 console.log(person.seeThree());
 console.log(person.seeFour());
 console.log(person.seeFive());
-
 console.log(this);
 
 --2)
@@ -530,7 +543,7 @@ see();
 seeTwo();
 
 
-# 20) What is `Destructuring`, `Spread Operator`, and `Rest Operator`? Solve these problems.
+# 20) Solve these problems.
 
 --Destructuring: Extracts values (from arrays, objects).
 --Spread : Copying & Merging, expands values.
@@ -541,6 +554,7 @@ seeTwo();
 ---1) Problem 1: Object Property Extraction
 
 Task: Extract name, city, and the first hobby using destructuring
+
 Expected output: John Doe, New York, reading
 
 const user = {
@@ -582,15 +596,14 @@ Your task is to write a function named formatUser that accepts a user object (us
 ---1) Problem 4: Array Manipulation
 Task: Create a new array that contains all elements from arr1, arr2, and arr3
 Then add the number 0 at the beginning and 10 at the end
-Expected output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Expected output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 const arr3 = [7, 8, 9];
 
 ---2) Problem 5: Object Merging with Override
-Task: Create a final settings object that merges defaultSettings with userSettings
-userSettings should override defaultSettings where properties match.
+Task: Create a final settings object that merges defaultSettings with userSettings, userSettings should override defaultSettings where properties match.
 Expected: { theme: 'dark', language: 'en', notifications: false, autoSave: false }
 
 const defaultSettings = {
@@ -621,11 +634,14 @@ function calculateSum(a, b, c, d, e) {
 ---1) Problem 7: Function with Variable Arguments
 
 Task: Write a function called `multiply` that takes the first number as a multiplier and multiplies it with all remaining numbers, then returns the sum of the results.
-Example: `multiply(2, 3, 4, 5)` should return `2×3 + 2×4 + 2×5 = 24`
+
+Output should return  24.
 
 function multiply( your parameters here ) {
   your code here
 }
+
+multiply(2, 3, 4, 5)
 
 ---Hint: Use `reduce()`.
 `reduce()` is an array method that reduces an array to a single value by applying a callback function on each element and accumulating the result.
@@ -637,7 +653,7 @@ Given an array of scores, use array destructuring to extract the first score and
 const scores = [95, 87, 92, 78, 85, 90, 88];
 first → 95
 second → 87
-avgOfRest → average of [92, 78, 85, 90, 88] → 86.6
+avgOfRest → 86.6
 
 ---Hint: Use `reduce()`.
 
@@ -661,132 +677,54 @@ const student = {
 
 # 23) What is a Callback, Callback Hell, and Promise?
 
-# 24) Write a program with proper error handling to fetch a user's data from this API:
-👉 API: `https://jsonplaceholder.typicode.com/users/1`
-👨‍💻 Note: Check if the API is responding before using it. Sometimes it may be temporarily unavailable.
+# 24) What is Abstraction in JavaScript?
 
-Q) Print the user's name in the console.
-Do this using both:
+# 25) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
-1)Use .then()
+# 26) What is Type Coercion vs Type Casting, and Concatenation vs String Concatenation?
 
-2)Use async/await with try and catch
+# 27) What is Babel, SWC, and Bundlers (Webpack, Parcel, Vite, esbuild, Rollup)?
+
+# 28) Why is Node.js necessary on the frontend? (For Knowledge)
+
+-----------------------------
+> For Knowledge: Which version-check command is correct — `--version`, `-v`, `--v`, or `-version`?
+
+All four commands (`--version`, `-v`, `--v`, `-version`) can be used to check the version of installed tools, but not all tools support all of them.
+
+`--version` and `-v` are the most commonly used and universally supported. `--v` and `-version` may work in some tools (like TypeScript) but fail in others (like Node.js).
+
+--Therefore, always use `--version` or `-v` for consistency and reliability.
 
 
-# 25) Write a JavaScript program that demonstrates the use of classes and object creation.
+> For Knowledge: What does `-g` mean in npm?
 
-# 26) Demonstrate Encapsulation using a Class.
-Task:
-Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
+`-g` stands for Global Installation. When you use `npm install -g <package-name>`, the package is installed system-wide and can be used in any project without installing it separately each time.
 
->Requirements:
+--Global Installation (`-g`):
+Installs the package in a global location — accessible from anywhere on your system.
 
-  Use a private field `#balance` (initial value should be ₹100).
+--Local Installation (without `-g`):
+Installs the package only in the current project's `node_modules` folder — available only within that specific project.
+---------------------------------
 
-  Implement the following public methods:
+# 29) What is JSX?
 
-  1. `deposit(amount)`
+# 30) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-       Adds the amount to the balance only if it’s greater than 0.
-       Logs the updated balance.
-
-  2. `withdraw(amount)`
-
-       Deducts the amount from balance only if sufficient balance is available.
-       Otherwise, logs an "insufficient balance" message.
-
-  3. `checkBalance()`
-
-       Logs the current balance.
-
-  Finally, create an object of the class and demonstrate all three methods.
-
-# 27) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
-
-# 28) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
-
-# 29) What is Abstraction in JavaScript?
-
-# 30) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
-
-# 31) What is Type Coercion vs Type Casting, and Concatenation vs String Concatenation?
-
-# 32) Shallow copy and deep copy questions.
-
->A)
-Create a shallow copy of the `profileOne` object using any method you prefer. After copying, change the `name` property in the copied object and verify that the original object is not affected.
-
-const profileOne = {
-  name: "Yashu",
-};
-
->B)
-Create a deep copy of the `profile` object using any method you prefer.
-Since the object contains a nested object (`social`), a shallow copy will not be sufficient. Ensure that modifying the `social` property in the copied object does not affect the original.
-
-const profile = {
-  name: "Yashu",
-  social: {
-    twitter: "@yashdev"   // A shallow copy is not sufficient here
-  }
-};
-
->C)
-Create a deep copy of the `user` object given below.
-This object contains nested objects, arrays, and a `Date` property. Ensure that all levels are copied independently so that changes in the copied object do not affect the original.
-
-const user = {
-  name: "Yashu",
-  skills: ["JS", "React"],
-  address: {
-    city: "Delhi",
-    pin: 110001
-  },
-  createdAt: new Date()
-};
-
->D)
-Create a deep copy of the `user` object given below.
-This object contains nested objects, arrays, a `Date` property, and a method (`info`). Make sure the deep copy handles all these correctly without affecting the original object.
-
-const user = {
-  name: "Yashu",
-  skills: ["JS", "React"],
-  address: {
-    city: "Delhi",
-    pin: 110001
-  },
-  createdAt: new Date(),
-  info(){
-    return(`My name is ${this.name}, my skills are ${this.skills[0]} and ${this.skills[1]}, and I live in ${this.address.city} - ${this.address.pin}`);
-  }
-};
-
-# 33) Based on `slice` and `splice`.
-
-let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
-
-Question 1:
-How would you extract only `"Vani"` and `"Code"` into a new array without modifying the original?
-
-Question 2:
-How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
-
-# 34) How to generate a random number between two numbers?
-
-# 35) Tell me the output of both of these lines and explain why:
+# 31) Tell me the output of both of these lines and explain why:
 
 console.log([] == false);  
 console.log([] === false);
 
 
-# 36) Which of the following is NOT an immutable operation?
+# 32) Which of the following is NOT an immutable operation?
 a) `map()`
 b) `filter()`
 c) `splice()`
 d) `concat()`
 
-# 37) What is the output of this code?
+# 33) What is the output of this code?
 
 >a)
 async function name(){
@@ -800,55 +738,14 @@ async function age(){
 }
 console.log(age());
 
-# 38) What is Babel, SWC, and Bundlers (Webpack, Parcel, Vite, esbuild, Rollup)?
-
-# 39) Why is Node.js necessary on the frontend? (For Knowledge)
-
-# For Knowledge: Which version-check command is correct — `--version`, `-v`, `--v`, or `-version`?
-
-All four commands (`--version`, `-v`, `--v`, `-version`) can be used to check the version of installed tools, but not all tools support all of them.
-
-`--version` and `-v` are the most commonly used and universally supported. `--v` and `-version` may work in some tools (like TypeScript) but fail in others (like Node.js).
-
->>Therefore, always use `--version` or `-v` for consistency and reliability.
-
-
-# For Knowledge: What does `-g` mean in npm?
-
-`-g` stands for Global Installation. When you use `npm install -g <package-name>`, the package is installed system-wide and can be used in any project without installing it separately each time.
-
->>Global Installation (`-g`):
-Installs the package in a global location — accessible from anywhere on your system.
-
->>Local Installation (without `-g`):
-Installs the package only in the current project's `node_modules` folder — available only within that specific project.
-
-# 40) What is JSX?
-
-# 41) Swap two variables using three different methods.
-
-let a=30;
-let b=600;
-
-#42)
-Can you write the same array destructuring swap logic for three variables?
-Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
-
-#43) Tell me the output of this code.
+# 34) Tell me the output of this code.
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#44) Solve this:
-let a=5859;
-
-1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
-2)Print only the last digit of the number. (Expected output: 9)
-
-
-#45) Evaluate the following JavaScript expressions and state whether they return true or false:
+#35) Evaluate the following JavaScript expressions and state whether they return true or false:
 
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
@@ -857,7 +754,7 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
-#46) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
+#36) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
 
 1)
 let a=10;
@@ -923,7 +820,97 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-#47) Solve these questions.
+# 37) Write a program with proper error handling to fetch a user's data from this API:
+👉 API: `https://jsonplaceholder.typicode.com/users/1`
+👨‍💻 Note: Check if the API is responding before using it. Sometimes it may be temporarily unavailable.
+
+Q) Print the user's name in the console.
+Do this using both:
+
+1)Use .then()
+
+2)Use async/await with try and catch
+
+
+# 38) Shallow copy and deep copy questions.
+
+>A)
+Create a shallow copy of the `profileOne` object using any method you prefer. After copying, change the `name` property in the copied object and verify that the original object is not affected.
+
+const profileOne = {
+  name: "Yashu",
+};
+
+>B)
+Create a deep copy of the `profile` object using any method you prefer.
+Since the object contains a nested object (`social`), a shallow copy will not be sufficient. Ensure that modifying the `social` property in the copied object does not affect the original.
+
+const profile = {
+  name: "Yashu",
+  social: {
+    twitter: "@yashdev"   // A shallow copy is not sufficient here
+  }
+};
+
+>C)
+Create a deep copy of the `user` object given below.
+This object contains nested objects, arrays, and a `Date` property. Ensure that all levels are copied independently so that changes in the copied object do not affect the original.
+
+const user = {
+  name: "Yashu",
+  skills: ["JS", "React"],
+  address: {
+    city: "Delhi",
+    pin: 110001
+  },
+  createdAt: new Date()
+};
+
+>D)
+Create a deep copy of the `user` object given below.
+This object contains nested objects, arrays, a `Date` property, and a method (`info`). Make sure the deep copy handles all these correctly without affecting the original object.
+
+const user = {
+  name: "Yashu",
+  skills: ["JS", "React"],
+  address: {
+    city: "Delhi",
+    pin: 110001
+  },
+  createdAt: new Date(),
+  info(){
+    return(`My name is ${this.name}, my skills are ${this.skills[0]} and ${this.skills[1]}, and I live in ${this.address.city} - ${this.address.pin}`);
+  }
+};
+
+# 39) Based on `slice` and `splice`.
+
+let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
+
+Question 1:
+How would you extract only `"Vani"` and `"Code"` into a new array without modifying the original?
+
+Question 2:
+How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
+
+# 40) How to generate a random number between two numbers?
+
+# 41) Swap two variables using three different methods.
+
+let a=30;
+let b=600;
+
+#42)
+Can you write the same array destructuring swap logic for three variables?
+Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
+
+#43) Solve this:
+let a=5859;
+
+1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
+2)Print only the last digit of the number. (Expected output: 9)
+
+#44) Solve these questions.
 
 >A) Generate OTPs
 
@@ -941,17 +928,47 @@ let radius = 5;
   👉 `2 × π × r`
   (The result must be a number, not a string, and must be limited to 2 decimal places.)
 
-#48) Solve the following:
+#45) Solve the following:
 1) Use console.log() to display the current year.
 2) Create a for loop that calculates the factorial of 5.
 
-#49) In JavaScript, what happens if you declare a variable without using let, const, or var?
-
-#50) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+#46) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
 
 For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
 
 Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
+
+# 47) Write a JavaScript program that demonstrates the use of classes and object creation.
+
+# 48) Demonstrate Encapsulation using a Class.
+Task:
+Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
+
+>Requirements:
+
+  Use a private field `#balance` (initial value should be ₹100).
+
+  Implement the following public methods:
+
+  1. `deposit(amount)`
+
+       Adds the amount to the balance only if it's greater than 0.
+       Logs the updated balance.
+
+  2. `withdraw(amount)`
+
+       Deducts the amount from balance only if sufficient balance is available.
+       Otherwise, logs an "insufficient balance" message.
+
+  3. `checkBalance()`
+
+       Logs the current balance.
+
+  Finally, create an object of the class and demonstrate all three methods.
+
+# 49) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
+
+# 50) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
 
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Questions 
