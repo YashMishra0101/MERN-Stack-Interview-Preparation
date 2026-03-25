@@ -6,7 +6,7 @@
 > Questions include Arrays, Strings, Sorting Algorithms, Searching, Recursion, and more.
 > For each problem, try to solve it yourself first before checking the answers file.
 
---Total: 21 Questions
+--Total: 18 Questions
 
 #1) Given an array of integers, calculate the total of all its values.
 
@@ -34,30 +34,19 @@ let arr2=[0,45,98,1,33,1,-7,55];
 
 let arr=[0,0,1,0,1,0,1,1,0,1,0]
 
-#7) Print each character on a new line.
-
-let s="ramratan";
-
-#8) Print each character in reverse order, on a new line.
-
-let s="ramratan";
-
-#9) Check whether the string is a palindrome or not.
+#7) Check whether the string is a palindrome or not.
 
 let a="abcdef";
 
-#10) Find two numbers in a sorted array whose sum equals the "target" using two pointers. Your target is 13 and the array is sorted.
+#8) Find two numbers in a sorted array whose sum equals the "target" using two pointers. Your target is 13 and the array is sorted.
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-#11) Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
-let str="YAsh";
-
-#12) Count how many times each character repeats in a string. (This is a Frequency Counter pattern.)
+#9) Count how many times each character repeats in a string. (This is a Frequency Counter pattern.)
 
 let str = "zZabcdedcjbAeeee";
 
-#13) Fibonacci Series — 4 Variations
+#10) Fibonacci Series — 4 Variations
 
 >Q1. Write a function to print the first `n` Fibonacci numbers.
 Example:
@@ -84,9 +73,9 @@ Input: n = 10
 Output: 88
 Explanation: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 = 88
 
-#14) What is Memoization?
+#11) What is Memoization?
 
-#15) Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
+#12) Why does the first code throw a "Maximum call stack size exceeded" error while the second code runs infinitely without crashing, even though both are designed to run continuously?
 
 ---Context:
 
@@ -117,18 +106,18 @@ for(let a=n; a>-1; a++){
 
 testTwo(5);
 
-#16) Sort the array using Bubble Sort, Selection Sort, Insertion Sort, or Merge Sort.
+#13) Sort the array using Bubble Sort, Selection Sort, Insertion Sort, or Merge Sort.
 let arr = [2, 78, 9, 23, 3, -5, 0, 95, 1, 54, 77, -88];
 
-#17) Merge two sorted arrays.
+#14) Merge two sorted arrays.
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90, 95, 102, 999];
 
-#18) You are given a sorted array of distinct integers in ascending order and a target value. Implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
+#15) You are given a sorted array of distinct integers in ascending order and a target value. Implement the binary search algorithm to return the index of the target if it is present in the array. If it is not present, return -1.
 let target = 25;
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 
-#19) Write a function to print numbers from n to 1 and from 1 to n without using a loop.
+#16) Write a function to print numbers from n to 1 and from 1 to n without using a loop.
 Example 1 (n to 1):
 Input: n = 5
 Output: 5 4 3 2 1
@@ -137,13 +126,13 @@ Example 2 (1 to n):
 Input: n = 5
 Output: 1 2 3 4 5
 
-#20) Write a function to calculate the sum of the first n natural numbers without using a loop.
+#17) Write a function to calculate the sum of the first n natural numbers without using a loop.
 Example:
 Input: n = 10
 Output: 55
 Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 
-#21) Write a function to print Fibonacci numbers up to n without using a loop.
+#18) Write a function to print Fibonacci numbers up to n without using a loop.
 Example:
 Input: n = 10
 Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]

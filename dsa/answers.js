@@ -5,7 +5,7 @@
 > This file contains answers and explanations for all DSA questions.
 > Each answer includes multiple approaches where applicable, along with Time Complexity (TC) and Space Complexity (SC).
 
---Total: 21 Questions
+--Total: 18 Questions
 
 #Ans 1) Array Sum
 let arr = [10, 20, 30, 40, 50];
@@ -208,34 +208,7 @@ console.log(arr);
 - Space Complexity: O(1)
 
 
-#Ans 7) Print Each Character on a New Line
-
-let s="ramratan";
-
----Using simple loop
-
-for(let a=0; a<s.length;a++){
-    console.log(s[a]);
-    // console.log(s.charAt(a));
-}
-
----Using for of loop
-
-for(let a of s){
-    console.log(a);
-}
-
-
-#Ans 8) Print Each Character in Reverse
-
-let s="ramratan";
-
-for(let a=s.length-1; a>=0; a--){
-    console.log(s[a]);
-    // console.log(s.charAt(a));
-}
-
-#Ans 9) Palindrome Check
+#Ans 7) Palindrome Check
 
 ---Solution One using built-in methods
 
@@ -275,7 +248,7 @@ const checkPalindrom = (para) => {
 
 console.log(checkPalindrom(a));
 
-#Ans 10) Two Pointer — Two Sum
+#Ans 8) Two Pointer — Two Sum
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let target = 13;
 
@@ -302,26 +275,7 @@ checkTarget(13);
 - Time Complexity: O(n)
 - Space Complexity: O(1)
 
-#Ans 11) Toggle Case Without Built-in Methods
-// ASCII knowledge → A-Z = 65-90, a-z = 97-122
-let str = "YAsh";
-
-const changeCase = (para) => {
-  let newStr = "";
-  for (let a = 0; a < para.length; a++) {
-    let check = para.charCodeAt(a);
-    if (check >= 97 && check <= 122) {
-      newStr += String.fromCharCode(check - 32);
-    } else {
-      newStr += String.fromCharCode(check + 32);
-    }
-  }
-  return newStr;
-};
-console.log(changeCase(str));
-
-
-#Ans 12) Frequency Counter
+#Ans 9) Frequency Counter
 
 let str = "zZabcdedcjbAeeee";
 
@@ -342,7 +296,7 @@ console.log(count);
 TC = O(n)
 SC = O(n)
 
-#Ans 13) Fibonacci Series — 4 Variations
+#Ans 10) Fibonacci Series — 4 Variations
 
 >>1)
 const fiboNumber = (n) => {
@@ -433,7 +387,7 @@ const sumOfFiboNum = (n) => {
 
 console.log(sumOfFiboNum(n));
 
-#Ans 14) Memoization
+#Ans 11) Memoization
 Memoization is an optimization technique used to speed up programs by saving time. It works by storing the
 results of function calls in a cache. When the function is called again with the same inputs, it gets the
 result from the cache instead of running the function again. This helps save time and system resources.
@@ -441,7 +395,7 @@ result from the cache instead of running the function again. This helps save tim
 In simple words, memoization means storing the result in a cache so that if the user asks for the same thing
 again, the program can return the saved result instead of calculating it again.
 
-#Ans 15) Recursion vs Loop (Call Stack)
+#Ans 12) Recursion vs Loop (Call Stack)
 The first code uses recursion, and the second uses a loop — and they behave very differently under the hood.
 
 --- Loops vs Recursion in JavaScript
@@ -464,7 +418,7 @@ performance, safety, and reliability.
 The JavaScript engine (like V8 in Chrome/Node.js, SpiderMonkey in Firefox, JavaScriptCore in Safari) has a call stack limit
 of usually around 10,000 to 20,000 function calls.
 
-#Ans 16) Sorting Algorithms
+#Ans 13) Sorting Algorithms
 
 >>Bubble Sort
 ---Bubble Sort keeps swapping adjacent numbers (if they are in the wrong order) so that the bigger ones bubble to the end.
@@ -536,7 +490,7 @@ console.log(insertionSort(arr));
 --TC: O(n²)
 --SC: O(1)
 
-#Ans 17) Merge Two Sorted Arrays
+#Ans 14) Merge Two Sorted Arrays
 
 let arrayOne = [3, 5, 8, 9, 89, 92];
 let arrayTwo = [1, 6, 34, 67, 90, 95, 102, 999];
@@ -573,7 +527,7 @@ console.log(mergeArray(arrayOne, arrayTwo));
 - Time Complexity: O(n + m) — where n and m are the lengths of the two arrays
 - Space Complexity: O(n + m)
 
-#Ans 18) Binary Search
+#Ans 15) Binary Search
 let arr = [2, 5, 14, 25, 67, 89, 103, 117, 150];
 let target = 25;
 
@@ -598,7 +552,7 @@ console.log(binarySearch(arr, target));
 - Time Complexity: O(log n)
 - Space Complexity: O(1)
 
-#Ans 19) Print N to 1 and 1 to N (Recursion)
+#Ans 16) Print N to 1 and 1 to N (Recursion)
 >>N to One
 
 let nToOne = (n) => {
@@ -622,7 +576,7 @@ OneToN(5);
 - Time Complexity: O(n)
 - Space Complexity: O(n) — due to recursive call stack
 
-#Ans 20) Sum of First N Natural Numbers (Recursion)
+#Ans 17) Sum of First N Natural Numbers (Recursion)
 
 let sumNumbers = (n) => {
   if (n === 0) return 0;
@@ -634,7 +588,7 @@ console.log(sumNumbers(10));
 - Time Complexity: O(n)
 - Space Complexity: O(n) — due to recursive call stack
 
-#Ans 21) Fibonacci Without a Loop (Recursion)
+#Ans 18) Fibonacci Without a Loop (Recursion)
 let fiboNumber = (n) => {
   if (n <= 0) return [];
   if (n === 1) return [0];

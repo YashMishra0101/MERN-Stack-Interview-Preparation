@@ -349,7 +349,8 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
     console.log("Api fetching completed");
   });
 
-  - `.then()` handles the fulfilled (successful) result of a Promise.
+  - .then() handles the fulfilled (successful) result of a Promise.
+  - .catch() handles any errors or rejections that occur in the promise
 
 #7)Async Await
 
@@ -694,7 +695,7 @@ The Global Execution Context (GEC) is the default execution environment where Ja
 
 All the code runs inside the Global Execution Context. When a function is called, a new Function Execution Context is created for it. However, that function context still runs inside the Global Execution Context. In other words, everything starts and ends within the Global Execution Context.
 
-JavaScript first creates the Global Execution Context, and then creates additional Function Execution Contexts whenever functions are invoked.
+So, JavaScript first creates the Global Execution Context, and then creates additional Function Execution Contexts whenever functions are invoked.
 
 --Global Execution Context has two main phases:
 
@@ -704,10 +705,10 @@ JavaScript first creates the Global Execution Context, and then creates addition
 1️⃣ Memory Creation Phase (Hoisting Phase)
 
 - Memory is allocated for variables and functions.
-- Variables declared with `var` are hoisted and initialized with `undefined`.
-- Variables declared with `let` and `const` are also hoisted, but they remain in the Temporal Dead Zone (TDZ).
 - Function declarations are hoisted with their entire function body.
 - During hoisting, only the declaration of variables is hoisted, not the initialization and Function declarations are hoisted with their entire function body.
+- Variables declared with `var` are hoisted and initialized with `undefined`.
+- Variables declared with `let` and `const` are also hoisted, but they remain in the Temporal Dead Zone (TDZ).
 - The `this` value is initialized.
   - In browsers → `window`
   - In Node.js → `global` object
@@ -746,7 +747,7 @@ JavaScript first creates the Global Execution Context, and then creates addition
 --Key Takeaways
 
 - JavaScript allocates memory before executing code.
-- Every execution context has two phases: Memory Creation Phase and Code Execution Phase.
+- Global Execution context has two phases: Memory Creation Phase and Code Execution Phase.
 - Hoisting occurs during the Memory Creation Phase.
 - The Call Stack manages the order of execution.
 - Every time a function is called, a new Function Execution Context is created.
@@ -756,9 +757,13 @@ JavaScript first creates the Global Execution Context, and then creates addition
 
 JavaScript is a single-threaded language, meaning it executes code line by line. When asynchronous operations are involved, they are managed by the Event Loop, which ensures non-blocking execution.
 
-⚠️ Note: The Event Loop is not a feature of JavaScript itself but is provided by the browser environment (or Node.js runtime). JavaScript doesn't have built-in asynchronous capabilities. Instead, Web APIs, the Microtask Queue, and the Task Queue are provided by the runtime environment to handle asynchronous operations efficiently.
+> ⚠️ Note:
 
-The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Firefox or Safari in JavaScriptCore/Nitro) works together with JavaScript to manage asynchronous operations such as `setTimeout`, `fetch`, Promises etc without blocking the main thread.
+The event loop is not part of the JavaScript language itself. On the frontend, the browser provides the event loop, and on the backend, if you are using Node.js, Node.js provides the event loop.
+
+The JavaScript engine (such as V8 in Chrome, Brave, and Microsoft Edge, SpiderMonkey in Firefox, and JavaScriptCore in Safari) is responsible for parsing and executing JavaScript code. The event loop and the JavaScript engine are separate components that work together to handle asynchronous operations but both are present in browser.
+
+In browsers, the event loop is provided by the browser. In Node.js, the event loop is implemented using the libuv library, which is written in C and handles asynchronous operations.
 
 
 >How the Event Loop Works:
@@ -766,7 +771,7 @@ The browser engine (like V8 in Chrome,Brave,Microsoft Edge , SpiderMonkey in Fir
 --In short
 Web APIs → Queues (Microtask Queue, Task Queue) → Call Stack = Event Loop
 
---- 1️⃣ Execution of Synchronous Code
+> 1️⃣ Execution of Synchronous Code
 
 JavaScript first executes all synchronous code in the Call Stack.
 JavaScript does not process asynchronous tasks until the Call Stack becomes empty.
@@ -774,7 +779,7 @@ JavaScript does not process asynchronous tasks until the Call Stack becomes empt
 This means all synchronous code is fully executed first. After that, JavaScript starts handling asynchronous operations with the help of the Event Loop.
 
 
---- 2️⃣ Asynchronous Code is Handled by Web APIs
+> 2️⃣ Asynchronous Code is Handled by Web APIs
 
 When the JavaScript engine encounters an asynchronous operation 
 (e.g., `setTimeout`, `fetch`, or event listeners), it delegates these tasks to the Web APIs provided by the browser environment.
@@ -782,11 +787,11 @@ When the JavaScript engine encounters an asynchronous operation
 These Web APIs handle the operations in the background, keeping the Call Stack free so that JavaScript can continue executing other code.
 
 
---- 3️⃣ Asynchronous Tasks Are Moved to Queues
+> 3️⃣ Asynchronous Tasks Are Moved to Queues
 
 Once the Web APIs finish their operations, their callbacks are placed into specific queues:
 
-Microtask Queue (Higher Priority)
+--Microtask Queue (Higher Priority)
 
 Handles smaller, high-priority asynchronous operations.
 
@@ -800,7 +805,7 @@ Includes:
 Tasks in the Microtask Queue are always executed before tasks in the Task Queue.
 
 
-Task Queue / Macrotask Queue (Lower Priority)
+-- Task Queue / Macrotask Queue (Lower Priority)
 
 Handles standard asynchronous tasks such as timers and DOM events.
 
@@ -813,12 +818,12 @@ Includes:
 Tasks in the Task Queue are executed only after the Microtask Queue is completely empty.
 
 
---- 4️⃣ Moving Tasks to the Call Stack
+> 4️⃣ Moving Tasks to the Call Stack
 
 The Event Loop continuously monitors the system and follows these steps:
 
 1. Check whether the Call Stack is empty.
-2. If the Microtask Queue contains tasks, execute all microtasks first by pushing them to the Call Stack.
+2. If Call Stack is empty and if the Microtask Queue contains tasks, execute all microtasks first by pushing them to the Call Stack.
 3. After the Microtask Queue is empty, move one task from the Task Queue to the Call Stack.
 
 This cycle repeats continuously, enabling JavaScript to perform non-blocking asynchronous execution efficiently.
@@ -828,7 +833,7 @@ This cycle repeats continuously, enabling JavaScript to perform non-blocking asy
 
 The Event Loop is the mechanism that:
 
-- Handles asynchronous code with the help of Web APIs.
+- Handles asynchronous code with the help of Web APIs and Queues.
 - Monitors the Call Stack and the queues.
 - Prioritizes Microtasks over Task Queue items.
 - Ensures that the JavaScript engine processes events and tasks in the correct order without blocking the UI or the main thread.
@@ -1362,7 +1367,7 @@ String(10) + "1" // You manually made 10 a string → result is "101"
 
 Here, you are in control. That’s type casting.
 
---
+------
 ?? So Are They the Same? --- No.
 
   Type coercion = automatic, JS decides.
@@ -1370,8 +1375,8 @@ Here, you are in control. That’s type casting.
 
 >Concatenation vs Strings Concatenation
 
-Concatenation refers to the process of combining two or more values.
-String concatenation specifically means joining two or more strings together to form a single string.
+-- Concatenation refers to the process of combining two or more values.
+-- String concatenation specifically means joining two or more strings together to form a single string.
 
 #21)Recursion and Backtracking
 

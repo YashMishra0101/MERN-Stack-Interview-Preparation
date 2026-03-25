@@ -4,7 +4,7 @@
 # Note
 > This section covers JavaScript interview questions including output-based, conceptual, and coding problems commonly asked in interviews and coding rounds.
 
---Total: 50 Questions
+--Total: 57 Questions
 
 #1) What will be the output of the following type coercion question in JavaScript?
 
@@ -531,7 +531,6 @@ let outerFun = (() => {
     function seeTwo() {
         console.log("SeeTwo count", count)
         console.log("SeeTwo ref", ref)
-
     }
     return [see, seeTwo];
 
@@ -591,12 +590,14 @@ const userInfo = {
 
 Your task is to write a function named formatUser that accepts a user object (userInfo) as its parameter. Inside the function definition, use parameter destructuring to directly extract name, age, and email from the object. If the email property is not provided in the object, it should default to "N/A". The function should return a formatted string in the exact format "name, age, email". For example, calling formatUser(userInfo) should return "Alice,25,N/A".
 
+Expected output:Alice,25,N/A
+
 >Spread operator
 
 ---1) Problem 4: Array Manipulation
 Task: Create a new array that contains all elements from arr1, arr2, and arr3
 Then add the number 0 at the beginning and 10 at the end
-Expected output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Expected output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10]
 
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
@@ -677,13 +678,13 @@ const student = {
 
 # 23) What is a Callback, Callback Hell, and Promise?
 
-# 24) What is Abstraction in JavaScript?
+# 24) What is Type Coercion vs Type Casting, and Concatenation vs String Concatenation?
 
-# 25) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+# 25) What is Babel and SWC.
 
-# 26) What is Type Coercion vs Type Casting, and Concatenation vs String Concatenation?
+# 26) What is Bundlers (Webpack, Rollup, Parcel).
 
-# 27) What is Babel, SWC, and Bundlers (Webpack, Parcel, Vite, esbuild, Rollup)?
+# 27) What is Vite and esbuild.
 
 # 28) Why is Node.js necessary on the frontend? (For Knowledge)
 
@@ -712,19 +713,31 @@ Installs the package only in the current project's `node_modules` folder — ava
 
 # 30) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-# 31) Tell me the output of both of these lines and explain why:
+# 31) What is a JIT compiler?
+
+# 32) What is a closure?
+
+# 33) What is Debouncing in JavaScript?
+
+# 34) What is Throttling in JavaScript?
+
+# 35) What is Abstraction in JavaScript?
+
+# 36) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+
+# 37) Tell me the output of both of these lines and explain why:
 
 console.log([] == false);  
 console.log([] === false);
 
 
-# 32) Which of the following is NOT an immutable operation?
+# 38) Which of the following is NOT an immutable operation?
 a) `map()`
 b) `filter()`
 c) `splice()`
 d) `concat()`
 
-# 33) What is the output of this code?
+# 39) What is the output of this code?
 
 >a)
 async function name(){
@@ -738,14 +751,14 @@ async function age(){
 }
 console.log(age());
 
-# 34) Tell me the output of this code.
+# 40) Tell me the output of this code.
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#35) Evaluate the following JavaScript expressions and state whether they return true or false:
+#41) Evaluate the following JavaScript expressions and state whether they return true or false:
 
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
@@ -754,7 +767,7 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
-#36) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
+#42) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
 
 1)
 let a=10;
@@ -820,7 +833,7 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-# 37) Write a program with proper error handling to fetch a user's data from this API:
+# 43) Write a program with proper error handling to fetch a user's data from this API:
 👉 API: `https://jsonplaceholder.typicode.com/users/1`
 👨‍💻 Note: Check if the API is responding before using it. Sometimes it may be temporarily unavailable.
 
@@ -832,7 +845,7 @@ Do this using both:
 2)Use async/await with try and catch
 
 
-# 38) Shallow copy and deep copy questions.
+# 44) Shallow copy and deep copy questions.
 
 >A)
 Create a shallow copy of the `profileOne` object using any method you prefer. After copying, change the `name` property in the copied object and verify that the original object is not affected.
@@ -883,7 +896,7 @@ const user = {
   }
 };
 
-# 39) Based on `slice` and `splice`.
+# 45) Based on `slice` and `splice`.
 
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
@@ -893,24 +906,24 @@ How would you extract only `"Vani"` and `"Code"` into a new array without modify
 Question 2:
 How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
 
-# 40) How to generate a random number between two numbers?
+# 46) How to generate a random number between two numbers?
 
-# 41) Swap two variables using three different methods.
+# 47) Swap two variables using three different methods.
 
 let a=30;
 let b=600;
 
-#42)
+#48)
 Can you write the same array destructuring swap logic for three variables?
 Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
 
-#43) Solve this:
+#49) Solve this:
 let a=5859;
 
 1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
 2)Print only the last digit of the number. (Expected output: 9)
 
-#44) Solve these questions.
+#50) Solve these questions.
 
 >A) Generate OTPs
 
@@ -928,19 +941,19 @@ let radius = 5;
   👉 `2 × π × r`
   (The result must be a number, not a string, and must be limited to 2 decimal places.)
 
-#45) Solve the following:
+#51) Solve the following:
 1) Use console.log() to display the current year.
 2) Create a for loop that calculates the factorial of 5.
 
-#46) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+#52) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
 
 For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
 
 Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
 
-# 47) Write a JavaScript program that demonstrates the use of classes and object creation.
+# 53) Write a JavaScript program that demonstrates the use of classes and object creation.
 
-# 48) Demonstrate Encapsulation using a Class.
+# 54) Demonstrate Encapsulation using a Class.
 Task:
 Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
 
@@ -966,9 +979,20 @@ Create a class `BankAccount` that demonstrates the concept of Encapsulation in J
 
   Finally, create an object of the class and demonstrate all three methods.
 
-# 49) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
+# 55) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
 
-# 50) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
+# 56) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
+
+# 57) Print each character on a new line.
+
+let s="ramratan";
+
+# 58) Print each character in reverse order, on a new line.
+
+let s="ramratan";
+
+# 59) Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
+let str="YAsh";
 
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Questions 

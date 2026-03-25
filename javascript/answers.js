@@ -4,7 +4,7 @@
 # Note
 > This file contains answers and explanations for all JavaScript interview questions.
 
---Total: 50 Questions
+--Total: 57 Questions
 
 #Ans 1)
 
@@ -521,7 +521,7 @@ function formatUser({name, age, email = "N/A"}) {
 return `${name},${age},${email}`; 
 }
 
-console.log(formatUser(userInfo));
+console.log(formatUser(userInfo));//Alice,25,N/A
 
 >Spread operator
 
@@ -601,6 +601,134 @@ Ctrl + F ➤ Just search in concepts section : #14)
 Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)  
 
 #Ans 24)
+---Type Coercion vs Type Casting and Concatenation concepts are available in the "Concepts" section.
+Ctrl + F ➤ Just search in concepts section : #20)  
+
+#Ans 25)
+--Babel
+Babel is a JavaScript transpiler (although it is sometimes called a compiler) written in JavaScript that converts modern JavaScript (ES6+) into backward-compatible JavaScript so it can run in older browsers. It can also compile React JSX and transform TypeScript syntax into plain JavaScript.
+
+Babel can handle TypeScript by removing the type labels (like number or string) and turning it into plain JavaScript. But it doesn’t check if the types are correct—that job is done by the TypeScript compiler.
+
+--SWC
+SWC (Speedy Web Compiler) is similar to Babel, but it is much faster because it is written in the Rust.
+
+--So you can say this : 
+
+SWC stands for Speedy Web Compiler. It is a transpiler (although it is sometimes called a compiler) written in Rust. It converts modern JavaScript into older versions so legacy browsers can run it. It can also compile JSX and transform TypeScript syntax into plain JavaScript.
+
+SWC can handle TypeScript by removing the type labels (like number or string) and turning it into plain JavaScript. But it doesn’t check if the types are correct—that job is done by the TypeScript compiler.
+
+--Note : 
+Both Babel and SWC is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
+
+
+#Ans 26)
+
+Bundlers (like Webpack, Rollup, or Parcel) are tools that take multiple files—such as JavaScript, CSS, and images—and bundle them into fewer optimized files. This helps reduce the number of network requests and ensures efficient loading in the browser.
+
+->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
+
+#Ans 27)
+--vite
+
+Vite is a modern frontend build tool and development server designed for fast development. During development, it uses esbuild under the hood, and during production it uses Rollup as a bundler for optimized output. Vite also provides Hot Module Replacement (HMR), which makes development faster by allowing modules to be updated in a running application in the browser without requiring a full page reload.
+
+(Hot Module Replacement (HMR) means that when we make changes to our code, those changes are instantly injected into the running application without reloading the whole page. So we don't have to restart the React app or manually reload.)
+
+
+--esbuild
+
+esbuild: A bundler + transpiler + minifier written in Go.
+
+esbuild is a bundler, transpiler, and minifier all in one tool, and it is written in Go, which makes it extremely fast compared to traditional JavaScript-based tools like Webpack or Babel..
+
+--Note
+If you configure Vite to use SWC, it will swap out esbuild and use SWC for fast development-time transforms. SWC is written in Rust, making it even faster than esbuild. But when it comes to producing the optimized production bundle, Vite still uses Rollup under the hood.
+
+#Ans 28)
+
+Node.js is not required to run frontend code in the browser because browsers can directly execute HTML, CSS, and JavaScript. However, Node.js is required in the development environment when we use modern frontend tools.
+
+Node.js enables the use of package managers like npm or pnpm to install and manage project dependencies, and tools like nvm (Node Version Manager) to manage different Node.js versions.
+
+Frontend build tools like Vite and bundlers like Webpack run on Node.js. Node.js provides the runtime environment that allows these tools to execute on the developer's machine.
+
+So, in summary, Node.js is not required to run frontend code in the browser, but it is required in the development environment to run build tools, bundlers, development servers, and package managers.
+
+#Ans 29)
+- JSX (JavaScript XML) is a syntax extension for JavaScript used in React. With the help of JSX, we can write HTML-like code inside JavaScript
+
+(Browsers do not understand JSX directly, so it must be transpiled into regular JavaScript using tools like Babel and SWC)
+
+--Note
+Many people say “JSX is HTML inside JavaScript”, This is technically incorrect. The correct statement is: “JSX is HTML-like syntax inside JavaScript”.
+
+#Ans 30) Variable Declared Without let / const / var
+
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
+anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before declaring, it gives us an Uncaught ReferenceError.
+
+If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code. It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without any issues.
+
+This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,like Python, Java, or C++, have their own rules and scoping mechanisms.
+
+---Example:
+
+function check() {
+  console.log("Just checking");
+  {
+    umar = 23;
+  }
+}
+
+check();
+console.log(umar); // 23 — accessible globally
+
+#Ans 31)
+
+#Ans 32)
+
+#Ans 33)
+Debouncing ensures that a function executes only after a specified delay has passed since the last time it was invoked.
+
+Debouncing is a technique used to limit how frequently a function executes. It ensures that a function is only executed after a specified delay has passed since the last time the event was triggered.
+
+This is useful when an event fires many times in a short period, such as typing in a search box, window resizing, or scrolling. Instead of executing the function on every event, debouncing waits until the user stops triggering the event for a certain time.
+
+- First, it reduces unnecessary function calls, so your app isn’t doing extra work.
+- Second, it improves performance by lowering the load on both the client and the server.
+- Third, it prevents things like API or event spam, so no accidental flooding.
+- Fourth, it enhances user experience, especially when users type or interact, because responses feel smoother.
+- Fifth, it helps you manage resource usage, so everything’s more efficient.
+
+>Example : 
+
+--In HTML file
+
+  <input type="text" id="search" placeholder="Type something" oninput="debouncedGetData(event)">
+
+--In JS File
+function debounce(getData, delay) {
+  let timer;
+
+  return function inner(...values) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      getData.apply(this, values);
+    }, delay);
+  };
+}
+
+function getData(e) {
+  console.log(e.target.value);
+}
+
+const debouncedGetData = debounce(getData, 500);
+
+#Ans 34)
+
+#Ans 35)
 --Abstraction
 
 Abstraction in JavaScript simply means hiding the internal details and showing only the necessary things to the user.
@@ -628,7 +756,7 @@ let userOne=new Login("Yash","12345");
 console.log(userOne.userLogin("12345")); ✅ 
 console.log(userOne.userLogin("123")); ❌
 
-#Ans 25)
+#Ans 36)
 ---Prototype
 
 Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.
@@ -672,75 +800,8 @@ console.log(usersAge.userOneName);
 console.log(usersAge.userTwoName); 
 
 
-#Ans 26)
----Type Coercion vs Type Casting and Concatenation concepts are available in the "Concepts" section.
-Ctrl + F ➤ Just search in concepts section : #20)  
 
-#Ans 27)
->Babel
-Babel is a JavaScript compiler/transpiler that allows developers to use the latest JavaScript features without worrying about browser compatibility. It transpiles modern JavaScript code (like ES6+) into versions that older browsers can understand, ensuring wider support and It also converts React's JSX syntax and TypeScript into regular JavaScript.
-
-->In simple language: Babel converts modern JavaScript code into an older form so that older browsers can understand it and it convert jsx and ts code into js.
-
-->Note : Babel is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
-
-
->SWC
-SWC (Speedy Web Compiler) is like Babel's ultra-fast younger sibling ⚡. It does the same job — compiling modern JavaScript (and TypeScript) into older, browser-compatible code — but it's written in Rust, which makes it significantly faster than Babel.
-
->Bundlers
-Bundlers (such as Webpack, Parcel, esbuild, rollup and Vite) are powerful tools for the frontend. They take all files and assets (JavaScript, CSS, images, etc.) and bundle them into optimized files to ensure efficient loading. (use this)
-
-->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
-
---Note 🖖🖖👇: 
-Vite is built using a combination of esbuild and Rollup, so Babel is not required for converting modern JavaScript into older JavaScript or for converting TypeScript/JSX into plain JavaScript. These transformations are handled by esbuild. However, if we choose the SWC option while creating a React project, then SWC performs these transformations instead of esbuild but by default, Vite uses esbuild, not Babel.
-
-#Ans 28)
-
-1. To use npm (Node Package Manager):  
-  -Reason: When you install Node.js, it comes with npm (Node Package Manager), which is essential for installing and managing 
-  JavaScript packages like TypeScript, React, and other libraries used in development. Without npm, you can't easily install 
-  these packages.
-  
-2. To run JavaScript outside the browser:  
-   - Reason: Node.js provides a JavaScript runtime environment, allowing you to run JavaScript
-    on the server-side or locally (e.g., running backend services or development tools).
-
-3. For modern development tools:  
-   - Reason: Tools like Webpack, Babel, and TypeScript compilers are built on top of Node.js. 
-   Node.js is required to run these tools for building and optimizing code.
-
-#Ans 29)
-- JSX (JavaScript XML) is a syntax extension for JavaScript used in React. With the help of JSX, we can write HTML-like code 
-inside JavaScript
-
-#Ans 30) Variable Declared Without let / const / var
-
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before
-declaring, it gives us an Uncaught ReferenceError.
-
-If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code.
-It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without
-any issues.
-
-This behavior is specific to JavaScript because of how it handles variable declarations and the global scope. Other languages,
-like Python, Java, or C++, have their own rules and scoping mechanisms.
-
----Example:
-
-function check() {
-  console.log("Just checking");
-  {
-    umar = 23;
-  }
-}
-
-check();
-console.log(umar); // 23 — accessible globally
-
-#Ans 31)
+#Ans 37)
 console.log([] == false);
 =>true 
 When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
@@ -753,7 +814,7 @@ without converting them, [] is an object (array is technically an object type), 
 (object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
 boolean are not the same type, hence false.
 
-#Ans 32)
+#Ans 38)
  Answer: c) `splice()`
 
 `splice()` modifies the original array → ❌ mutable
@@ -762,7 +823,7 @@ boolean are not the same type, hence false.
 So, `splice()` is the only mutable one among them 👀
 
 
-#Ans 33)
+#Ans 39)
 >a)
 Promise {<fulfilled>: 'Yash'}
 
@@ -777,14 +838,14 @@ Promise {<pending>}
 [[PromiseState]]: "fulfilled"
 [[PromiseResult]]: "23"
 
-#Ans 34)
+#Ans 40)
 let a=8;
 let b=2;
 
 console.log(8%2)//0
 console.log(2%8)//2 (if a%b and a<b, the answer will be a)
 
-#Ans 35) 
+#Ans 41) 
 console.log(10>5 && -55<56 && 67<88)//true
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
@@ -792,7 +853,7 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
-#Ans 36)
+#Ans 42)
 Context 
 Unary Operator (++,--)
 
@@ -891,7 +952,7 @@ let p=10;
 let ans=++(p++)
 First bracket solved so:  ++(p++)=++11; (so after bracket solved, ++ is applied on a constant value — that's why it's giving an error)
 
-#Ans 37)
+#Ans 43)
 
 fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((response) => {
@@ -922,7 +983,7 @@ let info = async () => {
 };
 info();
 
-#Ans 38)
+#Ans 44)
 
 >🤚 IMP: Summary for Deep vs Shallow Copy:
 
@@ -990,7 +1051,7 @@ copy.address.pin = 99998;
 console.log(user.info()); // original unchanged
 console.log(copy.info()); // updated values
 
-#Ans 39)
+#Ans 45)
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
 let ansOne=names.slice(1,3);
@@ -999,7 +1060,7 @@ console.log(ansOne);
 let ansTwo=names.splice(2,2,"Success");
 console.log(names);
 
-#Ans 40)
+#Ans 46)
 let randomNumber = (numOne, numTwo) => {
   return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
 };
@@ -1007,7 +1068,7 @@ console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 
-#Ans 41)
+#Ans 47)
 
 1)First Way : Using a temporary variable
 
@@ -1035,7 +1096,7 @@ console.log("a=",a);
 console.log("b=",b);
 
 
-#Ans 42)
+#Ans 48)
 
 let x = 1;
 let y = 2;
@@ -1044,14 +1105,14 @@ let z = 3;
 [x,y,z]=[y,z,x]
 console.log(x,y,z);
 
-#Ans 43) 
+#Ans 49) 
 let a=5859;
 
 console.log(Math.floor(a / 10)); // 585
 console.log(a % 10); // 9
 
 
-#Ans 44)
+#Ans 50)
 >A)
 1)
 const sixDigitOTP = () => {
@@ -1105,7 +1166,7 @@ let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
 
-#Ans 45) Current Year & Factorial
+#Ans 51) Current Year & Factorial
 
 --1) Display the current year:
 let getCurrentYear = new Date();
@@ -1118,7 +1179,7 @@ for (let a = 5; a > 0; a--) {
 }
 console.log(factorial);
 
-#Ans 46) Block Thread
+#Ans 52) Block Thread
 
 ---Proper synchronous busy-wait approach (truly blocks the thread)
 
@@ -1159,7 +1220,7 @@ loopDuration(6).then(() => {
   console.log("End");
 });
 
-#Ans 47)
+#Ans 53)
 >Constructor
 
 When we create a new object using the new keyword, the constructor inside the class is automatically called. 
@@ -1189,7 +1250,7 @@ const userThree = new UserInfo("Gaurav", "Frontend Developer");
 console.log(userThree);
 userThree.showInfo();
 
-#Ans 48)
+#Ans 54)
 >Encapsulation 
 Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
 public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
@@ -1245,7 +1306,7 @@ userOne.deposit(1500);
 userOne.withdraw(500);
 
 
-#Ans 49)
+#Ans 55)
 >Inheritance
 
 Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
@@ -1281,7 +1342,7 @@ class TeamCurrentTask extends TeamInfo {
 let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
 console.log(teamCurrentTask.getTeamInfoWithTask());
 
-#Ans 50)
+#Ans 56)
 --- Polymorphism
 Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
 use case or behavior.
@@ -1321,6 +1382,51 @@ const sendNotification = [
 sendNotification.forEach((n) => {
   n.send();
 });
+
+#Ans 57) Print Each Character on a New Line
+
+let s="ramratan";
+
+---Using simple loop
+
+for(let a=0; a<s.length;a++){
+    console.log(s[a]);
+    // console.log(s.charAt(a));
+}
+
+---Using for of loop
+
+for(let a of s){
+    console.log(a);
+}
+
+
+#Ans 58) Print Each Character in Reverse
+
+let s="ramratan";
+
+for(let a=s.length-1; a>=0; a--){
+    console.log(s[a]);
+    // console.log(s.charAt(a));
+}
+
+#Ans 59) Toggle Case Without Built-in Methods
+// ASCII knowledge → A-Z = 65-90, a-z = 97-122
+let str = "YAsh";
+
+const changeCase = (para) => {
+  let newStr = "";
+  for (let a = 0; a < para.length; a++) {
+    let check = para.charCodeAt(a);
+    if (check >= 97 && check <= 122) {
+      newStr += String.fromCharCode(check - 32);
+    } else {
+      newStr += String.fromCharCode(check + 32);
+    }
+  }
+  return newStr;
+};
+console.log(changeCase(str));
 
 // ─────────────────────────────────────────────────────────────────
 // 📊 DSA Answers (Arrays, Strings, Sorting, Searching, Recursion)
