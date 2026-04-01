@@ -1370,19 +1370,18 @@ Here, you are in control. That’s type casting.
 ------
 ?? So Are They the Same? --- No.
 
-  Type coercion = automatic, JS decides.
-  Type casting = manual, you decide.
+- Type coercion = automatic, JS decides.
+- Type casting = manual, you decide.
 
 >Concatenation vs Strings Concatenation
 
--- Concatenation refers to the process of combining two or more values.
--- String concatenation specifically means joining two or more strings together to form a single string.
+- Concatenation refers to the process of combining two or more values.
+- String concatenation specifically means joining two or more strings together to form a single string.
 
 #21)Recursion and Backtracking
 
 >>Recursion
-Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems,
-continuing until a base case is reached.
+Recursion is a programming technique in which a function calls itself to solve a problem by breaking it down into smaller subproblems, continuing until a base case is reached.
 
 >>Backtracking
 Backtracking is a method where we try all possible options. If one option doesn’t lead to a valid solution, we go back and try a 

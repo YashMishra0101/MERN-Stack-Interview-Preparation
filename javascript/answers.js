@@ -4,7 +4,7 @@
 # Note
 > This file contains answers and explanations for all JavaScript interview questions.
 
---Total: 57 Questions
+--Total: 60 Questions
 
 #Ans 1)
 
@@ -605,6 +605,7 @@ Ctrl + F ➤ Just search in concepts section : #4) #5) #6)  #7)
 Ctrl + F ➤ Just search in concepts section : #20)  
 
 #Ans 25)
+
 --Babel
 Babel is a JavaScript transpiler (although it is sometimes called a compiler) written in JavaScript that converts modern JavaScript (ES6+) into backward-compatible JavaScript so it can run in older browsers. It can also compile React JSX and transform TypeScript syntax into plain JavaScript.
 
@@ -622,30 +623,55 @@ SWC can handle TypeScript by removing the type labels (like number or string) an
 --Note : 
 Both Babel and SWC is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
 
-
 #Ans 26)
 
-Bundlers (like Webpack, Rollup, or Parcel) are tools that take multiple files—such as JavaScript, CSS, and images—and bundle them into fewer optimized files. This helps reduce the number of network requests and ensures efficient loading in the browser.
+Bundlers—like Webpack, Rollup, Parcel, or esbuild—take multiple files—such as JavaScript, CSS, and assets—and bundle them into fewer, optimized files. This helps reduce network requests and ensures smoother performance in the browser. Bundlers also perform optimizations like tree shaking (removing unused code), code splitting (loading code in smaller parts), and minification (reducing file size). 
 
 ->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
 
+---
+
+Tree Shaking : Removes unused code from the final bundle.
+Code Splitting : Splits code into multiple smaller bundles instead of one big file.
+Code Minification: Removes unnecessary characters from code, removes spaces, comments, Shortens variable names.
+
+---
+
 #Ans 27)
+
 --vite
 
-Vite is a modern frontend build tool and development server designed for fast development. During development, it uses esbuild under the hood, and during production it uses Rollup as a bundler for optimized output. Vite also provides Hot Module Replacement (HMR), which makes development faster by allowing modules to be updated in a running application in the browser without requiring a full page reload.
+Vite is a modern frontend build tool and development server designed for fast development. In earlier versions (before version 8), Vite used esbuild during development and Rollup for production builds, both written in JavaScript. In newer versions like Vite 8, Vite is transitioning to Rolldown, a Rust-based bundler that is faster than both esbuild and Rollup and is used for both development and production.
 
-(Hot Module Replacement (HMR) means that when we make changes to our code, those changes are instantly injected into the running application without reloading the whole page. So we don't have to restart the React app or manually reload.)
+Vite also provides HMR (Hot Module Replacement), which allows your code changes to be applied instantly in the browser without reloading the page, making development faster and smoother.
+
+HMR (Hot Module Replacement) is provided by Vite itself, not by the bundlers like Rolldown, esbuild, or Rollup.
+
+-----
+>Clarity/More info:
+
+- With ES Modules, the browser can load JavaScript files directly during development. Vite uses esbuild to pre-bundle dependencies from node_modules into an optimized format, so the browser can load them faster. At the same time, esbuild converts JSX or TSX into normal JavaScript. After this, the browser loads everything smoothly using ES Modules.
+
+- esbuild is a very fast JavaScript tool written in Go. It can bundle, transform, and minify code. Because it is written in Go and uses parallel processing, it is much faster than many JavaScript-based tools. In Vite, it is mainly used for fast dependency pre-bundling and code transformation during development.
+
+- Tools like Webpack and Parcel bundle the entire application (source code + dependencies) into large files, even during development. They do not rely on the browser’s native ES Modules. Both support HMR, but their updates are usually slower because they still need partial rebundling. Vite is faster because it serves modules directly using ES Modules instead of rebundling everything.
+
+- Other tools like Webpack, Rollup, and Parcel can also bundle and optimize code. However, they are generally slower than esbuild because they are written in JavaScript, while esbuild is written in Go and is optimized for speed.
+
+-During development (In version 8):
+  - Rolldown pre-bundles node_modules — that's Rolldown's job in dev.
+  - Oxc converts TypeScript and JSX to JavaScript — Oxc is the compiler inside Rolldown. When you request a file, Oxc transforms it on-demand.
+
+-During production (In version 8):
+   - In production, Rolldown acts as the main bundler. It takes all your project files and dependencies and combines them into optimized bundles. It also removes unused code (tree shaking), reduces file size, and improves performance so your app loads faster in the browser. Because Rolldown is written in Rust, it is designed to handle this process efficiently and scale better for large applications.
+
+- Inverse: Before Vite 8: esbuild did both pre-bundling AND TS/JSX transformation during dev
+After Vite 8: Rolldown does pre-bundling, and Oxc (inside Rolldown) does the transformation.
+
+- If you configure Vite to use SWC, it replaces esbuild for transforming code (like JSX/TSX) during development. SWC is written in Rust and offers performance comparable to esbuild. However, for production builds, Vite still uses Rollup (or Rolldown in newer versions) to bundle and optimize the application.
 
 
---esbuild
-
-esbuild: A bundler + transpiler + minifier written in Go.
-
-esbuild is a bundler, transpiler, and minifier all in one tool, and it is written in Go, which makes it extremely fast compared to traditional JavaScript-based tools like Webpack or Babel..
-
---Note
-If you configure Vite to use SWC, it will swap out esbuild and use SWC for fast development-time transforms. SWC is written in Rust, making it even faster than esbuild. But when it comes to producing the optimized production bundle, Vite still uses Rollup under the hood.
-
+----
 #Ans 28)
 
 Node.js is not required to run frontend code in the browser because browsers can directly execute HTML, CSS, and JavaScript. However, Node.js is required in the development environment when we use modern frontend tools.
@@ -666,8 +692,7 @@ Many people say “JSX is HTML inside JavaScript”, This is technically incorre
 
 #Ans 30) Variable Declared Without let / const / var
 
-When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from
-anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before declaring, it gives us an Uncaught ReferenceError.
+When we declare a variable without using `var`, `let`, or `const`, it becomes a global variable. This means we can access it from anywhere in the code — even from inside a function or block — but only after declaring it. If we try to access it before declaring, it gives us an Uncaught ReferenceError.
 
 If you create a global variable by not using let, var, or const, you can re-declare and re-assign it anywhere in your code. It's essentially like having a variable that's always in the global scope, so you can change its value or even declare it again without any issues.
 
@@ -686,10 +711,29 @@ check();
 console.log(umar); // 23 — accessible globally
 
 #Ans 31)
+A scripting language is a type of programming language typically used to automate tasks and run within another environment, such as a browser or a server. It is usually interpreted at runtime rather than compiled and is often used for quick and dynamic operations.
+
+JavaScript was created by Brendan Eich in 1995. It was initially called a scripting language because it was designed to run inside the browser to make web pages interactive. Additionally, since it was an interpreted language, it was considered a pure scripting language.
+
+However, JavaScript is no longer considered just a scripting language. With the introduction of Node.js in 2009, JavaScript can now run outside the browser as well. Additionally, the introduction of JIT (Just-In-Time) compilation gave JavaScript the performance needed for serious applications. Together, these advancements transformed it into a general-purpose programming language.
 
 #Ans 32)
+JIT (Just-In-Time) compilation in JavaScript is a technique used by JavaScript engines like V8, SpiderMonkey,JavaScriptCore to improve performance by compiling code during execution. Instead of interpreting code line by line every time, the engine first runs the code normally and monitors which parts are executed frequently, then it converts those frequently executed parts into optimized machine code using the JIT compiler, so they run much faster the next time. This approach allows JavaScript to achieve high performance while still remaining a flexible and dynamic language.
+
+Once JIT compiles a hot code path (frequently executed code) into machine code, that compiled version is cached. The next time that code runs, it uses the already-compiled version — it doesn't recompile it again.
+
+So the flow is:
+1. Code runs normally (interpreted)
+2. Engine notices it runs repeatedly
+3. JIT compiles it to machine code
+4. That compiled version stays cached
+5. All future executions use the cached compiled version (very fast)
+
+The recompilation only happens if the code changes or if the engine detects it needs optimization adjustments.
 
 #Ans 33)
+
+#Ans 34)
 Debouncing ensures that a function executes only after a specified delay has passed since the last time it was invoked.
 
 Debouncing is a technique used to limit how frequently a function executes. It ensures that a function is only executed after a specified delay has passed since the last time the event was triggered.
@@ -726,9 +770,9 @@ function getData(e) {
 
 const debouncedGetData = debounce(getData, 500);
 
-#Ans 34)
-
 #Ans 35)
+
+#Ans 36)
 --Abstraction
 
 Abstraction in JavaScript simply means hiding the internal details and showing only the necessary things to the user.
@@ -756,7 +800,7 @@ let userOne=new Login("Yash","12345");
 console.log(userOne.userLogin("12345")); ✅ 
 console.log(userOne.userLogin("123")); ❌
 
-#Ans 36)
+#Ans 37)
 ---Prototype
 
 Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.
@@ -801,7 +845,7 @@ console.log(usersAge.userTwoName);
 
 
 
-#Ans 37)
+#Ans 38)
 console.log([] == false);
 =>true 
 When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
@@ -814,7 +858,7 @@ without converting them, [] is an object (array is technically an object type), 
 (object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
 boolean are not the same type, hence false.
 
-#Ans 38)
+#Ans 39)
  Answer: c) `splice()`
 
 `splice()` modifies the original array → ❌ mutable
@@ -823,7 +867,7 @@ boolean are not the same type, hence false.
 So, `splice()` is the only mutable one among them 👀
 
 
-#Ans 39)
+#Ans 40)
 >a)
 Promise {<fulfilled>: 'Yash'}
 
@@ -838,14 +882,14 @@ Promise {<pending>}
 [[PromiseState]]: "fulfilled"
 [[PromiseResult]]: "23"
 
-#Ans 40)
+#Ans 41)
 let a=8;
 let b=2;
 
 console.log(8%2)//0
 console.log(2%8)//2 (if a%b and a<b, the answer will be a)
 
-#Ans 41) 
+#Ans 42) 
 console.log(10>5 && -55<56 && 67<88)//true
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
@@ -853,7 +897,7 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
-#Ans 42)
+#Ans 43)
 Context 
 Unary Operator (++,--)
 
@@ -952,7 +996,7 @@ let p=10;
 let ans=++(p++)
 First bracket solved so:  ++(p++)=++11; (so after bracket solved, ++ is applied on a constant value — that's why it's giving an error)
 
-#Ans 43)
+#Ans 44)
 
 fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((response) => {
@@ -983,7 +1027,7 @@ let info = async () => {
 };
 info();
 
-#Ans 44)
+#Ans 45)
 
 >🤚 IMP: Summary for Deep vs Shallow Copy:
 
@@ -1051,7 +1095,7 @@ copy.address.pin = 99998;
 console.log(user.info()); // original unchanged
 console.log(copy.info()); // updated values
 
-#Ans 45)
+#Ans 46)
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
 let ansOne=names.slice(1,3);
@@ -1060,7 +1104,7 @@ console.log(ansOne);
 let ansTwo=names.splice(2,2,"Success");
 console.log(names);
 
-#Ans 46)
+#Ans 47)
 let randomNumber = (numOne, numTwo) => {
   return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
 };
@@ -1068,7 +1112,7 @@ console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 
-#Ans 47)
+#Ans 48)
 
 1)First Way : Using a temporary variable
 
@@ -1096,7 +1140,7 @@ console.log("a=",a);
 console.log("b=",b);
 
 
-#Ans 48)
+#Ans 49)
 
 let x = 1;
 let y = 2;
@@ -1105,14 +1149,14 @@ let z = 3;
 [x,y,z]=[y,z,x]
 console.log(x,y,z);
 
-#Ans 49) 
+#Ans 50) 
 let a=5859;
 
 console.log(Math.floor(a / 10)); // 585
 console.log(a % 10); // 9
 
 
-#Ans 50)
+#Ans 51)
 >A)
 1)
 const sixDigitOTP = () => {
@@ -1166,7 +1210,7 @@ let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
 
-#Ans 51) Current Year & Factorial
+#Ans 52) Current Year & Factorial
 
 --1) Display the current year:
 let getCurrentYear = new Date();
@@ -1179,7 +1223,7 @@ for (let a = 5; a > 0; a--) {
 }
 console.log(factorial);
 
-#Ans 52) Block Thread
+#Ans 53) Block Thread
 
 ---Proper synchronous busy-wait approach (truly blocks the thread)
 
@@ -1220,7 +1264,7 @@ loopDuration(6).then(() => {
   console.log("End");
 });
 
-#Ans 53)
+#Ans 54)
 >Constructor
 
 When we create a new object using the new keyword, the constructor inside the class is automatically called. 
@@ -1250,7 +1294,7 @@ const userThree = new UserInfo("Gaurav", "Frontend Developer");
 console.log(userThree);
 userThree.showInfo();
 
-#Ans 54)
+#Ans 55)
 >Encapsulation 
 Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
 public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
@@ -1306,7 +1350,7 @@ userOne.deposit(1500);
 userOne.withdraw(500);
 
 
-#Ans 55)
+#Ans 56)
 >Inheritance
 
 Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
@@ -1342,7 +1386,7 @@ class TeamCurrentTask extends TeamInfo {
 let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
 console.log(teamCurrentTask.getTeamInfoWithTask());
 
-#Ans 56)
+#Ans 57)
 --- Polymorphism
 Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
 use case or behavior.
@@ -1383,7 +1427,7 @@ sendNotification.forEach((n) => {
   n.send();
 });
 
-#Ans 57) Print Each Character on a New Line
+#Ans 58) Print Each Character on a New Line
 
 let s="ramratan";
 
@@ -1401,7 +1445,7 @@ for(let a of s){
 }
 
 
-#Ans 58) Print Each Character in Reverse
+#Ans 59) Print Each Character in Reverse
 
 let s="ramratan";
 
@@ -1410,7 +1454,7 @@ for(let a=s.length-1; a>=0; a--){
     // console.log(s.charAt(a));
 }
 
-#Ans 59) Toggle Case Without Built-in Methods
+#Ans 60) Toggle Case Without Built-in Methods
 // ASCII knowledge → A-Z = 65-90, a-z = 97-122
 let str = "YAsh";
 

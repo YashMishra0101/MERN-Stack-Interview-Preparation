@@ -4,7 +4,7 @@
 # Note
 > This section covers JavaScript interview questions including output-based, conceptual, and coding problems commonly asked in interviews and coding rounds.
 
---Total: 57 Questions
+--Total: 60 Questions
 
 #1) What will be the output of the following type coercion question in JavaScript?
 
@@ -682,9 +682,9 @@ const student = {
 
 # 25) What is Babel and SWC.
 
-# 26) What is Bundlers (Webpack, Rollup, Parcel).
+# 26) What is Bundlers (Webpack, Rollup, Parcel, esbuild).
 
-# 27) What is Vite and esbuild.
+# 27) What is Vite.
 
 # 28) Why is Node.js necessary on the frontend? (For Knowledge)
 
@@ -713,31 +713,33 @@ Installs the package only in the current project's `node_modules` folder — ava
 
 # 30) In JavaScript, what happens if you declare a variable without using let, const, or var?
 
-# 31) What is a JIT compiler?
+# 31) What is a scripting language? Why was JavaScript initially called a scripting language and why is it no longer considered just a scripting language?
 
-# 32) What is a closure?
+# 32) What is a JIT compiler?
 
-# 33) What is Debouncing in JavaScript?
+# 33) What is a closure?
 
-# 34) What is Throttling in JavaScript?
+# 34) What is Debouncing in JavaScript?
 
-# 35) What is Abstraction in JavaScript?
+# 35) What is Throttling in JavaScript?
 
-# 36) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+# 36) What is Abstraction in JavaScript?
 
-# 37) Tell me the output of both of these lines and explain why:
+# 37) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+
+# 38) Tell me the output of both of these lines and explain why:
 
 console.log([] == false);  
 console.log([] === false);
 
 
-# 38) Which of the following is NOT an immutable operation?
+# 39) Which of the following is NOT an immutable operation?
 a) `map()`
 b) `filter()`
 c) `splice()`
 d) `concat()`
 
-# 39) What is the output of this code?
+# 40) What is the output of this code?
 
 >a)
 async function name(){
@@ -751,14 +753,14 @@ async function age(){
 }
 console.log(age());
 
-# 40) Tell me the output of this code.
+# 41) Tell me the output of this code.
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#41) Evaluate the following JavaScript expressions and state whether they return true or false:
+#42) Evaluate the following JavaScript expressions and state whether they return true or false:
 
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
@@ -767,7 +769,7 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
-#42) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
+#43) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
 
 1)
 let a=10;
@@ -833,7 +835,7 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-# 43) Write a program with proper error handling to fetch a user's data from this API:
+# 44) Write a program with proper error handling to fetch a user's data from this API:
 👉 API: `https://jsonplaceholder.typicode.com/users/1`
 👨‍💻 Note: Check if the API is responding before using it. Sometimes it may be temporarily unavailable.
 
@@ -845,7 +847,7 @@ Do this using both:
 2)Use async/await with try and catch
 
 
-# 44) Shallow copy and deep copy questions.
+# 45) Shallow copy and deep copy questions.
 
 >A)
 Create a shallow copy of the `profileOne` object using any method you prefer. After copying, change the `name` property in the copied object and verify that the original object is not affected.
@@ -896,7 +898,7 @@ const user = {
   }
 };
 
-# 45) Based on `slice` and `splice`.
+# 46) Based on `slice` and `splice`.
 
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
@@ -906,24 +908,24 @@ How would you extract only `"Vani"` and `"Code"` into a new array without modify
 Question 2:
 How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
 
-# 46) How to generate a random number between two numbers?
+# 47) How to generate a random number between two numbers?
 
-# 47) Swap two variables using three different methods.
+# 48) Swap two variables using three different methods.
 
 let a=30;
 let b=600;
 
-#48)
+#49)
 Can you write the same array destructuring swap logic for three variables?
 Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
 
-#49) Solve this:
+#50) Solve this:
 let a=5859;
 
 1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
 2)Print only the last digit of the number. (Expected output: 9)
 
-#50) Solve these questions.
+#51) Solve these questions.
 
 >A) Generate OTPs
 
@@ -941,19 +943,19 @@ let radius = 5;
   👉 `2 × π × r`
   (The result must be a number, not a string, and must be limited to 2 decimal places.)
 
-#51) Solve the following:
+#52) Solve the following:
 1) Use console.log() to display the current year.
 2) Create a for loop that calculates the factorial of 5.
 
-#52) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+#53) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
 
 For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
 
 Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
 
-# 53) Write a JavaScript program that demonstrates the use of classes and object creation.
+# 54) Write a JavaScript program that demonstrates the use of classes and object creation.
 
-# 54) Demonstrate Encapsulation using a Class.
+# 55) Demonstrate Encapsulation using a Class.
 Task:
 Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
 
@@ -979,19 +981,19 @@ Create a class `BankAccount` that demonstrates the concept of Encapsulation in J
 
   Finally, create an object of the class and demonstrate all three methods.
 
-# 55) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
+# 56) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
 
-# 56) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
+# 57) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
 
-# 57) Print each character on a new line.
-
-let s="ramratan";
-
-# 58) Print each character in reverse order, on a new line.
+# 58) Print each character on a new line.
 
 let s="ramratan";
 
-# 59) Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
+# 59) Print each character in reverse order, on a new line.
+
+let s="ramratan";
+
+# 60) Write a JavaScript function to toggle the case of each character in a given string without using built-in methods like toUpperCase() or toLowerCase().
 let str="YAsh";
 
 // ─────────────────────────────────────────────────────────────────
