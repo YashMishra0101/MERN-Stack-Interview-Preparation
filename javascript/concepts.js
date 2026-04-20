@@ -896,8 +896,7 @@ Examples: Object, Array, Function
 
 Non-Primitive(Reference) Data Types are mutable, meaning their values can be changed without creating a new object, changing the same memory block.
 
-Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will 
-affect the original data.
+Non-Primitive Data Types are stored in the Heap. They are accessed via references,so changes to a reference will affect the original data.
 
 - Examples :
 

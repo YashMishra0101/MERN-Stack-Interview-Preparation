@@ -607,34 +607,23 @@ Ctrl + F ➤ Just search in concepts section : #20)
 #Ans 25)
 
 --Babel
-Babel is a JavaScript transpiler (although it is sometimes called a compiler) written in JavaScript that converts modern JavaScript (ES6+) into backward-compatible JavaScript so it can run in older browsers. It can also compile React JSX and transform TypeScript syntax into plain JavaScript.
+Both Babel and SWC are JavaScript transpilers (although they are sometimes referred to as compilers). Babel is written in JavaScript, while SWC (Speedy Web Compiler) is similar to Babel but much faster because it is written in Rust.
 
-Babel can handle TypeScript by removing the type labels (like number or string) and turning it into plain JavaScript. But it doesn’t check if the types are correct—that job is done by the TypeScript compiler.
+Both tools convert modern JavaScript (ES6+) into backward-compatible JavaScript so it can run in older browsers. They can also compile React JSX and TypeScript syntax into plain JavaScript.
 
---SWC
-SWC (Speedy Web Compiler) is similar to Babel, but it is much faster because it is written in the Rust.
-
---So you can say this : 
-
-SWC stands for Speedy Web Compiler. It is a transpiler (although it is sometimes called a compiler) written in Rust. It converts modern JavaScript into older versions so legacy browsers can run it. It can also compile JSX and transform TypeScript syntax into plain JavaScript.
-
-SWC can handle TypeScript by removing the type labels (like number or string) and turning it into plain JavaScript. But it doesn’t check if the types are correct—that job is done by the TypeScript compiler.
+Babel and SWC can handle TypeScript by removing type annotations (such as number or string) and converting the code into plain JavaScript. However, they do not perform type checking—that responsibility belongs to the TypeScript compiler.
 
 --Note : 
 Both Babel and SWC is specifically designed for JavaScript. It's not a general-purpose tool for other programming languages.
 
 #Ans 26)
 
-Bundlers—like Webpack, Rollup, Parcel, or esbuild—take multiple files—such as JavaScript, CSS, and assets—and bundle them into fewer, optimized files. This helps reduce network requests and ensures smoother performance in the browser. Bundlers also perform optimizations like tree shaking (removing unused code), code splitting (loading code in smaller parts), and minification (reducing file size). 
-
-->In simple language: Bundlers take all the files and bundle them into a single or fewer optimized files.
+Bundlers—like Webpack, Rollup, Parcel, Rolldown or esbuild—take multiple files—such as JavaScript, CSS, and assets—and bundle them into fewer, optimized files. This helps reduce network requests and ensures smoother performance in the browser. Bundlers also perform optimizations like tree shaking (removing unused code), code splitting (loading code in smaller parts), and minification (reducing file size). 
 
 ---
-
 Tree Shaking : Removes unused code from the final bundle.
 Code Splitting : Splits code into multiple smaller bundles instead of one big file.
 Code Minification: Removes unnecessary characters from code, removes spaces, comments, Shortens variable names.
-
 ---
 
 #Ans 27)
@@ -670,7 +659,7 @@ After Vite 8: Rolldown does pre-bundling, and Oxc (inside Rolldown) does the tra
 
 - If you configure Vite to use SWC, it replaces esbuild for transforming code (like JSX/TSX) during development. SWC is written in Rust and offers performance comparable to esbuild. However, for production builds, Vite still uses Rollup (or Rolldown in newer versions) to bundle and optimize the application.
 
-
+-But in Version 8 vite is using rolldown both in the development and Production.
 ----
 #Ans 28)
 
@@ -722,7 +711,7 @@ JIT (Just-In-Time) compilation in JavaScript is a technique used by JavaScript e
 
 Once JIT compiles a hot code path (frequently executed code) into machine code, that compiled version is cached. The next time that code runs, it uses the already-compiled version — it doesn't recompile it again.
 
-So the flow is:
+Flow:
 1. Code runs normally (interpreted)
 2. Engine notices it runs repeatedly
 3. JIT compiles it to machine code
@@ -732,6 +721,25 @@ So the flow is:
 The recompilation only happens if the code changes or if the engine detects it needs optimization adjustments.
 
 #Ans 33)
+A closure is a function that remembers the variables from its outer scope even after that outer scope has finished executing, means an inner function can access its outer function's variables even after the outer function has finished its execution.
+
+function outer() {
+  let count = 0;
+
+  function inner() {
+    count++;
+    console.log(count);
+  }
+
+  return inner;
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+counter(); // 3
+
+
 
 #Ans 34)
 Debouncing ensures that a function executes only after a specified delay has passed since the last time it was invoked.
@@ -771,8 +779,123 @@ function getData(e) {
 const debouncedGetData = debounce(getData, 500);
 
 #Ans 35)
+Throttling is when an event happens repeatedly—like typing or scrolling—but you allow the related function to run only once in a fixed time interval (for example, once every second), even if the event keeps happening continuously. In other words, throttling is event-based and controls how often a function executes during ongoing events.
+
+Debouncing, on the other hand, also depends on events, but it works differently. It waits until the event stops for a specific period, and only then executes the function. If the event keeps happening continuously, the function will not run until there is a pause.
+
+Difference:
+Throttling runs the function at regular intervals while the event is still happening, whereas debouncing runs the function only after the event has stopped.
+
+>Example : 
+
+--In HTML file
+
+<input type="text" id="search" placeholder="Type something" oninput="throttledGetData(event)">
+
+--In JS File
+function throttle(getData, delay) {
+  let lastCall = 0;
+
+  return function inner(...args) {
+    const now = Date.now();
+
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      getData.apply(this, args);
+    }
+  };
+}
+
+function getData(e) {
+  console.log(e.target.value);
+}
+
+const throttledGetData = throttle(getData, 500);
 
 #Ans 36)
+---Prototype
+
+Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.This prototype object contains properties and methods that can be inherited by other objects through the prototype chain.
+
+or 
+
+Every object has a hidden object called a prototype that contains methods and properties. With the help of prototype inheritance, objects can share their properties and methods.
+
+--- Prototype Inheritance
+
+Prototype inheritance means that one object can inherit properties and methods from another object through its prototype, forming a chain of inheritance known as the prototype chain.
+
+or
+
+Prototype inheritance in JavaScript allows an object to inherit shared properties and methods from another object through the [[Prototype]] link
+
+
+---Code
+
+const usersName = {
+   userOneName: "Yash",
+   userTwoName: "Ram"
+};
+
+const usersAge = {
+  userOneAge: "23",
+  userTwoAge: "24"
+};
+
+// Set the prototype of usersAge to usersName
+Object.setPrototypeOf(usersAge, usersName);
+
+// Get the prototype of usersName
+console.log(Object.getPrototypeOf(usersName));
+
+// Accessing userOneName from usersAge
+console.log(usersAge.userOneName); 
+console.log(usersAge.userTwoName); 
+
+
+
+#Ans 37)
+--Constructor
+
+When we create a new object using the new keyword, the constructor inside the class is automatically called. The constructor is mainly used to create and initialize the properties of the object inside the class.
+
+
+class UserInfo {
+  constructor(name, role) {
+    this.name = name;
+    this.role = role;
+  }
+
+  showInfo() {
+    console.log(`User name is ${this.name} and User is a ${this.role}`);
+  }
+}
+
+const userOne = new UserInfo("Yash", "Software Developer");
+console.log(userOne);
+userOne.showInfo();
+
+const userTwo = new UserInfo("Vani", "Backend Developer");
+console.log(userTwo);
+userTwo.showInfo();
+
+const userThree = new UserInfo("Gaurav", "Frontend Developer");
+console.log(userThree);
+userThree.showInfo();
+
+#Ans 38)
+>Encapsulation 
+Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
+public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
+unauthorized modifications.
+
+--In simple language 
+
+Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private 
+properties (ES2022+).
+
+
+#Ans 39)
 --Abstraction
 
 Abstraction in JavaScript simply means hiding the internal details and showing only the necessary things to the user.
@@ -800,52 +923,84 @@ let userOne=new Login("Yash","12345");
 console.log(userOne.userLogin("12345")); ✅ 
 console.log(userOne.userLogin("123")); ❌
 
-#Ans 37)
----Prototype
+#Ans 40)
+--- Polymorphism
+Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
+use case or behavior.
 
-Every object in JavaScript has a hidden property called `[[Prototype]]`, which refers to another object called its prototype.
-This prototype object contains properties and methods that can be inherited by other objects through the prototype chain.
+In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
+parent class to provide a different functionality.
 
-or 
+>Difference (one-liner trick)
 
-Every object has a hidden object called a prototype that contains methods and properties. With the help of prototype inheritance, objects can share their properties and methods.
+--Overriding → Same method name, same parameters, but redefined in child class (runtime).
+--Overloading → Same method name, different parameters (compile-time → but JS doesn't true method overloading like C++ and Java).
 
---- Prototype Inheritance
+class SMSNotification {
+  send() {
+    console.log("Sending a generic notification");
+  }
+}
 
-Prototype inheritance means that one object can inherit properties and methods from another object through its prototype, 
-forming a chain of inheritance known as the prototype chain.
+class EmailNotification extends SMSNotification {
+  send() {
+    console.log("Sending Email Notification");
+  }
+}
 
-or
+class PushNotification extends EmailNotification {
+  send() {
+    console.log("Sending Push Notification");
+  }
+}
 
-Prototype inheritance in JavaScript allows an object to inherit shared properties and methods from another object through 
-the [[Prototype]] link
+const sendNotification = [
+  new SMSNotification(),
+  new EmailNotification(),
+  new PushNotification(),
+];
+
+sendNotification.forEach((n) => {
+  n.send();
+});
+
+#Ans 41)
+>Inheritance
+
+Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
+another class (called the parent or superclass) using the extends keyword in JavaScript.
+
+>super keyword
+
+The super keyword is used to call the constructor and methods of the parent class from within the child class.
+
+class TeamInfo {
+  constructor(teamName, teamRole, teamSize) {
+    this.teamName = teamName;
+    this.teamRole = teamRole;
+    this.teamSize = teamSize;
+  }
+
+  getTeamInfo() {
+    return `Team name: ${this.teamName} | Team role: ${this.teamRole} | Team size: ${this.teamSize} members`;
+  }
+}
+
+class TeamCurrentTask extends TeamInfo {
+  constructor(teamName, teamRole, teamSize, currentTask) {
+    super(teamName, teamRole, teamSize);
+    this.currentTask = currentTask;
+  }
+  getTeamInfoWithTask(){
+  return `${super.getTeamInfo()}. Currently, the team is working on ${this.currentTask}.`;
+  }
+}
 
 
----Code
+let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
+console.log(teamCurrentTask.getTeamInfoWithTask());
 
-const usersName = {
-   userOneName: "Yash",
-   userTwoName: "Ram"
-};
-
-const usersAge = {
-  userOneAge: "23",
-  userTwoAge: "24"
-};
-
-// Set the prototype of usersAge to usersName
-Object.setPrototypeOf(usersAge, usersName);
-
-// Get the prototype of usersName
-console.log(Object.getPrototypeOf(usersName));
-
-// Accessing userOneName from usersAge
-console.log(usersAge.userOneName); 
-console.log(usersAge.userTwoName); 
-
-
-
-#Ans 38)
+#Ans 42)
 console.log([] == false);
 =>true 
 When we use == then JS "changes types" to compare the values so [] becomes an empty string (""), and "" becomes 0 when converted to a
@@ -858,7 +1013,7 @@ without converting them, [] is an object (array is technically an object type), 
 (object !== boolean), it is immediately gives false,=== checks type and value strictly, so array (object) and
 boolean are not the same type, hence false.
 
-#Ans 39)
+#Ans 43)
  Answer: c) `splice()`
 
 `splice()` modifies the original array → ❌ mutable
@@ -867,7 +1022,7 @@ boolean are not the same type, hence false.
 So, `splice()` is the only mutable one among them 👀
 
 
-#Ans 40)
+#Ans 44)
 >a)
 Promise {<fulfilled>: 'Yash'}
 
@@ -882,14 +1037,14 @@ Promise {<pending>}
 [[PromiseState]]: "fulfilled"
 [[PromiseResult]]: "23"
 
-#Ans 41)
+#Ans 45)
 let a=8;
 let b=2;
 
 console.log(8%2)//0
 console.log(2%8)//2 (if a%b and a<b, the answer will be a)
 
-#Ans 42) 
+#Ans 46) 
 console.log(10>5 && -55<56 && 67<88)//true
 console.log(10>5  -55<56 && 67>88)//false
 console.log(100=="100" || 2>-9 || 88<102)//true
@@ -897,7 +1052,7 @@ console.log(100==="100" || 2>-9 || 88<102)//true
 console.log(100==="100" || 2>-9 || 88>102)//true
 console.log(100==="100" || 2<-9 || 88>102)//false
 
-#Ans 43)
+#Ans 47)
 Context 
 Unary Operator (++,--)
 
@@ -996,7 +1151,7 @@ let p=10;
 let ans=++(p++)
 First bracket solved so:  ++(p++)=++11; (so after bracket solved, ++ is applied on a constant value — that's why it's giving an error)
 
-#Ans 44)
+#Ans 48)
 
 fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((response) => {
@@ -1027,7 +1182,7 @@ let info = async () => {
 };
 info();
 
-#Ans 45)
+#Ans 49)
 
 >🤚 IMP: Summary for Deep vs Shallow Copy:
 
@@ -1095,7 +1250,7 @@ copy.address.pin = 99998;
 console.log(user.info()); // original unchanged
 console.log(copy.info()); // updated values
 
-#Ans 46)
+#Ans 50)
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
 let ansOne=names.slice(1,3);
@@ -1104,7 +1259,7 @@ console.log(ansOne);
 let ansTwo=names.splice(2,2,"Success");
 console.log(names);
 
-#Ans 47)
+#Ans 51)
 let randomNumber = (numOne, numTwo) => {
   return Math.floor(Math.random() * (numTwo - numOne + 1) + numOne);
 };
@@ -1112,7 +1267,7 @@ console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 console.log(randomNumber(2, 10));
 
-#Ans 48)
+#Ans 52)
 
 1)First Way : Using a temporary variable
 
@@ -1140,7 +1295,7 @@ console.log("a=",a);
 console.log("b=",b);
 
 
-#Ans 49)
+#Ans 53)
 
 let x = 1;
 let y = 2;
@@ -1149,14 +1304,14 @@ let z = 3;
 [x,y,z]=[y,z,x]
 console.log(x,y,z);
 
-#Ans 50) 
+#Ans 54) 
 let a=5859;
 
 console.log(Math.floor(a / 10)); // 585
 console.log(a % 10); // 9
 
 
-#Ans 51)
+#Ans 55)
 >A)
 1)
 const sixDigitOTP = () => {
@@ -1210,7 +1365,7 @@ let ans = Number((2 * Math.PI * radius).toFixed(2));
 console.log(typeof(ans));
 console.log(ans);
 
-#Ans 52) Current Year & Factorial
+#Ans 56) Current Year & Factorial
 
 --1) Display the current year:
 let getCurrentYear = new Date();
@@ -1223,7 +1378,7 @@ for (let a = 5; a > 0; a--) {
 }
 console.log(factorial);
 
-#Ans 53) Block Thread
+#Ans 57) Block Thread
 
 ---Proper synchronous busy-wait approach (truly blocks the thread)
 
@@ -1262,169 +1417,6 @@ let loopDuration = async (para) => {
 
 loopDuration(6).then(() => {
   console.log("End");
-});
-
-#Ans 54)
->Constructor
-
-When we create a new object using the new keyword, the constructor inside the class is automatically called. 
-The constructor is mainly used to create and initialize the properties of the object inside the class.
-
-
-class UserInfo {
-  constructor(name, role) {
-    this.name = name;
-    this.role = role;
-  }
-
-  showInfo() {
-    console.log(`User name is ${this.name} and User is a ${this.role}`);
-  }
-}
-
-const userOne = new UserInfo("Yash", "Software Developer");
-console.log(userOne);
-userOne.showInfo();
-
-const userTwo = new UserInfo("Vani", "Backend Developer");
-console.log(userTwo);
-userTwo.showInfo();
-
-const userThree = new UserInfo("Gaurav", "Frontend Developer");
-console.log(userThree);
-userThree.showInfo();
-
-#Ans 55)
->Encapsulation 
-Encapsulation means restricting direct access to the internal data of a class and only allowing access through controlled 
-public methods. In JavaScript, we use # to declare private fields inside a class. This ensures data protection and prevents 
-unauthorized modifications.
-
---In simple language 
-
-Encapsulation means hiding internal details and only exposing necessary things. In JavaScript, we use # for private 
-properties (ES2022+).
-
---❓ Why didn't we use a constructor in this code?
-
-We didn't use a constructor in this code because the private field #balance is already initialized with a default value (100). 
-If we wanted to make the starting balance dynamic, then we would need a constructor."
-
-
-
-class BankAccount {
-  #balance = 100;
-
-  deposit(amount) {
-    if (amount <= 0) {
-      console.log("Amount must be greater than 0.");
-      return;
-    }
-
-    this.#balance += amount;
-    console.log(
-      `₹${amount} deposited successfully. Your current balance is ₹${this.#balance}.`
-    );
-  }
-
-  withdraw(amount) {
-    if (amount > this.#balance) {
-      console.log("Insufficient balance.");
-      return;
-    }
-
-    this.#balance -= amount;
-    console.log(
-      `₹${amount} withdrawn successfully. Your current balance is ₹${this.#balance}.`
-    );
-  }
-
-  checkBalance() {
-    console.log(`Your current balance is ₹${this.#balance}.`);
-  }
-}
-
-const userOne = new BankAccount();
-userOne.checkBalance();
-userOne.deposit(1500);
-userOne.withdraw(500);
-
-
-#Ans 56)
->Inheritance
-
-Inheritance is a concept where one class (called the child or subclass) can inherit properties and methods from 
-another class (called the parent or superclass) using the extends keyword in JavaScript.
-
->super keyword
-
-The super keyword is used to call the constructor and methods of the parent class from within the child class.
-
-class TeamInfo {
-  constructor(teamName, teamRole, teamSize) {
-    this.teamName = teamName;
-    this.teamRole = teamRole;
-    this.teamSize = teamSize;
-  }
-
-  getTeamInfo() {
-    return `Team name: ${this.teamName} | Team role: ${this.teamRole} | Team size: ${this.teamSize} members`;
-  }
-}
-
-class TeamCurrentTask extends TeamInfo {
-  constructor(teamName, teamRole, teamSize, currentTask) {
-    super(teamName, teamRole, teamSize);
-    this.currentTask = currentTask;
-  }
-  getTeamInfoWithTask(){
-  return `${super.getTeamInfo()}. Currently, the team is working on ${this.currentTask}.`;
-  }
-}
-
-
-let teamCurrentTask=new TeamCurrentTask("Frontend Warriors","Handling Frontend Task",12,"Food Website");
-console.log(teamCurrentTask.getTeamInfoWithTask());
-
-#Ans 57)
---- Polymorphism
-Polymorphism is a concept where multiple classes can have methods with the same name, but each class provides its own different 
-use case or behavior.
-
-In JavaScript, this is usually achieved through "method overriding", where a child class overrides a method inherited from its 
-parent class to provide a different functionality.
-
->Difference (one-liner trick)
-
---Overriding → Same method name, same parameters, but redefined in child class (runtime).
---Overloading → Same method name, different parameters (compile-time → but JS doesn't true method overloading like C++ and Java).
-
-class SMSNotification {
-  send() {
-    console.log("Sending a generic notification");
-  }
-}
-
-class EmailNotification extends SMSNotification {
-  send() {
-    console.log("Sending Email Notification");
-  }
-}
-
-class PushNotification extends EmailNotification {
-  send() {
-    console.log("Sending Push Notification");
-  }
-}
-
-const sendNotification = [
-  new SMSNotification(),
-  new EmailNotification(),
-  new PushNotification(),
-];
-
-sendNotification.forEach((n) => {
-  n.send();
 });
 
 #Ans 58) Print Each Character on a New Line

@@ -6,7 +6,7 @@
 
 --Total: 60 Questions
 
-#1) What will be the output of the following type coercion question in JavaScript?
+# 1) What will be the output of the following type coercion question in JavaScript?
 
 --a)
 let a=5;
@@ -49,9 +49,9 @@ console.log("Sum of a + b = " + a + b, typeof ("Sum of a + b = " + a + b));
 console.log( a + b + " is a sum of a + b", typeof (a + b + " is a sum of a + b"),); 
 
 
-#2) Implement a callback function in JavaScript by passing one function into another, then print its value.
+# 2) Implement a callback function in JavaScript by passing one function into another, then print its value.
 
-#3) Tell the output without running the code.
+# 3) Tell the output without running the code.
 
 function firstFunction() {
   console.log("First Function Start");
@@ -71,7 +71,7 @@ function thirdFunction() {
 
 firstFunction();
 
-#4) Tell the output without running the code, in the proper sequence.
+# 4) Tell the output without running the code, in the proper sequence.
 
 console.log("line number 1", varValue);
 var varValue = 10;
@@ -94,7 +94,7 @@ console.log("line number 6", varValue);
 fn();
 
 
-#5) Tell the output without running the code, in the proper sequence.
+# 5) Tell the output without running the code, in the proper sequence.
 
 var a = 10;
 console.log("line number 1", a);
@@ -114,7 +114,7 @@ console.log("line number 6", a);
 
 fn();
 
-#6) Tell the output.
+# 6) Tell the output.
 
 let letFruit = "orange";
 var varFruit = "orange";
@@ -126,7 +126,7 @@ console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 }
 console.log("letFruit : ", letFruit, "varFruit : ", varFruit);
 
-#7) What will be the output of `console.log(person.fullName())` in the following two cases?
+# 7) What will be the output of `console.log(person.fullName())` in the following two cases?
 
 1)
 let person = {
@@ -154,11 +154,11 @@ let person = {
 
 console.log(person.fullName());
 
-#8) What is lexical scope / lexical scoping?
+# 8) What is lexical scope / lexical scoping?
     
-#9) Can we use the for...of loop for objects?
+# 9) Can we use the for...of loop for objects?
 
-#10) Explain the use of call(), apply(), and bind() in JavaScript and then tells the output of this question.
+# 10) Explain the use of call(), apply(), and bind() in JavaScript and then tells the output of this question.
 
 --1)Output-based (call)
 
@@ -218,9 +218,9 @@ car1.getBrand.call(car2);
 
 //Method borrowing allows one object to use another object's method by changing the value of this using call or apply.
 
-#11) What is the "this" keyword in JavaScript?
+# 11) What is the "this" keyword in JavaScript?
 
-#12) Predict the output of the following three console.log statements (in the browser, non-strict mode) and explain why this behaves differently in regularFunction, arrowFunction, and arrowFunctionTwo.
+# 12) Predict the output of the following three console.log statements (in the browser, non-strict mode) and explain why this behaves differently in regularFunction, arrowFunction, and arrowFunctionTwo.
 
 let person = {
   firstName: "Yash",
@@ -243,7 +243,7 @@ console.log(person.arrowFunction());
 
 console.log(person.arrowFunctionTwo());
 
-#13) Tell the output according to the browser (in the browser,non-strict mode) without running the code.
+# 13) Tell the output according to the browser (in the browser,non-strict mode) without running the code.
 --1)
 let person = {
   firstName: "Yash",
@@ -288,7 +288,7 @@ function abc() {
 
 abc();
  
-#14) What will be the output of the following code, in the proper sequence?
+# 14) What will be the output of the following code, in the proper sequence?
 
 ---1) Code Without `await`:
 
@@ -341,7 +341,7 @@ async function main() {
 main()
 
 
-#15) Find the output of these code snippets.
+# 15) Find the output of these code snippets.
 
 >a)
 for (let a = 1; a <= 5; a++) {
@@ -358,7 +358,7 @@ for (var a = 1; a <= 5; a++) {
 }
 
 
-#16) Find the output of each code snippet below.
+# 16) Find the output of each code snippet below.
 
 a)
 for (let a = 1; a <= 5; a++) {
@@ -453,7 +453,7 @@ for (var a = 1; a <= 5; a++) {
   })();
 }
     
-#17) Tell me the correct output.
+# 17) Tell me the correct output.
 
 a)
 const a = 1;
@@ -723,23 +723,31 @@ Installs the package only in the current project's `node_modules` folder — ava
 
 # 35) What is Throttling in JavaScript?
 
-# 36) What is Abstraction in JavaScript?
+# 36) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
 
-# 37) What is Prototype, Prototype Inheritance, and How Can We Set One Object to Another Object's Properties ?
+# 37) Write a JavaScript program that demonstrates the use of classes and object creation.
 
-# 38) Tell me the output of both of these lines and explain why:
+# 38) What is Encapsulation in Javascript.
+
+# 39) What is Abstraction in JavaScript?
+
+# 40) What is Polymorphism in JavaScript?
+
+# 41) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
+
+# 42) Tell me the output of both of these lines and explain why:
 
 console.log([] == false);  
 console.log([] === false);
 
 
-# 39) Which of the following is NOT an immutable operation?
+# 43) Which of the following is NOT an immutable operation?
 a) `map()`
 b) `filter()`
 c) `splice()`
 d) `concat()`
 
-# 40) What is the output of this code?
+# 44) What is the output of this code?
 
 >a)
 async function name(){
@@ -753,14 +761,14 @@ async function age(){
 }
 console.log(age());
 
-# 41) Tell me the output of this code.
+# 45) Tell me the output of this code.
 let a=8;
 let b=2;
 
 console.log(8%2)
 console.log(2%8)
 
-#42) Evaluate the following JavaScript expressions and state whether they return true or false:
+# 46) Evaluate the following JavaScript expressions and state whether they return true or false:
 
 console.log(10>5 && -55<56 && 67<88)
 console.log(10>5  -55<56 && 67>88)
@@ -769,7 +777,7 @@ console.log(100==="100" || 2>-9 || 88<102)
 console.log(100==="100" || 2>-9 || 88>102)
 console.log(100==="100" || 2<-9 || 88>102)
 
-#43) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
+# 47) This task involves unary operators (++, --) in both pre-increment (++x) and post-increment (x++) forms. Analyze each code snippet and determine the output.
 
 1)
 let a=10;
@@ -835,7 +843,7 @@ let p=10;
 let ans=++(p++);
 console.log(p);
 
-# 44) Write a program with proper error handling to fetch a user's data from this API:
+# 48) Write a program with proper error handling to fetch a user's data from this API:
 👉 API: `https://jsonplaceholder.typicode.com/users/1`
 👨‍💻 Note: Check if the API is responding before using it. Sometimes it may be temporarily unavailable.
 
@@ -847,7 +855,7 @@ Do this using both:
 2)Use async/await with try and catch
 
 
-# 45) Shallow copy and deep copy questions.
+# 49) Shallow copy and deep copy questions.
 
 >A)
 Create a shallow copy of the `profileOne` object using any method you prefer. After copying, change the `name` property in the copied object and verify that the original object is not affected.
@@ -898,7 +906,7 @@ const user = {
   }
 };
 
-# 46) Based on `slice` and `splice`.
+# 50) Based on `slice` and `splice`.
 
 let names = ["Yashu", "Vani", "Code", "Fun", "🔥"];
 
@@ -908,24 +916,24 @@ How would you extract only `"Vani"` and `"Code"` into a new array without modify
 Question 2:
 How would you remove `"Code"` and `"Fun"` from the array and add `"Success"` in their place?
 
-# 47) How to generate a random number between two numbers?
+# 51) How to generate a random number between two numbers?
 
-# 48) Swap two variables using three different methods.
+# 52) Swap two variables using three different methods.
 
 let a=30;
 let b=600;
 
-#49)
+# 53)
 Can you write the same array destructuring swap logic for three variables?
 Like: x = 1, y = 2, z = 3 → swap so that x → y, y → z, and z → x.
 
-#50) Solve this:
+# 54) Solve this:
 let a=5859;
 
 1)Write a program to remove the last digit from the number and print the remaining digits. (Expected output: 585)
 2)Print only the last digit of the number. (Expected output: 9)
 
-#51) Solve these questions.
+# 55) Solve these questions.
 
 >A) Generate OTPs
 
@@ -943,47 +951,15 @@ let radius = 5;
   👉 `2 × π × r`
   (The result must be a number, not a string, and must be limited to 2 decimal places.)
 
-#52) Solve the following:
+# 56) Solve the following:
 1) Use console.log() to display the current year.
 2) Create a for loop that calculates the factorial of 5.
 
-#53) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
+# 57) In JavaScript, the main thread is single-threaded.Can you write a function that blocks the JavaScript thread for a given number of seconds before continuing execution?
 
 For example, calling `blockThread(3)` should pause execution for 3 seconds before printing `"Done"`.
 
 Bonus: Can you implement this without using `setTimeout`, `setInterval`, or `Promise`? (Hint: use a busy-wait loop with `Date.now()`)
-
-# 54) Write a JavaScript program that demonstrates the use of classes and object creation.
-
-# 55) Demonstrate Encapsulation using a Class.
-Task:
-Create a class `BankAccount` that demonstrates the concept of Encapsulation in JavaScript.
-
->Requirements:
-
-  Use a private field `#balance` (initial value should be ₹100).
-
-  Implement the following public methods:
-
-  1. `deposit(amount)`
-
-       Adds the amount to the balance only if it's greater than 0.
-       Logs the updated balance.
-
-  2. `withdraw(amount)`
-
-       Deducts the amount from balance only if sufficient balance is available.
-       Otherwise, logs an "insufficient balance" message.
-
-  3. `checkBalance()`
-
-       Logs the current balance.
-
-  Finally, create an object of the class and demonstrate all three methods.
-
-# 56) Demonstrate inheritance in JavaScript using class, extends, and super with a real-world example.
-
-# 57) Demonstrate Polymorphism in JavaScript by creating a base class with a method, and override that method in two child classes. Show how each object calls its own version of the method.
 
 # 58) Print each character on a new line.
 
