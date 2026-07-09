@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-green.svg)](https://github.com/YashMishra0101/Interview-Preparation)
 
-Welcome! This is an open-source repository designed to help developers prepare for MERN stack interviews. It covers interview questions, answers, and core concepts across Frontend and Basic Backend topics — structured and written to support genuine understanding, not just memorization.
+Welcome, This is an open-source repository designed to help developers prepare for MERN stack interviews. It covers interview questions, answers, and core concepts across Frontend and Basic Backend topics, structured and written to support genuine understanding, not just memorization.
 
 ## 💡 Why This Repository?
 
